@@ -1,0 +1,582 @@
+Summary of chunk 1:
+# Lecture Notes: Object-Oriented Programming and Domain Modeling
+
+## Object-Oriented Programming Review
+- **Reminder to Review Week Two Code Examples**
+  - Play with examples to ensure understanding
+  - Key features for writing Java programs covered
+  - Emphasis on knowing nuances of Java features
+  - String handling differences explained
+  - Understanding 'instance of' and class relations
+  - Realizing interfaces with examples like shape interface and circle implementation
+- **Importance of Understanding Concepts**
+  - Excess bodies, interfaces, default methods crucial
+  - Encouragement to ask questions for clarification
+
+## Introduction to Java OOP
+- **Covered Topics and Concepts**
+  - Completed introduction to Java OOP
+  - Course content overview provided for thorough understanding
+  - Knowledge of Java programming assumed moving forward
+
+## Transition to Domain Modeling
+- **Concept of Domain Modeling**
+  - Shift from pure programming to designing software using OOP
+  - Focus on how to model and design software systematically
+  - Importance of object-oriented framework in software development
+- **Introduction to Assignment One**
+  - Purpose: Show ability to design object-oriented software systems
+  - Emphasis on understanding relationships, status, access modifiers
+  - Reflection of real-world software design principles
+- **Applicability of Design Principles**
+  - Design principles not limited to Java but applicable universally
+  - Importance of systematic software design in various disciplines
+
+## Unique Focus of the Course
+- **Distinguishing Aspect of the Course**
+  - Sole focus on proper software design principles
+  - Detailed exploration of software design intricacies
+  - Systematic learning to create high-quality, reusable, and flexible software
+- **Comparative Insight**
+  - Contrasting focus with other programming and technology courses
+  - Emphasis on practical application and systematic learning approach
+
+## Conclusion
+- **Encouragement for Systematic Learning**
+  - Focus on following steps for quality software design
+  - Characteristics of good software highlighted for emphasis
+
+Summary of chunk 2:
+### Domain Modelling and UML Diagrams
+
+- Domain modelling is essential for communication between software designers and domain experts.
+- Represents domain concepts visually for better understanding.
+- Helps clarify requirements and interactions between parties.
+- Natural language is imprecise, visual representation is clearer.
+- Domain models are not overly precise, complexity can arise if too detailed.
+- Can use domain models in database systems too, like ER diagrams.
+
+#### Importance of Domain Modelling
+
+- Essential for clarifying concepts and interactions.
+- Helps in surfacing misunderstandings or changes in requirements.
+- Acts as a bridge between software designers and domain experts.
+
+#### Conceptual Models in Domain Modelling
+
+- Also known as domain object models.
+- There is no one precise way of representation.
+- Should not be overly complex to maintain clarity.
+
+### Activity of Domain Modelling
+
+- Process of expressing related domain concepts visually.
+- Contributes to clear communication between parties.
+- Important to avoid misunderstandings and changes in requirements.
+
+Summary of chunk 3:
+# Lecture Notes: Unified Modeling Language and Class Diagrams
+
+## Introduction to Modeling Frameworks
+- There are various ways to represent models, such as Unified Modeling Language (UML) using class diagrams.
+- Other frameworks like mind maps and concept maps serve similar purposes to represent system structures.
+
+## Requirements Analysis vs Domain Modelling
+- **Requirements Analysis**: Defines external system behavior specified by given requirements.
+- **Domain Modelling**: Focuses on internal system behavior, deciding entities, interactions, and system workings.
+
+1. **Domain Definition**: Domain represents expertise area such as medicine for doctors or engineering for engineers.
+
+## Example Problem: Tourist Schedule Software
+- **Problem Statement**: Design software to manage tourist schedules involving city tours and hotel bookings.
+- **Requirements**: Tourists book hotel rooms of different grades, each with arrival and departure dates, and can modify their bookings.
+- **Implementation**: Model the problem for object-oriented design, where every entity will be an object.
+
+## Object-Oriented Programming Principles
+- **Object Interaction**: In object-oriented programming, interactions occur between objects which represent real-world entities.
+- **Design Approach**: To design software using object-oriented framework, a shift in thinking is essential.
+
+1. **Class Design**: Create classes for entities like cities, hotels, rooms, tourists, and booking information.
+   - Objects and classes are used to represent entities, interactions, and data.
+
+2. **Interactions among Objects**: Define how classes like cities, hotels, rooms, tourists, and booking information interact with each other in the system structure.
+
+3. **Assignment Link**: Practice of designing class diagrams and entities is similar to assignment tasks to understand modeling and software design.
+
+4. **Considerations**: All entities will be objects, and data structures like lists will be object-oriented representations.
+
+Summary of chunk 4:
+# Lecture Notes: Designing a System Using Classes and States
+
+## Storing Schedule Information
+- **Framework**: Information about the schedule is categorized into tourist, hotel, and room information.
+- **Representation**: Each tourist will have a schedule that needs to be stored.
+- **Programming**: When designing a program, consider it as a state machine that transitions between different states based on actions.
+  - **State Transition**: Every action in the program leads to a transition to the next state, keeping the variables updated.
+  - **Problem Space**: Variables in the program represent entities like students, patients, or customers, and are modified with actions.
+- **Procedural vs. Object-oriented Programming**:
+  - **Procedural**: Variables store information about the entities, modifying the program's state.
+  - **Object-oriented**: Objects encapsulate variables and arrays representing the state of each object.
+
+## Implementing Class Design
+- **Understanding State Representation**:
+  - In procedural programming, variables and arrays are used to maintain state.
+  - In object-oriented programming, objects and their attribute values denote the state.
+- **Multiple Objects Handling**:
+  - For multiple instances of an object (e.g., 500 students), each instance's variables represent an object's state.
+
+## Storing Schedule Within Classes
+- **Design Choices**:
+  - Consider whether the schedule should be stored within the tourist class or as a separate entity.
+- **Entity Identification**:
+  - Identify entities like tour, tourist, city, and room to be represented as classes.
+  - Establish relationships between entities based on requirements.
+- **Class Information**:
+  - Determine the information to be stored in each class (e.g., city name, hotel details) to depict the entity accurately.
+- **Method Definition**:
+  - Define methods for each class to perform necessary actions related to that entity.
+- **Design Quality**:
+  - Aim for a good design by focusing on entity representation, information storage, and method implementation.
+
+Summary of chunk 5:
+**Lecture Notes: Object-Oriented Design Approach**
+
+- **Tour Representation:**
+  - A tour is not fixed, requires methods to allocate cities for different days.
+  
+- **Booking Rooms Method:**
+  - *Hotel* has a number of rooms, method needed to book a room for a tourist.
+  
+- **System Design Process:**
+  - Identify entities/classes, determine necessary data storage, define actions/methods.
+  - Different design approaches can be used, various models possible.
+
+- **Mapping Real World to Domain Expert:**
+  - System components should represent real-world entities of domain expert's perspective.
+  
+- **Class Design and Naming Conventions:**
+  - Classes should reflect real-world entities, avoid technical labels like helper/manager.
+  
+- **Method Signatures and Functions:**
+  - Name, functionality of methods determined later, focus on intended actions (e.g., XY, Z).
+
+- **Noun and Verb Analysis:**
+  - Use of nouns as entities, verbs as behaviors/methods, aids in domain modeling.
+  
+- **Problem Analysis - Example:**
+  - Entities: tourist, schedule, hotels, rooms (standard, premium).
+  - Verbs/Actions: booking, cancelling, updating room, creating/modifying schedule.
+
+- **Method Implementation Example:**
+  - Creation of classes for hotel, rooms, determination of stored information.
+  - Booking room method execution involves modifications in hotel and tourist class instances.
+  - State transition occurs with method execution, altering objects' states.
+
+- **Software State Machine Concept:**
+  - Objects transition states with method execution, modifying system state.
+  
+- **Object Creation for Cities:**
+  - Objects representing different cities required in software for tour implementation.
+
+Summary of chunk 6:
+## Creating Objects for Different Hotels
+- Objects created for different hotels with specific properties (city, number of rooms).
+- No bookings made initially, objects ready for booking.
+- Booking process involves executing a method to modify the state of the object.
+
+### Object-Oriented Problem Solving Approach
+- **Entity Identification**: Identify entities, information to store, and methods required.
+- **Class Relationship Consideration**: Consider superclass creation, commonalities, and relationships.
+    - Consider "is-a" and "has-a" relationships for designing classes.
+    - Example: Hotel class with a list of room instances (has-a relationship).
+
+### Examples of "is-a" Relationship
+- Using "is-a" relationship in designing classes such as Tour and Schedule.
+- Example: Grade of Room, Premium Room, and Standard Room classes.
+    - Common attributes for all rooms (room number, area) in a superclass "Room".
+
+### Date Representation in Classes
+- Designing a class for handling dates.
+- Consider class fields for day, month, year, and methods to handle date operations.
+- Validation methods for input data like range checking, difference calculation, etc.
+
+### Pictorial Representation of Classes
+- Represent classes visually using rectangles.
+- Relationships such as dependency, aggregation, composition, and loose relationships can be depicted.
+- Aggregation and composition relationships explained with examples, illustrating class relationships.
+
+Summary of chunk 7:
+# Relationship in Object-Oriented Programming
+- **Directionality in Relationships**
+  - Relationship can be from A to B or vice versa.
+  - Directed relationships indicate dependency.
+  - Example: Individual owns a car, not the other way around.
+
+- **Forms of Relationships**
+  - **Association Relationship:**
+    - One class uses another class.
+    - Example: Hotel uses rooms.
+
+  - **Aggregation Relationship:**
+    - A class contains another class.
+    - Objects can exist independently.
+    - Example: Course has students enrolled.
+
+  - **Composition Relationship:**
+    - Stronger relationship; objects contained are removed if the main class is removed.
+    - Example: Virtual shopping cart removes items if the cart is removed.
+
+- **Use of UML Diagrams**
+  - UML diagrams used for structural and behavioral design.
+  - Class and object diagrams are emphasized in this course.
+  - Critics argue that behavioral diagrams can become overly complex.
+
+- **Representation in UML Diagrams**
+  - Class diagrams showcase class name, attributes, and methods.
+  - Object diagrams illustrate objects of a specific class with corresponding values.
+
+- **Example: Class Inheritance**
+  - Class Account with subclasses like Loan Account and Overdraft Account.
+  - Relationship representation with arrows for ease of understanding.
+
+- **Implementation Detail**
+  - Methods are shown with their name and attributes in UML but not language specific.
+  - Pseudo code format used for flexibility in implementation.
+
+- **Interaction with Objects**
+  - Objects are instances of classes and contain specific attribute values.
+
+These relationships in object-oriented programming help in understanding the dependencies and structures within a system, enhancing the design and implementation process.
+
+Summary of chunk 8:
+# Lecture Notes: Representing Classes and Associations
+
+## Classes and Methods
+- A class represents an object with actual value.
+- Methods are part of the class, not the object.
+- Representing classes involves super classes and subclasses.
+- Classes consist of variables and methods.
+
+## Associations and Cardinality
+- Association indicates relationships between classes.
+- Cardinality specifies the number of instances related.
+- Example: A dog belongs to an owner (1 to 1 cardinality).
+- Professors teach courses (Professor teaches course, multiple cardinality).
+- Entities for professors, courses, and relationships are depicted.
+
+## Representing Associations in Diagrams
+- Use UML diagrams to represent associations visually.
+- Example: Lab contains computers (association).
+- Composition example: Online order with list of items (composition).
+- Changing one component affects the other in composition.
+
+## Drawing Diagrams and Tools
+- Diagram creation will be part of next week's lab session.
+- Online tools simplify UML diagram creation process.
+- Drag and drop elements, fill values, and connect components in diagrams.
+
+## Relationship vs. Association
+- Arrow symbol represents dependency in relationships and associations.
+- Arrow presence matters more than diamond fill in associations.
+- Contextual understanding clarifies meaning in UML notation.
+
+## Examples and Representation Choices
+- Book and pages relationship example (1 book has 1 or more pages).
+- When to use attributes vs. classes for representation.
+- Object-oriented programming prefers instances over collection structures.
+
+Overall, understanding class representation, associations, cardinality, and UML diagram tools are essential for visualizing and designing object-oriented systems effectively. Striking a balance between attribute-based representation and class creation is key in object-oriented programming paradigms.
+
+Summary of chunk 9:
+# Storing More than Just a String or Number
+
+- To store more complex information, create a class and get an instance of that class.
+- For example, storing student information like first name, last name, phone number, address, lab marks, etc., requires a class for students.
+- Similarly, for storing flight information or airport details, classes for flight and airport are necessary.
+
+## Representing Objects and Instances
+
+- Representing objects by class instances makes data retrieval faster and more efficient.
+- Storing information about airports or courses requires dedicated classes for each entity.
+- Using instances eliminates the need for searching and allows direct access to detailed information.
+
+### Classes and Object Relationships
+
+- When storing information about courses, avoid duplication by utilizing superclass-subclass relationships.
+- Static methods should be used sparingly, as they can create a highly coupled system.
+- Considering abstract classes for attributes that are common across different instances of a class.
+
+#### Conclusion
+
+- Designing classes and utilizing instances efficiently can lead to optimized data storage and retrieval processes.
+- Emphasizing on object-oriented programming principles for creating scalable and structured data representations.
+
+Summary of chunk 10:
+### Title: Changing Title Code Prerequisite
+
+- Constant things: Title code Prerequisite remains unchanged.
+  - Example: 41511 for 2521.
+- Each offering: The changing part referring to the different classes.
+  - Relationship: Hazard relationship with a collection of offerings.
+  - Storage: Instance creation for course offering information.
+    - Instances stored in the collection.
+- Flexibility: Hazard relationship offers more flexibility than Is a.
+  - Not providing complete answers, room for interpretation.
+- Missing link: Course instance missing in offering information.
+  - Additional field required for course association.
+- Lecturers and students representation:
+  - Lecturers: Office location, represented as a class.
+    - Collection storage: Lecturer instances.
+  - Students: Name and details, represented as a class.
+    - Collection storage: Student instances.
+- Design process:
+  - Bottom-up approach.
+  - Class identification, commonality evaluation, relationship establishment.
+- Implementation:
+  - Structure creation based on requirements and relationships.
+  - Interface and class definition before actual implementation.
+- Test-driven development:
+  - Write tests before implementing methods.
+  - Ensures method functionality aligns with design and requirements.
+
+### Implementation and Testing in Software Development
+
+- Software development process:
+  - Requirement understanding leads to class and method definition.
+  - Development based on known requirements and design structure.
+- Test-driven approach:
+  - Writing tests prior to implementing methods.
+  - Testing aligns with initial requirements and design logic.
+- Method implementation:
+  - Following test cases, implementation of methods executed.
+  - Ensuring functionality and behavior match predefined expectations.
+- Importance of testability:
+  - Ensures code reliability and functionality accuracy.
+  - Methodical approach in development process, focusing on test-driven stages.
+
+Summary of chunk 11:
+### Notes on Assignment and Test Cases Implementation
+- Implementation of test cases is crucial before adding more tests.
+- Required tests for methods should be known beforehand.
+- Test cases will be part of the assignment.
+- Testing API functions will determine what implement functions to use.
+
+### Notes on Course Offerings and UML Diagrams
+- Course offerings will be stored in a collection class.
+- The collection can be a list or any preferred structure.
+- UML diagrams are essential for design.
+
+### Notes on First Assignment Design
+- First assignment involves designing and implementing software in Java.
+- Communication of design will be done using UML diagrams.
+- Auto-marking consists of 50% correctness and 50% on design.
+
+### Notes on Growth in Course
+- First assignment may feel inadequate but serves as a learning experience.
+- Growth and improvement in design will be visible in subsequent assignments.
+
+### Notes on Repository and Instance Handling
+- Each student will have a repository for the assignment work.
+- Only one instance of a student is needed even if enrolled in multiple courses.
+- Utilize array lists for efficient data storage.
+
+### Notes on Assignment Completion
+- Assignment details need to be thoroughly understood and implemented.
+- Maximum deadline for submission is seven days.
+
+### General Notes
+- In-depth review of assignment specs is necessary.
+- Read the assignment thoroughly to start the design process.
+- Seek clarification from the teaching staff for any questions regarding the assignment.
+
+Summary of chunk 12:
+### Lecture Notes: Software Design and Implementation
+
+- **Assignment Overview:**
+  - Due on Friday of week five.
+  - Three tasks: one mandatory, two optional.
+  - Aim to understand the problem space, design a good software, and implement correctly.
+  - Emphasis on thoughtful planning, class relationships, methods needed.
+  
+- **Design Process:**
+  - Importance of understanding the problem space and planning.
+  - Use classical tools like pen and paper for planning.
+  - Think about method functionalities, preconditions, and postconditions.
+  
+- **Robust Programming:**
+  - Future lecture topics to cover robust programming.
+  - Focus on developing Java VS code skills and critical thinking.
+  - Assignment to build skills in Java and software design.
+
+- **Academic Integrity:**
+  - Encouragement to attempt assignments independently.
+  - Discouragement from copying work to prevent learning setbacks.
+  - Warning against plagiarism detection and consequences.
+
+- **Assignment Details:**
+  - Back end design for an existing front end interface.
+  - Utilize the pre-built front end for visualization.
+  - Encouragement to engage with a well-developed assignment for learning objectives fulfillment.
+
+Summary of chunk 13:
+### Lecture Notes:
+
+#### System Design:
+- **Back End Design**:
+  - Back end will carry out tasks.
+  - Front end will call tasks and display outcomes.
+  
+#### Tasks:
+- **Task 1**:
+  - Devices on the surface: mobile phones, laptops, etc.
+  - 34 different types of devices can be created.
+  
+- **Task 2**:
+  - Satellites rotating around Earth.
+  - Different types, speeds, and characteristics of satellites.
+  - 34 types of satellites can be created.
+  
+- **Task 3**:
+  - File transfer from laptop to satellite.
+  - Need to decide if connection between device and satellite is possible.
+  
+#### System Simulation:
+- **Purpose**:
+  - Create instances of devices and satellites.
+  - Interaction between devices and satellites.
+  - Represents system in software.
+  
+- **Simulation Description**:
+  - State machine concept - simulates actions over time.
+  - Initial phase creates devices and satellites.
+  - Continuously updates states based on specific intervals (e.g. 5 minutes).
+  - Decision making based on satellite and device characteristics.
+  
+- **Simulation Process**:
+  - Update all states based on time intervals and object characteristics.
+  - Actions like file uploads trigger state changes.
+  - Decision making considering accessibility between satellite and device.
+
+Summary of chunk 14:
+### Lecture Notes: Object-Oriented Design and System Testing
+
+- **Designing the System**
+  - Consider components: devices, satellites
+  - Determine classes, relationships, commonalities
+  - Decide on information representation, methods
+  - Implement design based on relationships (Is-a, Has-a)
+  
+- **Testing the System**
+  - Determine testing strategy independently
+  - Emphasize abstraction and interface implementation
+  - Follow simulation model progression from state 0 to subsequent states
+  
+- **System Requirements**
+  - Focus on modelling satellites and devices
+  - Ensure runtime addition and removal of satellite devices
+  - Create instances, store characteristics as per fixed method
+  
+- **Functionality**
+  - Run queries to retrieve state information
+  - Enable file transfer among devices and moving devices implementation
+  
+- **Object-Oriented Approach**
+  - Consider suitability for object-oriented design
+  - Actions mainly involve changing instance values
+  - Transform procedural thinking to object-oriented for simplicity
+
+Summary of chunk 15:
+## Lecture Notes:
+
+### Frontend Structure:
+- Devices: Handheld, laptop, desktop.
+- Files: Information about files.
+- Satellites: Standard, teleporting, relay.
+- Relay satellite: Function to relay information.
+- Visualisation: No action required.
+- Focus: Implement the record.
+
+### Programme Structure:
+- Controller: Create device, create satellite, provide information.
+- Actions: Create, remove devices, create, remove satellites.
+- Task 1: Create device, remove device, store information, list IDs.
+- Task 1 Example: Creation of devices, addition of files, testing system.
+- Simulation: Change values in instances over time.
+- Position changes: Based on device and satellite specifications.
+- Frontend Functionality: Ticking every minute to make changes.
+
+### Task 2 Simulation:
+- Run simulation for a single minute.
+- Include: Moving satellites, transferring files.
+- List all entities in range after simulation.
+
+Summary of chunk 16:
+### Visibility Aspect Formula
+- Determine visibility using a specific formula.
+- List all currently visible items within the range provided by the satellite.
+- Consider factors such as distance and accessibility of devices within the range.
+
+### Task 2 Example
+- Review the provided information for Task 2.
+- Ensure that the majority of the necessary details are already provided.
+
+### Evaluation Requirement for Task 3
+- Task 3 constitutes 10% of the evaluation.
+- Focus on the ability to easily extend the system to incorporate new features or requirements.
+- Test the system's design flexibility and scalability.
+
+#### Design Principles
+- Ensure that the system is easily extendable and modifiable.
+- Test the system's adaptability to accommodate future changes quickly and efficiently.
+- Design the system with proper instances and relationships.
+
+### UML Diagram Requirement
+- Create a UML diagram for the system.
+- Utilize recommended websites for assistance in developing the diagram.
+
+### Blog Writing
+- Maintain a blog documenting the progress and challenges faced in the project.
+- Start early and seek clarification to avoid last-minute rush.
+- Emphasize understanding entities, relationships, and methods for effective system design.
+
+### Marking Criteria
+- Software correctness accounts for 50% of the total evaluation.
+- Software design contributes 45% to the overall assessment.
+- Promote originality and additional functionalities beyond the provided specifications.
+- Avoid direct copying; demonstrate understanding through innovative contributions.
+
+### Preparation and Course Structure
+- Begin planning and outlining different classes and their relationships.
+- Focus on storing relevant information and defining necessary methods.
+- Approach the task systematically and start working on it promptly.
+
+### Upcoming Topics
+- Next week's focus will be on design by contract, software principles, and patterns.
+- Discussing the importance of adhering to software design standards and best practices.
+
+### End of Lecture
+- Encouragement to start early and seek clarification.
+- Next class will delve into design by contract.
+- Acknowledgment of the upcoming long weekend.
+
+Summary of chunk 17:
+## Lecture Notes:
+
+### 1. Academic Integrity and Reusing Code
+- Repeating a course allows for the reuse of previous code base.
+- Must include a comment indicating the previous submission.
+- Journalism system will acknowledge the previous work.
+- Encouraged to improve on previous work for better results.
+
+### 2. Plagiarism Awareness
+- Warning against plagiarism, emphasize the importance of commenting on reused code.
+- Mentioning the name and providing relevant details to the tutor as a preventive measure.
+
+### 3. Clarification on Assignment
+- Understanding and clarifying the requirements of the assignment.
+- Consideration of abstraction, caps, and elements for a comprehensive solution.
+
+### 4. Interaction with Tutor
+- Seek clarification on any doubts or questions related to the assignment.
+- Encouragement for open communication with tutors for better understanding and evaluation.
+

@@ -1,0 +1,956 @@
+Summary of chunk 1:
+### Lecture on Haskell Programming
+
+#### Announcements
+
+- **First Quiz Available**: 
+  - Released yesterday on Web CMS.
+  - Deadline extended to Tuesday 6 PM to accommodate delays.
+  - Multiple submissions allowed; only the last submission before the deadline will be marked.
+  - Use Haskell for quiz solutions; lab computers or Ed Forum Haskell playground recommended.
+  - Collaboration is encouraged except for the final exam.
+
+#### Recap from Last Lecture
+
+- **Word Frequency Task**: 
+  - Incomplete offline recording; pending finalization.
+
+- **Topic Covered: Lists**
+
+  ##### Definition of Lists
+  - **List**: Sequence of objects.
+    - **Types of Lists**:
+      1. **Empty List**: `[]`
+      2. **Cons List (Constructed List)**: e.g., `x:xs`
+        - `x` is an object.
+        - `xs` is a list of objects.
+    
+  ```haskell
+  x : xs  -- where `x` is an object and `xs` is a list of the same type
+  ```
+
+  - **Type Consistency**:
+    - Lists must contain elements of the same type.
+    - Invalid Example: `[1, False, 3, 'a']` 
+
+  - **Type Representation**:
+    - List of integers: `[1, 2, 3] :: [Int]`
+
+  ##### Type of Cons
+  - **Cons (`:`)**:
+    - Takes an object of type `a` and a list of `a`, returning a list of `a`.
+  
+  ```haskell
+  (:) :: a -> [a] -> [a]
+  ```
+
+  - **Determine Type in Haskell**:
+    - Use `:t` in GHCi to find the type of expressions.
+    
+  ```haskell
+  :t (:)  -- Output: (:) :: a -> [a] -> [a]
+  ```
+
+  ##### Type Classes
+  - Example with `+`:
+    - Normally `+` is seen as `Int -> Int -> Int`.
+    - Haskell considers `+` in a broader sense:
+  
+  ```haskell
+  :t (+)  -- Output: (+) :: Num a => a -> a -> a
+  ```
+    - This means `+` operates on any type that is an instance of the `Num` type class (e.g., `Int`, `Double`).
+
+#### Functions on Lists
+
+- **Computing Length of a List**:
+  - **Pattern Matching** to define function:
+    - **Base Case**: Empty list returns `0`.
+    - **Recursive Case**: A list with head `x` and tail `xs`:
+    
+  ```haskell
+  length :: [a] -> Int
+  length [] = 0
+  length (_:xs) = 1 + length xs
+  ```
+
+- **Example Explanation**:
+  - The function matches an empty list case first, returning `0`.
+  - For a non-empty list, it uses cons (`:`) to destructure the list and recursively calculate the length.
+
+#### Upcoming Content
+
+- **Type Classes**:
+  - Plan to cover understanding type classes in Haskell.
+  
+- **Mapping Functions across Lists**:
+  - Example: applying a function to each element of a list (to be discussed further).
+
+---
+
+These notes capture key points and examples from the lecture on Haskell programming, focused on lists and basic functions.
+
+Summary of chunk 2:
+### Haskell Programming Lecture Notes
+
+#### Recursive vs Iterative Approaches
+
+- **List Structure**  
+  - List is either:
+    - Empty list `[]`
+    - An object concatenated with a smaller list `[x] ++ xs`
+  
+- **Defining Length in Haskell**  
+  - Recursive thinking essential because of recursive nature of lists.
+  - Length of a list: 
+    - If list is empty: `length [] = 0`
+    - If list is non-empty: `length (x:xs) = 1 + length xs`
+  
+  ```haskell
+  length :: [a] -> Int
+  length [] = 0
+  length (_:xs) = 1 + length xs
+  ```
+  
+- **Iterative Approach (Pseudocode)**
+  - Common for linked lists:
+  ```pseudo
+  length = 0
+  while (node != null) {
+    length++
+    node = node.next
+  }
+  ```
+  - Pros: More memory efficient.
+  - Cons: More moving parts, might be less readable.
+
+#### Recursive vs Iterative: Which is Better?
+
+- Iterative Approach:
+  - Generally more memory efficient because it doesn’t build up a call stack.
+  - Useful for systems with limited memory.
+  
+- Recursive Approach:
+  - Readability: Often more readable.
+  - Functional Programming: Fits naturally with Haskell and functional paradigms.
+  - Tail Recursion: Good compilers can optimize recursive calls into iteration, minimizing memory usage.
+  
+- **Compiler Optimization**  
+  - Decent C Compilers: Convert tail-recursive functions into iterative form.
+  - Haskell compilers: Perform similar optimizations.
+
+#### Readability Considerations
+
+- **Recursive Code**:
+  - Less moving parts.
+  - Easier to understand at a glance.
+  - Example: `length (x:xs) = 1 + length xs` clearly shows the process.
+
+- **Iterative Code**:
+  - Requires understanding of loops and counters.
+  - More complex due to manual tracking of nodes and counters.
+
+#### Practical Application
+
+- **Map and Parallelism**
+  - Functions like `map` can be parallelized.
+  - Example: Google’s MapReduce for parallel processing of large datasets.
+  
+  ```haskell
+  map :: (a -> b) -> [a] -> [b]
+  map _ [] = []
+  map f (x:xs) = f x : map f xs
+  ```
+
+#### Mathematical Correctness
+
+- Recursive definitions often easier to prove correct mathematically.
+- Not inherently better, but offers a different perspective and often proves simpler for verification.
+
+#### Coding with Maintainability
+
+- **Maintainability Focus**:
+  - Writing easily updateable code.
+  - Recursive approach: With proper comments, can be clearer and easier to maintain.
+  
+The key takeaway:
+- No inherently better approach between recursive and iterative.
+- Both have their place; choose based on application, readability, maintainability, and performance needs.
+
+#### Example: Custom Length Function
+
+- Avoid naming conflicts with common functions:
+  ```haskell
+  myLength :: [a] -> Int
+  myLength [] = 0
+  myLength (_:xs) = 1 + myLength xs
+  ```
+
+- Recursively defined function illustrates fewer parts, clearer intent, and the concise nature of functional programming principles.
+
+Summary of chunk 3:
+### Haskell Programming Lecture Notes
+
+#### Correctness and Safety
+- Focus on correctness and safety from the start.
+- Avoid unnecessary complexity (`fewer moving parts`).
+
+#### Recursive Function Definition
+- Importance of recursive functions.
+- Example: Define a function `myLength` using recursion and pattern matching.
+- Key principle: the function examines the input to decide which definition to apply.
+
+#### Pattern Matching
+- Used in defining functions that behave differently based on input structure.
+
+### Implementation of `myMap`
+- **Concept**: Mapping a function over a list.
+- **Type signature**: `(a -> b) -> [a] -> [b]`
+  - Takes a function from `a` to `b` and a list of `a`, returns a list of `b`.
+- **Base Case**: Apply the function `f` to an empty list yields an empty list.
+  - Utilize the wildcard `_` when `f` is not used.
+
+```haskell
+myMap _ [] = []
+```
+
+- **Recursive Case**: Apply `f` to the head (`x`) and recursively to the tail (`xs`).
+
+```haskell
+myMap f (x:xs) = f x : myMap f xs
+```
+
+#### Practical Example: `SuckSuck`
+- Purpose: Add 2 to each element in a list.
+- **Direct Recursive Definition**:
+
+```haskell
+suckSuck [] = []
+suckSuck (x:xs) = (x + 2) : suckSuck xs
+```
+
+- **Using `myMap` Function**:
+  - Introduce a lambda function for adding 2.
+  - Abstract the function to a higher level.
+
+```haskell
+suckSuck xs = myMap (\x -> x + 2) xs
+```
+
+#### Refinements in Functional Programming
+- Avoid repetition and improve readability.
+- Simplify condition checks to return the boolean expression directly.
+
+#### Higher-Level Abstractions
+- Focus on function definitions abstractly rather than at application levels.
+  - Example: Rewriting `suckSuck` to remove parameter bindings directly.
+
+```haskell
+myMap (2 +) xs
+```
+
+#### Best Practices
+- Utilization of higher-level thinking improves code maintainability and readability.
+- Recognize and apply patterns to avoid common first-year mistakes, such as using unnecessary if-else constructs.
+
+### Summary of Key Concepts:
+1. **Functions**: Define compactly with pattern matching and recursion.
+2. **Mapping**: Abstract operations using higher-order functions (e.g., `myMap`).
+3. **Readability**: Simplify expressions and condition checks.
+4. **Recursive Definitions**: Breaking problems into base and recursive cases.
+
+```haskell
+-- Example code snippets for clarity
+myMap _ [] = []
+myMap f (x:xs) = f x : myMap f xs
+
+suckSuck [] = []
+suckSuck (x:xs) = (x + 2) : suckSuck xs
+suckSuck xs = myMap (\x -> x + 2) xs
+```
+
+By maintaining clear, concise, and functionally abstract code, you enhance the reliability and maintainability of Haskell programs.
+
+Summary of chunk 4:
+**Haskell Programming Lecture Notes**
+
+---
+
+### Recap and Map Function
+- `plus 2` is a function that adds 2 to a number.
+    - Correct usage: `map (plus 2) list`
+    - Simplifies anonymous functions, e.g., instead of `map (\x -> x + 2) list`, use `map (plus 2) list`
+- Think at a higher, more abstract level when defining functions.
+
+### Topic Overview for Today
+- **Types and Induction**
+    - Recursive types, functions, and proofs.
+    - Importance of recursion and induction in defining and proving properties of types.
+
+### Induction and Recursive Definitions
+- **Basic Induction**
+  - Recap: Prove at base case and inductive step.
+      - Base: Prove `P(0)`
+      - Inductive Step: Prove if `P(n)` then `P(n+1)`
+  - Example properties to prove:
+      - Sum of first N natural numbers: `N * (N + 1) / 2`
+
+**Definition of Natural Numbers**
+- Define using recursion:
+  - Zero is a natural number.
+  - If `n` is a natural number, then `n + 1` (successor of `n`) is also a natural number.
+  - Define recursively: `0`, `S(0)`, `S(S(0))`...
+
+```haskell
+-- Example code snippet for natural numbers definition
+data Nat = Zero | Succ Nat
+```
+
+### Defining Addition Recursively
+- Define addition based on the recursive definition of natural numbers.
+
+```haskell
+-- Define addition for Nat type
+add :: Nat -> Nat -> Nat
+add Zero n = n
+add (Succ m) n = Succ (add m n)
+```
+- Explanation:
+  - Adding zero to any number results in that number (`add Zero n = n`).
+  - Adding `Succ m` to `n` is `Succ (add m n)`.
+
+---
+
+By structuring and defining mathematical and computational concepts recursively, the foundation for strong proofs and complex data type definitions is established, leading to advanced functional programming techniques in Haskell.
+
+Summary of chunk 5:
+### Addition and Proofs in Haskell
+
+- **Addition Process:**
+  - `N + K` where `K` gets progressively smaller until `K = 0`.
+  - Example: Adding `N` to `0`, eventually results in `sum`.
+
+- **Proof of 1+1=2:**
+  - Proving simple arithmetic can be non-trivial.
+  - `1` is the successor of `0`, `2` is the successor of the successor of `0`.
+  - More complex proofs like `2+2=4` are harder than they appear.
+
+- **Commutativity of Addition:**
+  - Goal: Prove `N + M = M + N`.
+  - While intuitively obvious, formal proof needed.
+  - Small classroom test to ask if `6 * 4 = 4 * 6`.
+
+### Syntactic vs Semantic Differences
+
+- **Arrays and Syntax:**
+  - Example: `array[4][6]` vs `array[6][4]` - representation matters.
+  - Syntax: How expressions are written.
+  - Semantics: The meaning/behavior of the expressions.
+
+- **Code Example:**
+  ```haskell
+  let x = 6
+  let y = 4
+  print (x * y)
+
+  let x = 4
+  let y = 6
+  print (x * y)
+  ```
+  - Different syntax but semantically might appear same if output is the same.
+
+- **Memory Management:**
+  - Execution can vary in terms of register and memory use.
+  - Example involving zero optimizations:
+    ```haskell
+    let x = 0
+    let y = computeSomething() -- takes forever
+    print (x * y)
+    ```
+
+### Importance of Formal Proofs
+
+- **Proving Properties:**
+  - Verify through rigorous techniques beyond test cases.
+  - Infinite sets require induction proofs.
+  - Example: `N + M = M + N` for natural numbers.
+
+- **Induction Basics:**
+  - Need to prove base case.
+  - Prove inductive step.
+  - Ensures result for infinitely many possibilities.
+
+### Induction in Detail
+
+- **Proof Structure:**
+  - **Base Case:** Show property holds for initial value (e.g., `0`).
+  - **Inductive Step:** Assume property holds for `n`, then prove for `n+1`.
+  
+- **Example Induction:**
+  - Prove `P(n)` is true for all natural numbers:
+    1. Base Case: `P(0)` is true.
+    2. Inductive Step: Assuming `P(n)`, prove `P(n+1)`.
+    
+Remember, different pieces of code can have the same output (semantics) but be written very differently (syntax). Understanding both aspects is crucial in functional programming and Haskell.
+
+Summary of chunk 6:
+### Natural Numbers and Induction in Haskell
+
+**Definition of Natural Numbers:**
+- A natural number is either zero or one more than a smaller natural number.
+
+**Principle of Induction:**
+- To prove a property for all natural numbers:
+  - Prove it holds for zero.
+  - Assume it holds for an arbitrary natural number, then prove it holds for the next number.
+- This allows proving a statement for all natural numbers.
+
+**Example Function `F`:**
+- Define function `F` in Haskell:
+  ```haskell
+  f :: Int -> Int
+  f 0 = 0
+  f n = 2 * n - 1 + f (n - 1)
+  ```
+
+**Calculating Values for Function `F`:**
+- F(0) = 0
+- F(1) = 2 * 1 - 1 + F(0) = 1
+- F(2) = 2 * 2 - 1 + F(1) = 4
+- F(3) = 2 * 3 - 1 + F(2) = 9
+- F(4) = 2 * 4 - 1 + F(3) = 16
+- General observation: Fixing F at N might be interpreted as F(N) = N^2.
+
+**Proving Property of `F`:**
+- **To Show:** For all natural numbers `N`, `F(N) = N^2`.
+- Use induction to prove above statement:
+  - **Base Case:** 
+    - For `N = 0`: `F(0) = 0^2`, hence `P(0)` is true.
+  - **Inductive Case:**
+    - Assume `P(N)`: `F(N) = N^2` (Inductive Hypothesis).
+    - Prove `P(N+1)`: `F(N+1) = (N+1)^2`.
+    - Using function definition:
+      ```haskell
+      F(N+1) = 2 * (N + 1) - 1 + F(N)
+             = 2N + 2 - 1 + N^2 (using P(N))
+             = N^2 + 2N + 1
+             = (N + 1)^2
+      ```
+    - Thus, `P(N+1)` holds using the assumption `P(N)`.
+
+**Formal Inductive Proof:**
+1. **Induction Hypothesis:**
+   - Assume `P(N)` is true: `F(N) = N^2`.
+2. **Proof of `P(N+1)`:**
+   - Show `F(N+1) = (N+1)^2` using the inductive step.
+   - Given: `F(N+1) = 2(N + 1) - 1 + F(N)`.
+   - Substitute the inductive hypothesis:
+     ```plaintext
+     F(N+1) = 2N + 1 + N^2
+            = N^2 + 2N + 1
+            = (N + 1)^2
+     ```
+3. **Conclusion:**
+   - By proving the base case and the inductive step, the property `P(N): F(N) = N^2` holds for all natural numbers `N`.
+
+**General Structure of Induction Proof:**
+1. **Base Case:** Prove the property holds for the initial value (usually `N = 0` or `N = 1`).
+2. **Inductive Case:** 
+   - Assume the property holds for an arbitrary natural number `N`.
+   - Prove it for `N + 1` using the assumption.
+3. **Conclusion:** With the base case and inductive step proved, conclude the property holds for all natural numbers.
+
+Summary of chunk 7:
+### Induction on Natural Numbers
+- **Principle of Induction**: P of N holds for all natural numbers.
+- **Induction on Lists**: Generalization of induction principle.
+- **List Definition**:
+  - Either an empty list or 
+  - An object consed with a smaller list.
+- **Analogous to Natural Number**: Similar to how each natural number is constructed by adding 1 to the previous one, a list constructs by adding an element to the existing list.
+
+### Infinitely Recursive Lists
+- Example:
+  ```haskell
+  ones = 1 : ones
+  ```
+- **Evaluation in Haskell**:
+  - Lazy evaluation: Haskell only evaluates as much as needed.
+  - For `take 1000 ones`, it evaluates just 1000 elements before stopping.
+- **Print All Ones**: Attempting to print the entire list leads to an infinite loop.
+
+### Proving Properties for All Finite Lists
+- **Plan**:
+  1. Prove property for the empty list.
+  2. Prove that if the property holds for a smaller list, it holds for a list with one extra element.
+  3. Combine these steps to prove the property for all finite lists.
+
+### Proof Example: `map` Preserves List Length
+- **Proposition**: Length of the list remains the same after applying `map`.
+
+#### Proposition
+\[P(Xs) : \text{length}(\text{map}\ F\ Xs) = \text{length}(Xs) \text{ for any list } Xs\]
+
+#### Base Case
+- **Empty List**:
+  - Prove: \[ \text{length}(\text{map}\ F\ []) = \text{length}([]) \]
+  - **Using Definition of Map**: \(\text{map}\ F\ [] = []\)
+  - \(\Rightarrow \text{length}([]) = \text{length}([])\)
+  - **Conclusion**: \(P([])\) holds.
+
+#### Induction Step
+- **Inductive Hypothesis**:
+  - Assume \[P(Xs) : \text{length}(\text{map}\ F\ Xs) = \text{length}(Xs)\]
+
+- **Inductive Case**: 
+  - Need to show: \[\text{length}(\text{map}\ F\ (x : Xs)) = \text{length}(x : Xs)\]
+  - **Using Definition of Map**:
+    ```haskell
+    map F (x : Xs) = (F x) : (map F Xs)
+    ```
+  - Apply length function:
+    \[\text{length}((F x) : \text{map}\ F\ Xs) = 1 + \text{length}(\text{map}\ F\ Xs)\]
+  - **By Inductive Hypothesis**:
+    \[1 + \text{length}(\text{map}\ F\ Xs) = 1 + \text{length}(Xs)\]
+  - \(\Rightarrow \text{length}((F x) : \text{map}\ F\ Xs) = 1 + \text{length}(Xs)\)
+    - \(\text{length}(x : Xs) = 1 + \text{length}(Xs)\)
+
+- **Conclusion**:
+  - \(\text{length}(\text{map}\ F\ (x : Xs)) = \text{length}(x : Xs)\ \text{holds}\)
+  - Hence, \(P(x : Xs)\) proven.
+
+### Structural Induction
+- Proving properties is easier and more intuitive when considering list structure rather than list length.
+
+Summary of chunk 8:
+### Length Function and Induction in Haskell
+
+- **Definition of length:**
+  ```haskell
+  length [] = 0
+  length (x:xs) = 1 + length xs
+  ```
+  
+- **Using the Definition:**
+  - For the list `X cons Xs` (x:xs):
+    - `length (x:xs) = 1 + length xs`
+  - This step-by-step unwinding is based on the original definition of the length function.
+
+- **Swapping Equalities:**
+  - Equality in mathematical terms allows both directions.
+  - You can replace `1 + length xs` with `length (x:xs)` due to definitional equality.
+
+### Induction Hypothesis
+
+- Induction helps verify properties for all lists. 
+  - If property P is true for list `xs`, then it should be true for `x:xs`.
+
+- **Proof by Induction:**
+  - **Base Case:** 
+    - Property P holds for the empty list `[]`.
+  - **Inductive Step:**
+    - Assuming P holds for any list `xs`, show that P holds for `x:xs`.
+
+### Structural Induction
+
+- **Reasoning in Functional Programming:**
+  - Uses equational reasoning and structural induction.
+  - Not limited to lists; applies to any recursive data type.
+  
+### Haskell vs Infinite Lists
+
+- **Applicability:**
+  - Structural induction does not apply to infinite lists as it requires a grounded base case.
+  - For infinite lists, proving the property for the entire list is complex and often circular.
+
+### Mastery and Course Details
+
+- For more advanced concepts:
+  - **Course Recommendations:**
+    - Theory of Computation (316141614141)
+    - Mathematics for Computer Science (Math 1081)
+    - Induction over Trees (9020) 
+
+### Induction Explained Further
+
+- **How It Works:**
+  - Define structure: list can be empty or an element cons with another list.
+  - Prove the property holds for:
+    - The empty list.
+    - Two smaller lists concatenated.
+
+- **Natural Numbers Example:**
+  - Constructed by defining:
+    - 0 is a natural number.
+    - If `n` is a natural number, then `n + 1` is also a natural number.
+  - Smallest set where this holds is the set of natural numbers.
+
+### Fixed Point Concept
+
+- **Induction:**
+  - Prove property P(0).
+  - Prove P(n) implies P(n+1).
+  - P holds for the smallest set, the natural numbers.
+
+- **Contrasting with Co-Induction:**
+  - Co-Induction: Starts with a universally true set and eliminates false cases.
+  - Co-Induction is less intuitive, as it goes from the largest superset inward.
+
+### Break Time
+
+- Students encouraged to take a break and grab some snacks.
+- Resumed discussion after a 5-minute break.
+
+---
+
+**Note:** Emphasized the importance of grounding cases, mathematical reasoning in functional programming, fundamental principles of induction, and its specific applications and limitations based on structure (like in finite lists). Ensure clear understanding of induction principles crucial for deep comprehension of Haskell or any recursive data types in functional programming.
+
+Summary of chunk 9:
+### Induction and Co-Induction
+
+- **Co-Induction**:
+  - Understanding involves starting with a bigger set and iterating until no further reduction is possible.
+  - Helpful to include infinite lists via co-inductive definitions.
+- **Least Fixed Points**:
+  - Concept useful in understanding computations.
+  - Discussed in-depth in course 3153, involving algorithmic verification.
+
+### Defining Natural Numbers
+
+- Natural numbers:
+  - Defined via zero and the successor function.
+- Integers:
+  - Add predecessor function to include negative numbers.
+  - **Inductive Definition**:
+    - Zero is an integer.
+    - Successor of an integer is an integer.
+    - Predecessor of an integer is an integer.
+  - Results in more complex proof requirements.
+
+### Induction Proof Requirements
+
+- **Natural Numbers**:
+  - Prove property at zero.
+  - If it holds for \( n \), it holds for \( n + 1 \).
+  - If it holds for \( n \), it holds for \( n - 1 \) (with additional complexity for integers).
+- **Example**:
+  - \( n \in \mathbb{Z} \)
+  - \( n + 1 \in \mathbb{Z} \)
+  - \( n - 1 \in \mathbb{Z} \)
+
+### Recursive Definitions
+
+- **Regular Expressions**:
+  - Recursive definitions employed to prove properties.
+- **List Definitions**:
+  - Example with Merge Sort:
+    - A list can be divided into two smaller approximately equal lists.
+  - Induction for lists:
+    - Requirement on base case (empty list or single element).
+    - Assumption on simpler cases to prove for complex cases.
+
+### Data Types in Programming
+
+- **Defining Data Types**:
+  - Crucial in programming (e.g., Java objects).
+  - Allows for modeling of complex structures.
+
+### Example Haskell Code for Inductive Definitions
+
+```haskell
+-- Natural numbers definition
+data Nat = Zero | Succ Nat
+
+-- Adding predecessor function for integers
+data Int = Zero | Succ Int | Pred Int
+```
+
+### Structural Induction
+
+- **Basic Idea**:
+  - Assume it's true for simple cases, prove for complex cases.
+- **List Example**:
+  - Base case (empty or single-element list).
+  - Recursive case (two smaller lists in merge sort).
+
+### Summary
+
+- Structural induction helps understand properties of data structures by breaking them down into base and recursive cases.
+- Definitions and induction proofs must align in complexity.
+
+Summary of chunk 10:
+## Haskell Programming Lecture Notes
+
+### Identity Verification System
+- Task: Write a program to calculate total point value from a list of documents for identity verification in a bank.
+- **Point System**:
+  - **Primary Document**: Passport = 70 points.
+  - **Secondary Document**: 
+    - Initial Example: Driver’s license, Student ID = 40 points.
+    - Subsequent Example: Credit cards = 25 points.
+
+### Haskell Program Setup
+- **Objective**: Setup a function to calculate points.
+- **Commenting**: Eliminate unnecessary function names (e.g., use descriptive names instead of `f`).
+
+### Type Synonyms
+- **Type Synonym**: Using the `type` keyword for readability and consistency.
+
+#### Example:
+```haskell
+-- Type synonym for document
+type Document = String
+```
+
+### Function Definition
+- **Calculating Points**: 
+  ```haskell
+  points :: [Document] -> Integer
+  points [] = 0
+  points ("passport":xs) = 70 + points xs
+  ```
+
+- **Repetition Issue**: 
+  ```haskell
+  points ("birth certificate":xs) = 70 + points xs
+  points ("credit card":xs) = 25 + points xs
+  ```
+
+### Enum and Data Types
+- **Improved Type Definition**: 
+  ```haskell
+  -- Enum using 'data'
+  data Document = Passport | BirthCertificate | CreditCard | DriverLicense | StudentID
+  ```
+
+### Function Refinement with Data Type
+- **Matching on Enum Type**:
+  ```haskell
+  points :: [Document] -> Integer
+  points [] = 0
+  points (Passport:xs) = 70 + points xs
+  points (BirthCertificate:xs) = 70 + points xs
+  points (CreditCard:xs) = 25 + points xs
+  points (DriverLicense:xs) = 40 + points xs
+  points (StudentID:xs) = 40 + points xs
+  ```
+
+### Type Checking
+- **Type of Document Instances**:
+  ```haskell
+  -- Checking type of document
+  typeOf Passport -- Output: Document
+  ```
+
+### Show Function
+- **Show Function for String Conversion**:
+  ```haskell
+  -- Convert list or objects into strings
+  show 1      -- Output: "1"
+  show [1,2]  -- Output: "[1, 2]"
+  ```
+
+### Summary
+- The process involved defining types and writing a function to calculate points for various documents.
+- Initially used simple strings for document types before switching to a defined `Document` data type for clarity and maintainability.
+- The use of `data` for defining types helps restrict the input to only valid document types.
+- Show function to handle output conversion.
+
+Summary of chunk 11:
+### **Haskell Programming Lecture Notes**
+
+---
+
+#### **Conversion to String Using `show`**
+- When you type `123`, Haskell tries to pretty print the result by converting it to a string using `show`:
+  ```haskell
+  show 123 -- "123"
+  ```
+- For custom data types, `show` is not defined automatically.
+- Use `deriving Show` to automatically implement a default `show` method:
+  ```haskell
+  data Document = Passport | CreditCard | BirthCertificate deriving Show
+  ```
+  - This will ensure that instances of `Document` can be printed as strings.
+
+#### **Equality with `Eq`**
+- To check if two instances of a custom type are equal, use `deriving Eq`:
+  ```haskell
+  data Document = Passport | CreditCard | BirthCertificate deriving (Show, Eq)
+  ```
+  - By default, the derived `Eq` instance will consider instances created by the same constructor to be equal.
+  - Example usage:
+    ```haskell
+    Passport == Passport -- True
+    Passport == CreditCard -- False
+    ```
+
+#### **Coding Example with Points**
+- Points are calculated for `primary`, `secondary`, and `tertiary` items:
+  ```haskell
+  points :: [Document] -> Int
+  points xs = 70 * length primaryItems + 25 * length tertiaryItems + length secondaryItems
+    where
+      primaryItems = filter isPrimary xs
+      secondaryItems = undefined -- Placeholder for user-defined logic
+      tertiaryItems = undefined -- Placeholder for user-defined logic
+  ```
+
+#### **Using `filter`**
+- `filter` applies a predicate to a list and includes items that satisfy the predicate:
+  ```haskell
+  filter even [1,2,3,4] -- [2,4]
+  ```
+- Example: Filtering primary items from a list of documents:
+  ```haskell
+  isPrimary :: Document -> Bool
+  isPrimary Passport = True
+  isPrimary BirthCertificate = True
+  isPrimary _ = False
+
+  primaryItems = filter isPrimary xs
+  ```
+
+#### **Placeholders and Logic:**
+- Define placeholders for secondary and tertiary items:
+  ```haskell
+  points xs = 70 * length primaryItems + 25 * length tertiaryItems + length secondaryItems
+    where
+      primaryItems = filter isPrimary xs
+      secondaryItems = [] -- Add logic to filter secondary items
+      tertiaryItems = [] -- Add logic to filter tertiary items
+  ```
+
+#### **Top-Down Coding Approach**
+- Start with the overall desired functionality and fill in details later:
+  - Define initial structure and then work on detailed implementation.
+
+#### **`where` Clauses**
+- `where` clauses allow defining helper functions and values locally within the scope of a function:
+  ```haskell
+  points :: [Document] -> Int
+  points xs = 70 * length primaryItems + length secondaryItems
+    where
+      primaryItems = filter isPrimary xs
+      secondaryItems = [] -- Placeholder for logic to compute secondary points
+  ```
+
+- This methodology helps organize the code and keeps the primary function clean and interpretable.
+
+#### **Debugging**
+- Continuously check the code integrates correctly without errors:
+  - Reload the file often to ensure no typos or logic errors exist.
+
+#### **Primary Point Calculation**
+- Calculate primary points by filtering the list and applying multipliers:
+  ```haskell
+  primaryPoints = length (filter isPrimary xs) * 70
+  ```
+
+Use these notes to understand basic Haskell operations like pretty printing with `show`, checking equality with `Eq`, and calculating points for a list of custom data types while employing `filter` and `where` clauses for better modularity and readability.
+
+Summary of chunk 12:
+### Haskell Programming: Case Analysis and Secondary Items
+
+#### Objective
+- Aim to get the length of specific item lists (primary, secondary, tertiary).
+
+#### Key Points
+
+##### Length Calculation
+- To get the length of a list, use:
+  ```haskell
+  length [list]
+  ```
+
+##### Case Analysis
+- Case analysis in Haskell is used to handle different possibilities in a concise manner.
+- Syntax for case analysis:
+  ```haskell
+  case var of
+      pattern1 -> result1
+      pattern2 -> result2
+      ...
+  ```
+
+##### Example: Calculating Secondary Points
+
+1. **Definition of `isSecondary`**:
+    ```haskell
+    isSecondary item = case item of
+        "Driver's Licence" -> True
+        "Student ID" -> True
+        _ -> False
+    ```
+
+2. **Filter Secondary Items**:
+    ```haskell
+    filter isSecondary listOfItems
+    ```
+
+3. **Calculation Logic**:
+    - Case analysis to handle empty and non-empty lists.
+    - Add fixed points for the first item and multiply the length of the rest.
+
+    ```haskell
+    calcPoints :: [String] -> Int
+    calcPoints items = case items of 
+        [] -> 0
+        (x:xs) -> 40 + 25 * length xs
+    ```
+
+##### Summarized Step-by-Step Process:
+1. **Filter Secondary Items**:
+    ```haskell
+    let secondaryItems = filter isSecondary listOfItems
+    ```
+
+2. **Calculate Secondary Points**:
+    ```haskell
+    let points = case secondaryItems of
+                     [] -> 0
+                     (x:xs) -> 40 + 25 * length xs
+    ```
+
+##### Guard vs Case in Haskell
+- **Guard** uses equality checks:
+    ```haskell
+    functionName args
+        | condition1 = result1
+        | condition2 = result2
+    ```
+
+- **Case** handles pattern matching:
+    ```haskell
+    case var of
+        pattern1 -> result1
+        pattern2 -> result2
+    ```
+
+#### Example Execution
+- Input list: `["Passport", "Credit Card"]`
+- Calculation for points using case analysis:
+  ```haskell
+  calcPoints ["Driver's Licence", "Student ID"]
+  ```
+
+- If input is `["Driver's Licence", "Student ID"]`, the points calculation would be `40 + 25 * 1 = 65`.
+
+---
+
+### Common Mistakes and Fixes
+- Ensure all possible cases are handled in the `case` statement.
+- Double-check the use of brackets and syntax to avoid errors.
+
+#### Debugging Tips
+- Print intermediate lists to verify filtering logic.
+- Check results of case conditions to ensure correctness.
+
+### Recap
+- Use `length` to find the size of a list.
+- Use `case` for clear and concise pattern matching.
+- Filter lists based on conditions (e.g., secondary status).
+- Calculate results with fixed and variable component logic (e.g., 40 + 25 * length).
+
+---
+

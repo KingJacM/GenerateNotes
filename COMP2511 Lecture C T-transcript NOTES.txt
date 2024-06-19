@@ -1,0 +1,601 @@
+Summary of chunk 1:
+### Lecture Notes:
+
+- **Introduction**:
+  - Last lecture focused on concepts like class, inheritance.
+  - Today we will interactively create a class and object, understand defining a class and creating objects.
+
+- **Important Points**:
+  - This is the third computing course, assumed prerequisites.
+  - Will cover all important aspects of defining a class and creating objects.
+  - Can ask questions anytime.
+
+- **Defining a Class**:
+  - A class in Java is a type with properties and behaviors.
+  - Class is a blueprint for objects.
+  - Java interpreter remembers class properties and behavior.
+  
+    - **Access Modifier**:
+      - `public`: Available to all classes.
+      - `private`: Not available to anyone.
+      - Default: Has default interpretation.
+    
+    - **Package**:
+      - Collection of Java files for a specific functionality.
+      - Classes grouped under a package.
+      - Package is like a directory in Unix/Linux.
+      
+- **Class as an ADT**:
+  - Class is an Abstract Data Type.
+  - Represents entities or relations like student, customer, etc.
+  - Need to store information about the entity or relation.
+
+- **Example: Circle Class**:
+  - Define a class named `Circle` with properties.
+  - Example: Circle has center (X, Y) and radius.
+  - Declare variables to store circle information.
+
+- **Next Steps**:
+  - Emphasis on understanding class structure and creating objects.  
+  - Will move on to more advanced features in subsequent lectures.
+
+### Code Snippet:
+
+```java
+public class Circle {
+    // properties
+    int centerX;
+    int centerY;
+    double radius;
+    
+    // methods can be added here
+}
+```
+
+Summary of chunk 2:
+# Class Declaration and Access Modifiers
+- Variables declared using different access modifiers
+    - Example of declaring variables in different ways for educational purposes
+    - Emphasize on keeping variables private for proper encapsulation
+    - Public, private, default, and protected access modifiers discussed
+        - Default access is used if not specifying public or private
+    - Explained the difference in accessibility among the access modifiers
+- Importance of Access through Getters and Setters
+    - Variables kept private, accessed through public methods
+    - Getters for retrieving values, setters for modifying values
+        - Illustration of setting and getting values through methods
+    - Benefits of using getters and setters for controlled access and validation
+        - Allows performing checks before modifying or returning values
+        - Provides flexibility in processing values before accessing
+
+# Encapsulation and Control over Access
+- Significance of private variables for encapsulation
+    - Access restricted to the class instance only
+    - Getters and setters facilitate controlled access and manipulation
+    - Example of utilizing getters and setters for value validation
+        - Use case of converting temperature units for illustration
+    - Advantages of encapsulation through private variables and accessor methods
+        - Ensures controlled access and modifications based on defined methods
+        - Ability to override methods for additional functionalities
+
+# Defining Constant Variables
+- Introduction to defining constants in Java
+    - Constant declared using `static final` keywords
+    - Convention to use uppercase for constants
+    - Illustration of declaring a constant variable ('colourReversal') as an example
+    - Explanation of the significance of 'static' for instance variables
+
+# Conclusion
+- Recapitulation of the importance of access modifiers and encapsulation
+- Overview of utilizing getters and setters for controlled variable access
+- Example of defining constant variables using 'static final'
+- Emphasis on maintaining variables as private for encapsulation and controlled access
+
+Summary of chunk 3:
+## Lecture Notes:
+
+### Class Variables and Instance Variables:
+- Each circle instance has associated XY and R values.
+- Constant values, like pi, are stored as class variables, not with each instance.
+- Two types of variables: instance variables unique for each instance, and class variables unique for the class.
+  - Class variables have only one value per class.
+- Class variable 'numberOfClass' is used to count how many circle instances were created.
+
+### Private and Public Variables:
+- Variable 'pi' is made private to maintain independence of classes.
+- Encourages classes to declare their own constants instead of depending on external values.
+- Minimizes coupling between classes to make software more modular and reusable.
+
+### Subclass Inheritance:
+- Subclass inherits properties of parent class but can add more.
+- In Java, all classes are implicitly subclasses of the object class.
+- Object class handles basic operations when creating new instances.
+- Subclassing is done by using the keyword `extends` with the parent class name.
+- Technically, all classes in Java are subclasses of the object class, even if not explicitly mentioned.
+
+### Object Class:
+- Object class in Java handles basic operations when creating new instances.
+- Manages tasks like memory allocation, reference tracking, and other low-level operations.
+- By default, all user-defined classes in Java are subclasses of the object class.
+- Objects of any class in Java implicitly inherit methods and properties from the object class.
+
+### Summary:
+- Circles store XY and R for each instance, while constants like pi are stored as class variables.
+- Private variables promote class independence and modular design.
+- Subclassing allows inheriting parent class properties and adding new ones.
+- Object class in Java handles low-level operations when creating new instances.
+- All user-defined classes in Java are implicitly subclasses of the object class.
+
+Summary of chunk 4:
+# Lecture Notes: Constructors in Java
+
+## Definition of a Constructor
+- A constructor is used to create an instance of a class, like `Circle`.
+- Constructors do not necessarily require any arguments to be passed.
+- A default constructor can be set with predefined values if no arguments are provided.
+- In Java, the constructor for a class will have the same name as the class itself.
+
+## Creating an Instance of a Class
+- To create an instance of a class, the constructor is called.
+- The first call in any constructor should be to construct the superclass.
+- The `super` keyword is used to call the constructor of the superclass.
+- If no superclass constructor is explicitly called, Java will automatically insert a superclass constructor call.
+- Memory allocation is done by the constructor to store variables like `X`, `Y`, and `R`.
+- The constructor's task is to find a place to store the variables for the instance.
+
+## Additional Functionality
+- Clients can pass values while creating an instance of a class, like `Circle`.
+- Additional methods can be implemented to handle different ways of creating instances based on client input.
+- User-provided values for `X`, `Y`, and `R` can be set as the instance variables.
+
+## Summarizing Constructors
+- Constructors are used to instantiate objects and set initial values.
+- Default constructors with predefined values can be utilized.
+- The superclass constructor is usually called first before setting class-specific variables.
+- Memory for storing instance variables is allocated by the constructor.
+- Clients can provide values for variables during instance creation to customize objects.
+
+Summary of chunk 5:
+# Lecture Notes: Understanding Constructors and the use of "this" and "super" in Java
+
+## Differentiating between names of variables in constructors
+- Use different names for different axes to avoid confusion.
+- Semantically same names are generally used.
+- Use "this" keyword to refer to the instance variable, distinguish from constructor parameter.
+
+## Using "this" to refer to instance variables
+- When using "this.X", it refers to the instance variable.
+- Helps in accessing instance variables and methods within the class.
+- Always use "this" to ensure clarity and avoid ambiguity between parameter and instance variables.
+
+## Best practices for setting and getting variable values
+- Use getters and setters for better control over variable changes.
+- Avoid directly accessing variables, use methods for validation and control.
+- Centralizes control mechanisms for efficient debugging and modification.
+
+## Implementing constructor hierarchy
+- First line of any constructor should call constructor of super class or same class.
+- Follow constructor sequence for proper initialization.
+- Avoid copy-pasting code, aim for reusability and maintainability.
+
+## Creating multiple constructors for flexibility
+- Provide multiple constructors based on different input requirements.
+- Use default values to simplify object creation.
+- Avoid duplicating code, strive for clean and efficient code structure.
+
+## Conclusion
+- Focus on clarity, reusability, and maintainability in constructor design.
+- Utilize "this" and "super" effectively for variable and constructor referencing.
+- Consider various input scenarios and provide appropriate constructors for flexibility and ease of use in class instantiation.
+
+Summary of chunk 6:
+# Lecture Notes:
+
+## Understanding Java Method Signatures:
+- Every method and constructor in Java has a unique signature consisting of the name, number of arguments, and corresponding argument types.
+- A method with different argument types or number of arguments will be considered a different method.
+- This uniqueness is crucial for method overloading which allows multiple methods with the same name but different signatures.
+
+## Class Structure in Java:
+- To declare a class, specify the class name and optionally extend a superclass using the keyword 'extends'.
+- Access modifiers determine the visibility of a class: 'public', 'private', or the default which is generally available to everyone.
+
+## Class Properties and Methods:
+- Define properties and methods within a class declaration.
+- Example: Declaring a method `getArea()` to calculate the area of a circle using instance variables (x, y, r) without any arguments.
+- Instance methods access instance variables directly which are specific to that instance.
+
+## Using Class Methods:
+- Invoking methods on instances: create an instance, call a method on that instance.
+- Example: `C1.getArea()` returns the area of the circle represented by the instance `C1`.
+- Methods can return values of specific types, like `double` in this case.
+
+## Default Object Class Methods:
+- The default methods in the Object class include `toString()` and `equals()`.
+- `toString()` method is used to represent an object as a string. Custom implementation is required based on the object's attributes.
+- When `toString()` is used, it returns a string representation of the object (e.g., XY and R for a circle).
+
+## Constructor Behavior in Subclasses:
+- Inheritance and constructor behavior: It is recommended to explicitly call the superclass constructor in a subclass.
+- Java automatically inserts a call to the superclass constructor if unspecified, but explicit calls are good practice.
+
+## Implementation of `toString()`:
+- Although `toString()` is a default method, custom implementations are required for meaningful object representation.
+- `toString()` can convert an object into a string format that represents the object's characteristics.
+
+## Answering Questions:
+- Addressing a question regarding constructors in subclasses and superclass calls.
+- Good practice is to explicitly call superclass constructors in subclasses for clarity and maintainability. Java automatically inserts the call if not explicitly specified.
+
+Overall, Java method signatures with unique identifiers, class structures with access modifiers, instance methods accessing instance variables, usage of default Object class methods, and the significance of superclass constructor calls in subclass inheritance were discussed. The importance of custom `toString()` implementations for meaningful object representations was highlighted.
+
+Summary of chunk 7:
+## Method Signature and Overriding
+- Good practice to create the method to string the way we want to convert to string.
+- Method signature depends on the name of the method, argument type, etc.
+    - If any change in method signature, it will be a different method, not be used.
+- Method declared in a class will override the method in the object class.
+    - For override, method must have the same signature.
+- Overriding superclass methods requires following the exact signature.
+- Can access API documentation or use tools to automatically generate stubs.
+- Tools like "generate getters and setters," "organize imports," "generate constructors," "generate hash code and equals" can save time by providing templates.
+- Can modify the autogenerated code as needed.
+
+## Equals Method and Overriding
+- Equals method in superclass Object defined as `public boolean equals(Object obj)`.
+- Argument type as Object because subclasses may vary.
+- Beginners may mistakenly use specific class name instead of Object.
+- Declaring a new equals method without overriding the superclass method results in creating a new method.
+- Purpose of overriding is to use the superclass method by default.
+
+## Conclusion
+- Understanding method signatures and the importance of overriding superclass methods is crucial in Java programming.
+- Care must be taken to follow the correct signature format to ensure proper method overriding and functionality.
+
+Summary of chunk 8:
+### Lecture Notes:
+
+---
+
+#### **Overriding Objects:**
+- **Need Object to Override:** To override an existing object, a new instance or object must be provided.
+- **Defining Equality:** Equality is defined based on values, in this example, two circles are considered equal if their XY and R values match.
+- **Comparison Logic:** Even if stored in different memory locations, if two objects have matching values for XY and R, they are logically considered equal.
+- **Comparison Process:** When comparing a new object with the current object, the new instance (OBG) is compared with the current object (this) to determine equality.
+- **Handling Null:** Initial check involves ensuring the given object is not null since the comparison is made with the current object.
+- **Check for Exact Equality:** Using double equal signs (==) to check if the instances are exactly the same for better efficiency.
+  
+#### **Handling Object Type:**
+- **Object Superclass:** As instances are of type Object, variables like XY and R are not directly accessible in the Object class.
+- **Downcasting:** When confident about the object's original class (e.g., Circle), downcasting can be done to access specific variables.
+- **Get Class Method:** Utilizing `getClass()` method to determine the class of the object being compared.
+- **Type Match Check:** If objects are not of the same type (e.g., not both Circle instances), equality will not hold.
+- **Downcasting to Access Variables:** Downcasting an object to its specific type (e.g., Circle) allows access to class-specific variables (XY and R).
+
+#### **Ensuring Safe Access:**
+- **Runtime Error Avoidance:** Thorough checks and downcasting ensure safe access to variables, preventing runtime errors.
+- **Accessing Object Properties:** After successful downcasting, variables specific to the object's class (e.g., XY, R in Circle) can be accessed without issues.
+- **Good Programming Practice:** Downcasting with confidence after type checks is a recommended programming practice for safe variable access.
+
+--- 
+
+By following these object-oriented programming practices and being mindful of object types and equality logic, safe and efficient object comparison and manipulation can be achieved in Java.
+
+Please feel free to ask any questions for further clarification.
+
+Summary of chunk 9:
+# Lecture Notes
+
+## Class Declarations and Method Overriding
+- Classes can be created in Java to store variables and methods.
+- To override methods declared in the object class, the `equals` method must have an argument of type object.
+- Downcasting is performed after checking if the other instance is of the same class.
+- Access to variables and methods is limited to the level of casting.
+
+## Class Initialization and Constructors
+- Understanding constructors is essential in Java programming.
+- Instance variables can be declared within a class.
+- Class variables, also known as static variables, can be defined.
+- Constructors and setters play a crucial role in setting up instances.
+- Basic methods like `toString` and `equals` can be overridden to customize behavior.
+
+## Creating and Using Instances
+- Classes can be instantiated to create objects.
+- Each instance holds values set by the constructor.
+- The `equals` method defined in a class differs from the default `equals` method in the object class.
+- Custom `equals` implementation offers control over comparing instances.
+
+## Creating Test Program and Class Methods
+- In a test program, a class with a main method can be declared.
+- The main method is associated with the class and does not require an instance.
+- Main method syntax in Java resembles C programming.
+- Java emphasizes proper syntax and declaration requirements compared to C.
+- Carefully defining methods ensures correct program execution.
+
+## Instance Creation and Default Constructors
+- Instances of a class can be created using the `new` keyword.
+- Default constructors are used when no specific values are provided.
+- The instance holds the initialized values of the class variables.
+- Storing instances allows access to the stored values for manipulation.
+
+## Customization and Domain-specific Equality
+- Equality between instances can be defined based on specific requirements.
+- Custom `equals` implementation allows for domain-specific equality definitions.
+- Comparing instances can involve criteria unique to the context of the program.
+- Implementing equality methods tailored to the use case ensures accurate comparisons.
+
+Summary of chunk 10:
+### Lecture Notes:
+
+#### Instance and Reference in Java
+- Java manages everything regarding instances and references.
+- Accessing variables like X, Y, Z of an instance can be done using dot notation.
+- Public variables can be accessed directly with instanceName.variableName.
+- Instances are essentially pointers to memory locations where data is stored.
+- In Java, instances are references rather than explicit pointers like in C.
+- Methods and variables can be accessed using instanceName.methodName or instanceName.variableName.
+- Classes and static variables are accessed using className.staticVariable.
+- Class variables are like global variables but increase coupling, so generally not advisable to use.
+- Printing instances can be done by calling a predefined method like toString().
+  
+#### Creating and Managing Circles
+- Creating instances of circles using constructors (C1, C2, C3, C7).
+- Managing and accessing multiple instances of circles using references (C1, C2, C3).
+- Java handles garbage collection to free memory of unreferenced instances automatically.
+- Memory management in Java involves tracking references to instances using directed graphs.
+  
+#### Examples
+- Accessing values of variables with instanceName.variableName.
+- Printing values of instances using print methods.
+- Assigning references of instances to other instances.
+- Understanding the concept of garbage collection in Java.
+
+Summary of chunk 11:
+## Memory Management in Java
+
+- Java only frees memory allocation, not external resources like open files or databases.
+- It's our responsibility to release external resources before Java conducts garbage collection.
+- Comparison of references using `==` to compare two instances in Java.
+
+### Understanding References in Java
+
+- `C1 == C2` compares references, not instances.
+- Instances `C2` and `C3` with same values are different instances.
+- `C2.equals(C3)` compares actual contents of `C2` and `C3`.
+
+#### Limitations of References
+
+- References in Java cannot be modified or incremented.
+- References allow access to corresponding variables but cannot be directly changed.
+- Creating instances in Java does not involve dealing with memory directly.
+
+### Java Features Overview
+
+- Java handles memory pointers, allowing the creation of instances without memory management concerns.
+- Addressing queries on overriding `toString` method and polymorphism postponed for later discussion.
+
+## Comparison with C++
+
+- Java avoidance of certain C++ features like multiple inheritance for predictable behavior.
+- Simplification in Java syntax to prevent confusion among programmers.
+- Focus on providing a clear and straightforward language syntax.
+
+### Accessibility of Variables
+
+- Variables with `private` access specifier are restricted within the class.
+- Usage of getter and setter methods for accessing private variables.
+
+#### Summary
+
+- Emphasis on access specifiers and best practices for variable accessibility.
+- Creating classes and managing instances in Java with a focus on memory management.
+
+**Note:** The code and examples provided demonstrate the concepts discussed. Additional exploration and practice are encouraged for a better understanding of Java memory management.
+
+Summary of chunk 12:
+# Subclass and Inheritance
+
+- Three possible approaches for subclass and inheritance discussed
+- First approach: Creating a subclass by inheriting from the parent class (circle)
+   - Example: Creating a graphical circle as a subclass of a circle
+   - Inheriting all properties and methods from the circle class
+   - Adding additional variables and methods for the graphical circle
+
+## Approaches to Achieve Subclass and Inheritance
+
+1. **Creating a New Class (Without Inheritance)**
+   - Copy-pasting code and adding more variables
+   - Not a recommended approach due to code duplication
+
+2. **Using Has-A Relationship**
+   - Declaring an instance of the parent class within the subclass
+   - Example: Graphical circle having an instance of mathematical circle
+   - Forwarding methods to the parent class instance
+
+3. **Direct Inheritance**
+   - Directly inheriting from the parent class without declaring new variables
+   - Utilizing all methods and properties from the parent class
+   - Extending the constructor to add new functionalities
+
+# Implementation Example: Creating Graphical Circle
+
+- Solution: Creating a graphical circle as a subclass of a circle
+- Ensuring all circle properties are accessible in the graphical circle
+- Adding extra variables and methods specific to the graphical circle
+- Implementing a constructor to initialize the superclass and additional features
+
+## Method Forwarding
+
+- Forwarding methods from the subclass to the superclass for implementation
+- Ensuring proper method invocation by using method forwarding
+- Example: Calling getArea method of the mathematical circle instance within the graphical circle
+
+# Conclusion
+
+- Understanding different approaches to subclass and inheritance
+- Choosing the appropriate method based on the requirements
+- Ensuring effective utilization of inheritance for code reusability
+
+(Note: Further details regarding the implementation can be showcased in Java code snippets during the lecture.)
+
+Summary of chunk 13:
+# Lecture Notes:
+## Objects and Classes in Java
+
+- **Object Reference and Type:**
+  - Assigning object reference to a variable (`GGC` to `C`).
+  - Type constraint: `C` type as a circle, cannot access `Draw` method from `Graphical Circle`.
+  - Downcasting `C` to `GC` allows access to additional methods.
+
+- **Class Identification:**
+  - Checking class type: `C.getClass()` returns `Graphical Circle` or `Circle Graphics`.
+  - Differentiating object class type usage.
+
+- **Package and Inheritance:**
+  - Defining package: `Shapes`, linking to directory for containing classes.
+  - Class relationships: `Circle` extends `Shape`, `Graphical Circle` extends `Circle`.
+  - Importing modules: `Color` and `Graphics` for package usage.
+
+- **Variable Declaration and Access Control:**
+  - Variable accessibility based on access modifiers (`public`, `private`, `protected`, `default`).
+  - Experimenting with access modifiers for learning purposes.
+
+- **Constructor Usage:**
+  - Overriding constructors: utilizing `super` for subclass initialization.
+  - Declaring a protected variable (`P`) for subclass usage demonstration.
+
+- **Comments and Documentation:**
+  - Introducing code documentation within the source code.
+  - Highlights significance of comprehensive documentation in Java using APIs.
+  - API facilitates developers by cataloging classes, constructors, and methods for efficient utilization.
+
+- **Java Knowledge and Library Usage:**
+  - Java knowledge includes understanding core concepts and utilizing libraries.
+  - API serves as a knowledge repository for Java developers to access classes and methods efficiently.
+  - Need for both core language understanding and library exploration in Java development.
+
+By comprehensively exploring object referencing, class identification, package management, access control, constructor utilization, documentation practices, and library usage, students can enhance their Java programming proficiency and efficiency in code development.
+
+Summary of chunk 14:
+**Lecture Notes:**
+
+---
+
+**Creating Documentation using JavaDoc:**
+- API search or documentation is needed. 
+- Create Java documentation using JavaDoc tool.
+- Write comments before methods or constructors in a specific format.
+- Comments provide information on parameters and method description.
+- JavaDoc extracts comments to create an API form automatically.
+- No separate documentation file needed, all in one format.
+- Comments in JavaDoc format help in automatic API creation.
+- Comments may not be written if focusing on displaying things on screen.
+
+**Comparing Graphical Circle Instances:**
+- Comparing graphical circle instances using equals method.
+- Superclass method used to ensure objects are not null.
+- Check if both instances are of graphical circle type.
+- Superclass checks attributes XY and R.
+- Downcast to graphical circle for comparison of other attributes.
+- Checking the last two attributes after superclass check.
+
+**Access Modifiers in Inheritance:**
+- Private is not accessible in subclasses.
+- Declare as default or protected for accessibility in subclasses.
+- Public is accessible everywhere.
+- Protected accessible in subclass of different package, default only in the same package.
+
+**Method Forwarding in Hazza1 Example:**
+- Creation of graphical circle in Hazza1.
+- Area method is called using method forwarding.
+- Method forwarding is calling a method from another instance.
+- Not necessary to write code for method forwarding.
+- Relationship and functionalities available as needed.
+
+**Conclusion:**
+- Understanding the creation of Java documentation using JavaDoc with appropriate comments.
+- Importance of using access modifiers in inheritance for proper visibility.
+- Method Forwarding in Java for calling methods from another instance efficiently.
+
+--- 
+
+**Code Snippet:**
+
+```java
+// Creating JavaDoc comments for documentation
+/**
+ * Parameter X of method
+ * Parameter Y of method
+ * @param X
+ * @param Y
+ */
+public void methodName(int X, int Y) {
+   // Method code here
+}
+```
+
+---
+
+Summary of chunk 15:
+# Lecture Notes: Abstract Classes and Interfaces
+
+## Abstract Classes
+- **Definition**: Java allows declaring a class with partial implementation or none; abstract classes have at least one abstract method.
+- **Cannot Instantiate**: Abstract classes cannot be instantiated due to incomplete method implementations.
+- **Purpose**: Provides a blueprint for subclasses to implement specific methods.
+
+## Interfaces
+- **Definition**: Contains method signatures without implementations; serves as a contract for classes to implement.
+- **Distinctiveness**: Focuses on defining behavior rather than structure.
+- **Value**: Allows for multiple classes to implement common behavior uniformly.
+
+### Example: Shapes
+- **Abstract Class Shape**: Declares abstract method `area()` with no implementation.
+- **Subclasses**: Circle and Rectangle inherit from Shape.
+- **Implementations**: Circle class implements both `area()` and `circumference()`.
+- **Polymorphism**: Different implementations of `area()` method for various shapes; dynamic binding at runtime. 
+
+### Polymorphism and Dynamic Binding
+- **Polymorphism**: Objects of different shapes can be treated uniformly.
+- **Dynamic Binding**: Behavior of methods is determined at runtime based on the specific object.
+- **Advantage**: Provides flexibility and uniformity in handling objects of multiple types.
+
+By leveraging abstract classes and interfaces, along with the concept of polymorphism and dynamic binding, Java allows for effective code structure and versatility in programming.
+
+Summary of chunk 16:
+---
+
+### Lecture Notes: Variable Basics and Troubleshooting
+- Recording issue addressed; lecture available on Teams for reference.
+  
+#### Troubleshooting Recording Issue
+- Recording made on Teams for review; accessible to all students.
+  
+#### Discussion on Variables
+- Importance of understanding variables emphasized.
+  
+#### Student Interaction
+- Speaker 1 asks a question to Speaker 0.
+- Speaker 0 acknowledges question, addresses Speaker 1 by name ("NN").
+- Collaboration with friends referenced in conversation.
+
+--- 
+
+### Detailed Notes:
+
+#### Troubleshooting Recording Issue
+- Lecture recorded on Teams due to technical difficulty.
+- Students advised to refer to Teams for lecture content.
+  
+#### Discussion on Variables
+- Emphasis on the significance of understanding variables in programming.
+  
+#### Student Interaction
+- Speaker 1 poses a question to Speaker 0.
+- Speaker 0 acknowledges the question and refers to Speaker 1 as "NN."
+- Mention of collaboration with friends regarding the topic discussed.
+
+--- 
+
+By following the structured approach above, you can efficiently organize and present the lecture notes for future reference and comprehension.
+

@@ -1,0 +1,505 @@
+Summary of chunk 1:
+# Lecture Notes:
+
+## Attendance and Feedback
+- Some students might have lost their way or didn't like the food.
+- Appreciation extended to those present.
+- Feedback from emails received, particularly on concerns about the mathematics.
+
+## Mathematics in the Course
+- **Importance of Math (Math 1081):**
+  - Math is the motivation behind decisions, not essential to know all technical terms.
+  - Use mathematics to explain actions rather than expecting expertise from students.
+  
+## Preparation for Quiz and Exercises
+- Apologies for delays in setting up quizzes and exercises, will be available later.
+- Courses will be web-CMS based for maintainability.
+- Questions can be directed to Ed forum, emails, or during lecture chat.
+
+## Chips Experiment and Food Feedback
+- Observations on food preferences, especially about salt and vinegar chips.
+- Encouragement for students to provide feedback on food preferences for future lectures.
+- Positive feedback on fruit consumption, which will continue to be provided.
+
+## High School Basics and Practical Application
+- Continuation of basics from the last lecture to provide hands-on experience in this session.
+- Lecture slides outline the areas of focus and what will be covered.
+- Next lectures will focus on practical exercises available on the course website.
+
+## Functional Programming in Haskell
+- High school revolves around functions as the primary building blocks.
+- **Functions:** 
+  - Definition involves a type definition to specify behavior.
+  - Haskell can infer types but recommended to provide type definitions for clarity.
+- **Difference with TypeScript:**
+  - Haskell and TypeScript have strong typing but Haskell can work out types.  
+- **Types of Functions:**
+  - Functions in Haskell always have types, following the format a goes to B.  
+   
+## Conclusion
+- Future lectures will delve deeper into practical exercises and hands-on applications for students to engage with high school concepts effectively.
+
+Summary of chunk 2:
+# Function Types and Complexity
+- Function types can be complicated, with functions representing one input type to one output type.
+  - Functions like `A` and `B` can be complex, e.g., `A` could be a type leading to `int` and `B` could be another type leading to another `int`.
+- Dealing with functions that require multiple inputs like addition involves treating them as creating new functions.
+  - For instance, `plus` is a function that takes an integer and returns a function taking another integer, ultimately producing an integer.
+- Handling multiple inputs involves a function returning a function that can accept additional arguments.
+- High school notation simplifies function types, like representing `plus` as `int -> int -> int` due to right associativity of arrows.
+- The behavior differs for functions taking functions as input, such as evaluating a function at a specific value.
+
+# Applying Arguments to Functions
+- Function application involves applying arguments to functions, with the term 'applying' indicating plugging arguments into a function.
+- Function application is left-associative, interpreting bracketing from the left.
+  - For example, `F X Y` means `F` is applied to `X`, and the result is then applied to `Y`.
+- Placing arguments consecutively feeds them into the function step by step, creating new functions in the process.
+- Different interpretations occur based on how arguments are applied to functions, affecting the composition and output.
+
+Summary of chunk 3:
+## Lecture Notes:
+
+### Introduction:
+- Two students with the name Max in the class.
+- Mention of various students and their names.
+
+### Applying Y to X and Function F:
+- Applying Y to X and throwing the output into F.
+- Demonstrating the error of trying to add one and two as functions.
+- Explaining how functions deal with multiple inputs.
+- Functions are first-class citizens that can be returned like integers, booleans, and characters.
+- Utilizing functions with multiple variables as inputs.
+- Commenting on functions being able to return other functions.
+
+### Boolean Operations:
+- True and false as boolean values.
+- Operations like `and`, `not`, and their prefix and infix notation.
+- Mention of list operations regarding boolean values.
+- Explaining the use of parentheses to change infix to prefix operations and vice versa.
+
+### Composite Data Types:
+- Discussion on returning multiple outputs from a function.
+- Comparison with other programming languages on returning multiple parameters.
+- Explanation of composite data structures like pairs.
+- Usage of pairs, tuples, and triples to return multiple values.
+- Illustrating the concept of pairs with examples.
+
+### Returning Functions within Data Types:
+- Demonstrating the return of functions within pairs and triples.
+- Exploration of returning functions as part of composite data types.
+- Use of pairs or triples for managing multiple return values.
+- Discussion on the elegance of returning multiple values using data structures.
+
+### Passing Pairs as Single Inputs:
+- Suggesting to pass a pair as a single input into a function.
+- Demonstrating a function taking a pair of integers as input.
+
+### Conclusion:
+- Overview of the various concepts discussed regarding functions, boolean operations, and composite data types.
+- Illustration of passing pairs into functions as a single input.
+
+### End of Lecture
+- Interactions with students regarding questions and discussions during the lecture.
+
+Summary of chunk 4:
+# Lecture Notes:
+
+## Functions:
+- **Definition**: Function can take a pair XY and return X plus Y.
+- **Advantage**: Allows for normal programming and supports functional programming principles.
+- **Limitation**: Pair input limits options compared to functions that take one thing.
+- **Partial Evaluation**: By transforming multiple inputs functions into single-input functions, we enable partial applications.
+- **Currying**: Named after Haskell Curry, the concept of converting multi-input functions into a chain of single-input functions.
+- **Decurrying (Uncurling)**: The opposite of currying, allowing the conversion of single-input functions back into multi-input functions.
+
+## Characters and Strings:
+- **Strings**: Represented as double quotes and treated as lists of characters in Haskell.
+- **Operations**: Possible operations include concatenation, taking substrings, dropping characters.
+- **Lists**: Strings are essentially lists of characters in Haskell, similar to arrays in C.
+- **List Definition**: Lists are defined using square brackets, like in Python.
+
+## Examples:
+- **An Example**: Using lists of integers described by square brackets.
+- **Python Influence**: Some design principles in Python are inspired by Haskell's use of lists, tuples, and anonymous functions.
+
+Summary of chunk 5:
+## List Operations
+- **Xs**: Common in high school, to pluralize things like Xs or Ys for lists.
+- **Accessing Items**: `X` type, `Xs = 123`, `Xs` returns list, can access using indexing.
+  - Take from `Xs`: `Xs[0:2]`, `Xs[2]`, `Xs[3:]`.
+  - Empty list: Dropping items.
+- **Concatenation**: Combine lists, order matters, example with `456`.
+- **List of Characters**: A list becomes string with characters.
+- **Mixing Types**: Lists require same type elements.
+- **Tuples for Multiple Types**: For different types, use tuples instead of lists.
+- **Immutable Tuples**: Tuples can't be extended like lists with concatenation.
+
+## List Implementation
+- **Linked List**: Implementation of lists similar to a linked list.
+- **Linked List Definition**: Conversation about the recursive definition of a linked list.
+  - Explanation: Elements connected without cycles, ends when pointer is null.
+- **Alternative Interpretation**: Stack of papers analogy, nodes pointing to next.
+- **Recursive Definition**: Describing linked lists recursively as base case and smaller pile.
+  - Simplicity and ease of verification using induction discussed.
+- **Teaching Methods**: Discussion on teaching the node chain vs. recursive definition.
+
+Summary of chunk 6:
+## Topic: Recursive Definition and Induction
+
+- **Recursive Definition**
+  - Definition of complex object in terms of simpler objects
+  - Example: Recursive definition of a linked list
+  - Widely used in computer science
+  - Allows defining arbitrarily complex objects
+  - Example: Natural numbers defined as zero and N+1 if N is a natural number
+
+- **Induction**
+  - Verification of recursive definitions
+  - Example: Factorial function (recursive programming)
+    - `if N=0: return 1 else: return N * Fact(N-1)`
+    - Defines factorial in terms of simpler objects (base case and N-1)
+  
+- **Benefits of Recursive Definitions**
+  - **Simplicity**: Defining complex behavior in terms of simpler objects
+  - **Arbitrarily Complex Things**: Recursion allows defining objects of any size
+  - **Example**: Linked lists, natural numbers can be defined recursively
+  - **Recursion in Programming**: Examples like merge sort are based on recursive definitions
+
+- **Conclusion**
+  - Recursion enables working with complex objects by building definitions on simpler structures
+  - In computer science, recursive definitions facilitate dealing with various data types and problem-solving strategies
+
+Summary of chunk 7:
+# Lecture Notes: Recursion and Induction
+
+## Recursive Programming
+- Recursive nature defines everything in recursive programming.
+- Proof by induction is a form of recursive proof.
+- To prove by induction, establish base case (N = 0) and inductive case.
+- Inductive case assumes true for N = K, then proves for K + 1.
+- Induction proofs are recursive proofs based on recursive data types.
+
+## Recursion and Natural Numbers
+- Natural numbers defined recursively: 0 is natural, N + 1 is natural if N is natural.
+- Recursion simplifies understanding and definition of natural numbers.
+- Recursion builds from base cases or smaller numbers.
+
+## Factorial and Recursion
+- Evaluation of Factorial descends down a chain of numbers.
+- Induction proofs ascend from base case to prove each case.
+- Factorial definition for N depends on factorials of smaller numbers.
+
+## Recursive Definitions and Viewpoint
+- Recursive definitions may seem to go down the chain, while induction proofs progress up.
+- Evaluation of statements and functions at specific points is akin to viewpoint shifts.
+- Recursive processes and proofs are about perspective and direction.
+
+## Lists and Construction
+- Lists can be empty or a node pointing to a smaller list.
+- Construction of lists using cons operator (:), syntactic sugar for prepend operation.
+- Type of cons operation: takes object of type A and list of A's, returns list of A's.
+- Example: 123 can be syntactically represented as 1 cons 23, with 23 as 2 cons 3. 
+
+## Conclusion
+- Recursion and induction form the basis of recursive programming and proof techniques.
+- Understanding natural numbers recursively aids in computational thinking.
+- Recursion involves viewpoint shifts in evaluation and proof processes.
+- Lists are constructed using cons operator to build structures in a recursive manner.
+
+Summary of chunk 8:
+## List Construction
+- Lists are built up using cons operator from left to right.
+  - Each cons operation adds an element to the list.
+- Cons operator is right associative, simplifying list construction.
+  - Example: `(1 cons 2 cons 3)` is equivalent to `1 cons (2 cons 3)`, which equals `1 cons (2 cons (3 cons ()))`.
+
+### Characteristics of Lists and Cons Operator
+- Cons operator builds lists from an object on the left and a list on the right.
+- Base case for lists is the empty list `()`.
+- Cons is a prefix operator used for list construction.
+  - `SNO` in some versions is similar to cons written backwards.
+
+## List Operations
+- To sum all elements of a linked list:
+  - Base case: if the list is empty, return 0.
+  - Recursive case: add the head to the sum of the tail of the list.
+- Transitioning to formal definition in Haskell:
+  - Define `sum` recursively for empty and non-empty lists.
+    - `sum [] = 0`, `sum (x:xs) = x + sum xs`.
+
+### Recursive Definitions
+- `sum` function: `sum [] = 0`, `sum (x:xs) = x + sum xs`.
+- `factorial` function: `factorial 0 = 1`, `factorial n = n * factorial (n-1)`.
+
+#### Function Evaluation
+- Evaluate `factorial 0` in `factorial n = n * factorial (n-1)` correctly by applying `-1` to `n` before the factorial operation.
+
+Summary of chunk 9:
+# Lecture Notes:
+
+## Understanding Recursion
+- **Definition of Recursive Function**: A function that can replace the left-hand side with the right-hand side recursively.
+- **Example**: The sum of 12 can be calculated by breaking it down into smaller sums, such as 1 + sum of 2, until it simplifies.
+
+## Factorial Calculation
+- **Factorial Function**: Handles factorial calculations based on matching conditions.
+- **Example**: If factorial of zero is already defined, it uses that definition, otherwise it looks for the best matching condition.
+- **Guard Conditions**: Used to define multiple cases, with "bar" separating conditions.
+- **Syntax**: If N equals zero, factorial N equals one; otherwise, factorial N equals N times factorial N minus one.
+
+## Avoiding Infinite Loops
+- **Type Definition Placement**: It can be placed anywhere as long as it's in a logical order.
+- **Readability**: Code is read from top to bottom, so keeping related definitions together is good practice.
+
+## Higher Order Functions
+- **Higher Order Functions**: Functions that take functions as inputs.
+- **Example**: Map function, which maps As to Bs in a list of As and a list of Bs.
+- **Syntactic Sugar**: The use of "otherwise" is equivalent to "true" when defining guard conditions.
+
+## Syntax Challenges
+- **Syntax Errors**: Pay attention to syntax details to avoid errors.
+- **Importance of Syntax**: Accuracy in syntax is crucial for correct functioning of code.
+
+## Conclusion
+- Understanding recursion, factorial calculation, guard conditions, type definition placement, and higher order functions are essential concepts in functional programming. Paying attention to syntax is crucial for writing error-free code.
+
+Summary of chunk 10:
+# Type Variables and Definitions:
+- A's and B's referred to as type variables for defining concepts.
+- Apply twice concept to be discussed.
+
+## Break and Refreshment:
+- Decision to take a break for 5 minutes for food and fresh air.
+- Express gratitude and intention to return to the topic later.
+
+# Natural Numbers and Arithmetic:
+- Introduction of natural numbers without proper definition.
+- Defining natural numbers as successors of N.
+  - Two represented as successor of successor.
+- Exploring the addition of natural numbers.
+  - Recursive definition of addition.
+  - Example: N plus successor of M is successor of N plus M.
+
+## Addition and Theorems:
+- Defining addition using recursion.
+- Claiming N plus one equals successor of N.
+- Claiming N plus M equals M plus N.
+- Induction used to prove the theorems.
+
+## Multiplication and Properties:
+- Definition of multiplication introduced.
+- N times M defined using addition.
+- Assertion that N times M equals M times N.
+- Mentioning the need for proof.
+
+### Discussion and Insights:
+- Emphasizing the significance of defining operations.
+- Comparing different perspectives on arithmetic.
+- Highlighting the importance of understanding basic principles.
+- Anticipating recursion as a future topic.
+- Encouraging engagement and questioning in the learning process.
+
+Summary of chunk 11:
+### Higher Order Functions
+- Functions using functions as inputs
+- Building higher order functions
+- Function that raises X to the power four
+    - Definition: Power four of X = X * X * X * X
+    - Using square function instead of multiplication
+- Defining powerful in terms of square
+    - Square of square of X
+- Applying square twice
+    - Define a function: apply twice
+    - apply twice takes a function that takes integers to integers
+    - Implementation: apply twice function of F and X = F(F(X))
+- Abstracting into a more abstract world
+    - Avoid repeating code
+    - Benefit of abstraction in programming
+
+### Applying Functions Twice
+- General pattern of applying functions twice
+- Define a function: apply twice
+    - Takes a function and an argument
+    - Function is applied twice: F(F(X))
+- Abstracting the process to handle various functions
+- Fixing errors in implementation: missing parentheses, evaluation step
+
+### Reusing Apply Twice Function
+- Use apply twice for defining power four
+- Power four of X = apply twice square to X
+- Simplify by dropping the X: Power 42 = apply twice square
+
+Summary of chunk 12:
+# Lecture Notes:
+
+## Type Variables and Generics
+- Apply twice can be used for any function, not limited to integer functions.
+- Instead of 'in', we can use type variable 'a'.
+- 'A' represents any type, can be replaced by other generic variables like 'B'.
+- Type variables start with lowercase, concrete types start with uppercase.
+- Illustrated the concept of polymorphism, also known as generics.
+- Different type variables can be introduced to denote various types, e.g., 'A', 'B', etc.
+
+## Higher Order Functions and Polymorphism
+- Demonstrated the concept of polymorphism in the context of higher order functions.
+- Explored the functionality of the 'map' function.
+- The 'map' function takes a function that transforms 'A's into 'B's and lists of 'A's into lists of 'B's.
+- Example: Applying the 'successor' function to a list to increment each element.
+- Utilizing anonymous functions (lambda functions) for tasks like checking if a number is odd or even.
+
+## Anonymous Functions in Python
+- Showed usage of anonymous functions in Python (lambda functions).
+- Demonstrated how to use an anonymous function to check if a number is even by mapping it across a list.
+- An anonymous function is a temporary placeholder function that can be used without being named explicitly.
+
+Summary of chunk 13:
+# Lecture Notes
+
+## Anonymous Functions in High School
+- Definition:
+  - Similar to Python's lambda function.
+  - Use symbols like Backslash (\) instead of lambda.
+- Syntax:
+  - Lambda X: X % 2 == 0 maps to 1234.
+  - Can use multiple arguments like Y or XY.
+
+## Lecture Slides Recap
+- Functions:
+  - Has name, type, domain, and co-domain.
+- Currying:
+  - Apply multiple arguments to functions.
+- Higher Order Functions:
+  - Apply functions to other functions.
+- Map:
+  - Type: (a -> b) -> List a -> List b.
+- Strings:
+  - Syntactic sugar for lists of characters.
+
+## Solving a Problem
+- Objective:
+  - Write function "Word frequency".
+- Steps:
+  - Convert string to lowercase.
+  - Sort words.
+  - Group adjacent occurrences.
+  - Sort runs by length.
+  - Generate report of N most common words.
+
+## Algorithm Implementation
+- Type-Driven Design:
+  - Define functions to solve the problem step by step.
+- Initial Function:
+  - break_into_words(string): Splits string into words.
+
+# End of Lecture Notes
+
+Summary of chunk 14:
+# Function Definition
+- Function returns a list of strings, placeholders as undefined.
+- Haskell is a lazy language, evaluates on an as needed basis.
+- Example with 2 / 0, no error until the value is requested.
+- Lazy evaluation example with true or X = 2, no need to evaluate X.
+
+## Nested Declarations
+- Functions can remain undefined until needed.
+- Declaration allows nested declarations without errors until evaluation is imminent.
+
+# Function Composition
+- Define apply twice as F dot F.
+- Function composition where F dot G (X) = F(G(X)).
+- Picture with sequential F and G mapping.
+- Type of dot: B to C, A to B gives A to C.
+- Product of F composed with G implies G then F operation.
+
+## Apply Twice Function
+- Define apply twice as F dot F without the need for X.
+- Use functional composition for composing functions effectively.
+
+# Convert to Lowercase
+- Function to convert a list of strings to lowercase with the same type output.
+- Placeholder as undefined for implementation.
+
+# Sort Words
+- Function to sort a list of strings, output will be a list of strings.
+
+Summary of chunk 15:
+# Lecture Notes:
+
+## Definition of a Run
+- Defining a run as a tuple representing occurrences and the string itself.
+- Idea of representing a run as a pair of a word and a number.
+
+## Type Synonyms
+- Using type synonyms to keep code clean.
+- Discussing the concept of type synonyms for code organization.
+
+## Grouping and Sorting
+- Grouping strings as a preliminary step before proceeding.
+- Sorting strings by length to arrange them accordingly.
+- Taking the longest strings as part of the process.
+
+## Generating a Report
+- Building a list of longest runs to generate the final report.
+- Defining the type for the function to generate the report.
+
+## Word Frequency Function
+- Defining the word frequency function with inputs of a number and a string.
+- Outlining the steps for word frequency: breaking into words, converting to lowercase, sorting, grouping, taking the longest, and generating the report.
+
+## Conclusion
+- Piecing together the building blocks to create the word frequency function.
+- Summarizing the process of extracting, organizing, and analyzing strings to determine word frequency.
+
+Summary of chunk 16:
+# Lecture Notes: Type-Driven Design
+
+## Matching Up Types
+- Ensuring pieces match up for perfect results
+- Reloading to check for errors and proper functionality
+- Need to define functions for desired operations
+- Utilizing built-in functions for efficiency
+- Using Hoogle to search standard libraries for functions
+
+## Breaking into Words
+- Searching for functions to break strings into words
+- Discovering the 'words' function, which fulfills the purpose
+- Function is defined in the base or prelude
+- Confirming location of function definition
+
+## Converting to Lowercase
+- Exploring options for converting list of strings to lowercase
+- Identifying 'lowercase' function in the Cabal distribution
+- Importing necessary functions from external libraries
+- Experimenting with imports and utilizing the 'toLower' function
+
+Summary of chunk 17:
+### Lecture Notes:
+
+- **Problem with `toLower` Function**:
+  - `toLower` converts chars to chars, not strings to strings.
+  - Double map needed to handle this.
+
+- **Finding the `toLower` Function**:
+  - `toLower` is in `data.Char` library.
+  - Import `data.Char` to access `toLower`.
+
+- **Implementing `toLower` for Strings**:
+  - Using `map` function to convert a string to a lowercase string.
+  - It converts a list of strings into a list of lowercase strings.
+
+- **Handling Imports and Function Application**:
+  - Consider the placement of the function call within the code.
+  - Dropping unnecessary variables to improve readability.
+
+- **Advanced Function Composition**:
+  - Utilizing compose function for multiple function applications.
+  - Building a chain of functions before applying to the input.
+
+- **Functional Programming Approach**:
+  - Abstract and high-level approach in composing functions.
+  - Emphasizing the importance of function composition in functional programming.
+
+- **Conclusion and Future Steps**:
+  - Recording the completion of the task offline.
+  - Encouraging practice and exploration to enhance understanding.
+

@@ -1,0 +1,426 @@
+Summary of chunk 1:
+# Technical Difficulties
+- Speaker 0 attempts to check if the audience can hear them multiple times, facing echo issues.
+- Resolving technical issues by changing the mic to eliminate echo.
+- Speaker 1 intermittently responds to confirm if the sound is clear.
+
+# Introduction and Assignment Announcement
+- Assignment release scheduled for Thursday with a deadline by the end of the week, emphasizing its relevance to the current topics.
+- Object-oriented programming topics will be covered today, focusing on abstract classes and creating classes.
+  
+# Discussion Topics
+- Introduction to Java course review and discussions on object-oriented paradigms.
+- Covering abstract classes and class creation.
+- Exploring important concepts through lecture slides, with subsequent practical examples.
+
+# Importance of Examples
+- Importance of downloading and working with sample code provided.
+- Emphasis on practical implementation, modification, and understanding behavior.
+- Examples include private/public/protected qualifiers, overriding, overloading, inheritance, and method behaviors.
+
+# Future Topics
+- Next lecture to focus on domain modeling, concluding the object-oriented programming segment.
+- Transition from programming to design patterns and software principles.
+- Emphasis on designing software applications leveraging object-oriented programming concepts.
+
+Summary of chunk 2:
+### Lecture Notes: Software Design Principles
+
+#### Subclasses and Inheritance
+- Discussing the design of software using inheritance and interfaces.
+- Importance of using software principles and design patterns in software design.
+  - Subclasses and inheritance covered.
+  - Abstract classes introduced in the last lecture.
+  - Single versus multiple inheritance to be revisited.
+  - Interfaces are extremely important in software design.
+  - Exploring method forwarding and polymorphism in more detail.
+- Method overloading explained based on method signature and argument type.
+- Constructor already covered in previous sessions.
+
+#### Abstract Classes and Class Hierarchy
+- Abstract classes have at least one unimplemented method.
+- Abstract class example discussed, demonstrating the inability to create objects of an abstract class.
+- Subclasses implement unimplemented methods, allowing object creation.
+- Abstract methods, such as area and circumference, provide flexibility in implementation based on subclasses.
+
+#### Class Relationships and Implementation
+- Implementation of class relationships: circle and rectangle extending shape class.
+- Different implementations of area and circumference methods for circle and rectangle objects.
+- Treating circle and rectangle objects as shapes allows for consistent handling and manipulation irrespective of specific types.
+- Example of handling shapes in a canvas showcased the advantage of uniform treatment through a common superclass.
+
+#### Conclusion
+- The advantage of implementing object-oriented concepts like inheritance, abstract classes, and interfaces in software design.
+- Simplifies code management, provides flexibility in implementation, and enhances scalability and reusability.
+- Methods like method overloading and constructor functionality discussed for comprehensive understanding in practical scenarios.
+
+**Note:** Lecture emphasized the practical application of software design principles through examples and class relationships to optimize code structure. Further elaboration on interfaces, polymorphism, and method forwarding expected for a deeper understanding.
+
+Summary of chunk 3:
+# Abstract Classes and Interfaces in Java
+- **Rectangle and Circle Example**
+  - Area implementation different for circle and rectangle.
+  - Shape array created to store different shapes.
+  - Array of type shape, treating circle, rectangle, graphical circle as shapes.
+  - One loop for all shapes.
+  - Accessing methods based on index.
+  - Array in Java is an object with a length field.
+  - No need to pass length separately.
+  - Abstract class used as a common type.
+  
+- **Interfaces in Java**
+  - Interface is a type with zero implementation.
+  - All methods implicitly abstract in an interface.
+  - Offers methods with only method signature.
+  - Importance of interfaces lies in abstraction feature.
+  - API abstraction - call a service without knowing the implementation.
+  - Similar concept to using file operations in C or Java.
+  - Opening a file - knowing how to use interface, not implementation details.
+  - Abstract data type - separate header from implementation.
+  - Ability to change implementation without changing the header.
+
+Summary of chunk 4:
+**Section: Importance of Interfaces in Software Design**  
+- In software design, begin by designing interfaces based on requirements.  
+- Interfaces do not change, providing stability for client programs to rely on.  
+- Interfaces connect client programs with implementations.  
+- Interfaces are all abstract by default, no need to declare "abstract."  
+
+**Section: Creating and Implementing Interfaces**  
+- Design interfaces before creating classes.  
+- Interfaces define methods and their parameters.  
+- Implement a new class if there's a better way, while the interface remains constant.  
+- Example: Interface named "Draw" with methods like set color and set XYZ.  
+
+**Section: Implementing Interfaces in Classes**  
+- Classes like Circle and Rectangle implementing the interface "Draw."  
+- Subclass must implement all methods from the interface.  
+- Any object of a class implementing the interface can be used interchangeably.  
+
+**Section: Abstract Class vs. Interface**  
+- Abstract classes used to share common methods between classes.  
+- Abstract classes can have some implemented methods and some abstract methods.  
+- Interfaces do not have implementations, only method signatures.  
+
+- The choice between an abstract class and an interface depends on the problem and design requirements.  
+- Abstract classes limit to single inheritance in Java.  
+- Select abstract class when sharing some methods, and interface when only method signatures are required.
+
+Summary of chunk 5:
+# Interface and Array of Type Draw
+- Create a shape array and another array of type Draw
+- Draw is an interface, array declared as type Draw
+- Objects implementing draw interface can be put in the array
+- Arrays of draw Circle, draw Square, draw Rectangle created 
+- All implementable of Shape Abstract class and draw interface
+- Can assign same objects to draw, treat them as both
+- Single loop calculates area and sets position
+
+# Power of Interface and Abstract Class
+- Shapes are different but treatable as draw
+- Interface and abstract class show flexibility
+- Objects can be treated differently based on implemented interfaces
+
+# Implementing Interface and Multiple Interfaces
+- New class implementing doable can be treated as doable
+- Class needs to provide methods required by interface
+- Class implementing interface can be treated as the interface
+- Class can implement multiple interfaces for flexibility and varying functionality
+- Signature in interfaces unique, no conflict with same method names
+- Methods in interfaces have no implementation, different signature equals different methods
+- Class can implement multiple interfaces, no conflict if signature is the same
+- Interface use allows treating same object differently based on interfaces used
+- Provides flexibility in class treatment based on interface implemented and type hierarchy
+
+Summary of chunk 6:
+# Lecture Notes:
+
+## Introduction to Interfaces and Implementations:
+- Can have Objects of different types as required.
+- Use features in different patterns.
+- Powerful mechanism available.
+- Implementation in subclasses.
+
+### Interfaces and Methods:
+- Interfaces: movable and scalable.
+- No conflict if same method in different interfaces.
+- Movable and scalable implemented interfaces.
+
+#### Extending Interfaces:
+- Interfaces can extend other interfaces.
+- No implementation, only headers.
+
+##### Method Forwarding:
+- Classes A, B, C where C implements X.
+- Forward methods by creating instances of classes.
+- Implement same method across classes using method forwarding.
+
+###### Distinction Between Area in Shape and Interface Method:
+- Area in a shape and interface method are both abstract.
+- Describing expected behavior, different implementations.
+
+## Polymorphism:
+- Multiple behaviors of the same type.
+- Shape class with area and circumference.
+- Objects treated as shapes for polymorphism.
+
+### Advanced Polymorphism:
+- Multiple behaviors in programming.
+- Type behaving differently.
+- Example with shapes, circles, and rectangles.
+
+Summary of chunk 7:
+# Abstract Class vs. Interface
+- Abstract class: contains some implementation and rest as signature
+- Interface: everything is abstract
+- Use abstract class if common methods needed between subclasses
+- Interfaces preferable in most cases
+- Choose based on specific requirements
+
+## Implementing Shape using Abstract Class
+- Shape and Circle Rectangle with abstract class
+- Alternative approach using Shape as an interface
+- Example: Circle implements Shape interface
+
+## Overriding in Inheritance
+- Class A, Class B extends A
+- Method F implemented in both classes
+- Object creation and method calling demonstration
+- Object's level determines method binding
+- Dynamic binding: methods bound at object creation level
+- Overridden methods retain behavior from object's class
+- Example with objects of different types and method calls
+
+Summary of chunk 8:
+### Method Overriding:
+- Variable of type A, method F, behaves differently.
+- Poly different multiple behaviors, polymorphism.
+- Explanation: technical concept, important and interesting in practice.
+- Method overriding: Class B, overriding Method F with signature wide, no argument, returns integer.
+
+#### Abstract Method vs. Method Overriding:
+- Similar to implementing an abstract method (no implementation).
+- Conceptual similarity, but slight difference with abstract class not being implemented.
+
+#### Is-A vs Has-A Relationship:
+- Is-A relationship: inherit from superclass, override methods if necessary.
+- Has-A relationship: design choice to modify specific methods, avoids incorrect design.
+
+#### Shadow Variables:
+- Referring to local variables, shadow variable in superclass and subclass.
+- Use 'super' keyword to refer to superclass variables.
+- Shadow variables indicate poor design practice, alternative naming recommended.
+- Default modifier: accessible to subclasses in the same package.
+
+#### Best Practices:
+- Private variables with getters and setters.
+- Private variables not available in subclasses.
+
+#### Conclusion:
+- Method overriding and variable management practices emphasized for better design and functionality in object-oriented programming.
+
+Summary of chunk 9:
+# Method Overriding vs Method Overloading:
+- When declaring variables, override in a cleaner and neater way by considering design principles.
+    - Use `super` to access methods/variables in the superclass, but remember that only one `super` can be used.
+    - Consider if the same method/variable needs to be used or overridden in a subclass.
+- Method overloading involves using different signatures (name and number of arguments) to create multiple methods with the same name.
+    - Useful in scenarios like adding numbers represented as integers or strings.
+    - Allows behavior to remain the same while accepting different input types.
+
+# Access Modifiers and Inheritance:
+- Private methods are only accessible within the same class and are not available even in subclasses.
+- To make a method accessible in a subclass:
+    - Use default, protected, or public access modifiers.
+    - Default methods are available in subclasses within the same package.
+    - Protected methods are available in subclasses within the same package and in external packages too.
+
+# Accessing Private Variables Across Classes:
+- In a scenario where a private variable needs to be accessed in another class:
+    - Utilize getters and setters which are public to access and modify private variables.
+    - By using getters and setters, you can modify the behavior of private variables in a subclass.
+
+Summary of chunk 10:
+### Lecture Notes:
+
+#### Access Modifiers:
+- Default is more secure than protected; default can only be accessed within the package.
+- Use protected if the class may be extended outside the package, use default if it should be limited to the package.
+- `super` allows access if it is not private.
+- Importance of hands-on practice with examples to understand concepts across different languages.
+- Emphasis on continuous learning due to the rapid evolution of technologies.
+- Keep variables private and use getter/setter methods to access them.
+- Public methods should be used to offer behaviors to client programs.
+- Visibility: private (within the class), protected (within package and subclasses), public (accessible everywhere).
+- Constructors will be discussed after the break.
+
+#### Inheritance vs. Abstract Classes and Interfaces:
+- Inheritance used for common methods across classes, abstract classes for partial method implementation.
+- Interfaces for defining types without implementations, increasingly used in programming.
+- Interfaces are compared to abstract data types in C, analogous to header files.
+- Abstract classes and interfaces play crucial roles depending on the design requirements.
+
+#### Classroom Interaction:
+- Clarification on attending in-person tutorials while registered for online; advised to coordinate with tutors for assessment.
+- Differences in tutorial assessments based on the method used; consider consulting with tutors for confirmation.
+- Importance of exploring the variations in programming languages firsthand to understand their unique features.
+- Abstract class and interface concepts to be demonstrated with examples after the break.
+
+#### Next Topic: Packages
+- Introduction to the discussion on packages for the upcoming session.
+
+Summary of chunk 11:
+## Class A and Class B Overview:
+- Class A has two variables: Default and constructors for different behaviors.
+- Implements method overloading for different examples.
+- It provides an example of different concepts like method overriding, overloading, and shadow variables.
+- Class B extends Class A, introduces shadow variables and implements methods differently.
+- Test class allows creation of objects, method calls to test understanding and modifications.
+
+## Wrapper Classes and Packages Definition:
+- Wrapper classes are briefly mentioned, will be revisited later.
+- Package definition includes name declaration, file organization in the same directory, and import usage.
+- Class A, Class B, and Test belong to the same package.
+- Differentiates between static and instance methods in Class A and Class B.
+
+## Method Calls and Overrides:
+- Class A's instance method (F1) requires object creation for method call.
+- Class A's static method (F2) is called using class name directly, can't access instance variables.
+- The test file exemplifies method overriding for instance methods.
+- Static methods do not involve overriding, as they are connected to the class directly.
+
+## Conclusion:
+- Emphasizes the distinction between instance and static methods for method invocation and overriding.
+- Static methods do not follow the overriding concept as they are class-associated.
+- Instance methods involve calls with object instances and allow for method overrides.
+- Provides clarity on the usage and behavior of methods within classes.
+
+Summary of chunk 12:
+### Lecture Notes:
+
+#### Static Functions and Java Doc Comments
+- When calling through class, it is a warning to avoid certain actions.
+- Java Doc format comments are extracted to create an API file.
+- Parameters defined with clear structure for easy interpretation.
+- Inheritance through classes in the same package.
+- Method overriding and overloading explained.
+- Utilization of the toString method for object representation.
+- Strings handling mentioned to be slightly different in Java.
+- Static functions accessed via class qualifiers.
+- Instructions to experiment with static methods and address queries with tutors.
+
+#### Shape Implementations
+- Different approaches: 'is a' and 'has a' relationships for implementing shapes.
+- Utilization of an abstract class 'shape' for common method implementation.
+- Static variable 'number of shapes' for tracking shapes.
+- Method 'print area' defined in the abstract class to print the area of an object.
+- Utilization of the keyword 'this' in the implementation of common methods across subclasses.
+- Object identification in shape objects based on type for method selection.
+
+Summary of chunk 13:
+## Checking Class Type
+
+- To determine the class type, two methods are mentioned:
+  - **instanceof keyword**: Used to check if an object is an instance of a specific class or its subclasses.
+    - Returns true if the object is of type circle or any subclass.
+    - For example, if object is a graphical circle, it will return true.
+  - **getClass method**: Retrieves the class where the object was originally created.
+    - Returns the specific class where the object was created.
+    - Allows for comparison based on the original class of the object.
+
+## Structural Implementation as Interface
+
+- The concept of **shape as an interface** is introduced to avoid using the term abstract.
+  - The interface includes methods for area and circumference.
+- Implementation:
+  - Circle now **implements** the shape interface, requiring the implementation of specified methods.
+  - Graphical circle and rectangle follow the same structure, inheriting from superclasses accordingly.
+- Transition to interfaces:
+  - Use of **ArrayList** over array for flexibility.
+  - List creation of type shape interface, enabling addition of various shapes.
+
+## Default Methods in Interfaces
+
+- Before Java 8, interfaces had no default method implementations.
+- **Default methods** were introduced in Java 8 to provide method implementation within interfaces.
+  - Default methods are available to every class that implements the interface.
+- Default methods appear similar to abstract methods but allow for direct implementation within the interface.
+- Caveat:
+  - Concern regarding potential conflict with multiple interfaces implementing the same default method.
+  - If multiple interfaces have the same default method signature, the class must override the method for clarity.
+  - Resolving the choice of method implementation at design time to avoid runtime confusion.
+
+Summary of chunk 14:
+## Multiple Default Methods in Interfaces:
+- It is considered bad style to use multiple default methods in interfaces.
+- Default methods in interfaces should be kept to a minimum for better design.
+- Default methods can be provided as needed, but excessive use should be avoided.
+- It is acceptable to use default methods if they make sense in the context.
+  
+## Importing Packages and Classes:
+- To import classes from another package, use the import statement followed by the package name.
+- Imported classes from a package can be all or selectively chosen based on requirements.
+- Default and protected qualifiers determine class visibility within and outside the package.
+- Public and protected members are accessible outside the package, while default members are restricted.
+  
+## Default Methods vs Abstract Methods:
+- Default methods in interfaces make them similar to methods in abstract classes.
+- Interfaces with default methods allow implementing multiple interfaces for added flexibility.
+- Default methods were introduced in later versions to enhance interface functionality.
+- Default methods in interfaces provide flexibility without limiting class extension.
+  
+## Wrapper Classes and Primitive Types:
+- Java provides wrapper classes for basic types like Integer, Double, etc.
+- Not all values in Java are objects, some are primitive types like int, double, char.
+- Wrapper classes convert primitive types into objects for compatibility with object-oriented principles.
+- Primitive types are not classes but are treated as objects in Java through wrapper classes.
+
+Summary of chunk 15:
+# Wrapper Classes:
+- Integer class wraps around the basic primitive int type.
+- Provides methods useful for dealing with integers.
+- For example, converting a string to an integer using parseInt method.
+- Class also includes static method powers for parsing strings into integer values.
+- Method toString converts integer values to strings.
+
+## API and Wrapper Classes:
+- Utilizing API to explore available constructors and methods in Java.
+- Wrapper classes extend the concept of wrapping in various contexts.
+- Reference to wrapper start-ups adapting AI functionalities.
+
+# String Handling:
+- Strings treated differently, for memory optimization.
+- String literal optimization example: reusing memory for identical string literals.
+- Creating new objects with 'new' keyword for independent string instances.
+- Difference between using literals and 'new' keyword for string objects.
+- Changing a literal string will reflect on same reference, use 'new' for manipulation.
+- Emphasized using 'new' keyword for modifying strings.
+- Understanding references and pointers in string objects.
+- Importance of scoping and namespace in variable declarations.
+- Considerations for importing entire packages with 'star' symbol.
+
+Summary of chunk 16:
+# Lecture Notes: 
+
+## Assignment Preview and Release:
+- Assignments will be released selectively on Thursday lectures with an introduction.
+- Detailed description will be provided by Carl in week three.
+- Instructions and specifications will be available for review and the assignment can be started.
+- More information will be given in week three.
+
+## Programming Languages Handling Strings:
+- Java handles strings historically by reusing the same object to save space.
+- Other languages like Python and C# have different ways of handling strings.
+- Understanding the methods used in different languages is crucial.
+
+## Method Forwarding and Class Instances:
+- Method forwarding is explained by creating an instance of the class that has the desired method.
+- By creating an object of a class, one can utilize and modify the implemented methods.
+- Modification of behavior can be achieved by calling a method and making adjustments as needed.
+
+## Reminder and Conclusion:
+- Reminder to see students on Thursday for the assignment discussion.
+- Explanation of method forwarding simplifies the utilization of implemented methods.
+
+# End of Lecture Notes.
+

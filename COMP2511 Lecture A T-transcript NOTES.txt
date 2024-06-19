@@ -1,0 +1,550 @@
+Summary of chunk 1:
+### Lecture Notes:
+
+#### Course Overview:
+- **Course Name:** Com 2511 - Object-Oriented Design and Programming, now referred to as "The Art of Software Design."
+- **Purpose:** Cover various aspects beyond object-oriented programming crucial for industry relevance.
+- **Industry Relevance:** A speaker from Fairfax emphasized the course's alignment with industry expectations for software development.
+
+#### Course Distinction:
+- **Previous Courses:**
+  - **COM 1511:** Focused on writing correct software and testing logic.
+  - **COM 2521:** Emphasized data structures, algorithms, and efficiency.
+- **Focus Transition:** Shifts from correctness and efficiency to software design for reusability, updatability, bug detection, portability, and maintainability.
+  
+#### Importance of Software Design:
+- **Software Evolution:** Constantly changing software landscape necessitates software that can be easily updated, reused, and adapted.
+- **Industry Dynamics:** Organizations rely on software that is malleable, maintains legacy systems, and aligns with existing frameworks for sustainable development.
+- **Pragmatic Approach:** Acknowledgment that familiarity with new languages and technologies should be balanced with organizational requirements and industry standards.
+
+#### Implications:
+- **Software Value:** Emphasis on software design becomes vital due to the significant value of software assets in industries, including government, corporate, and start-up sectors.
+- **Practicality:** Balancing innovation with practicality for sustainable software development aligns with industry demands for efficient software utilization and upkeep.
+
+Summary of chunk 2:
+### Lecture Notes:
+
+#### Importance of Designing Good Software
+- *Focus on writing software with characteristics like reusability, debuggability*
+- *Designing software is considered an art*
+- *Teaching systematic way to design good software*
+- *Avoiding bad software practices improves software quality*
+- *Checklist approach to address software issues*
+  
+#### Software Development Process
+- *Assignments help in improving software design skills*
+- *Refactoring for software improvement without changing external behavior*
+- *Goal is to develop software with reusability, flexibility, readability*
+  
+#### Software Principles and Design Patterns
+- *Importance of following software principles*
+- *Gang of four's book on software design patterns is a classic reference*
+- *Classic theories and algorithms from the past remain relevant*
+- *Software design patterns are like cooking recipes for software development*
+- *Patterns provide solutions for specific problem contexts*
+- *Comprehensive learning of software principles and important design patterns in the course*
+- *Applicability of software principles and design patterns across programming languages, not limited to object-oriented or Java*
+
+#### Conclusion
+- *Teaching software principles and design patterns for designing efficient and correct software*
+- *Focus on learning important patterns and principles applicable across programming languages*
+
+Summary of chunk 3:
+### Programming Paradigms
+- Different programming paradigms are being utilized in technology.
+- Procedural programming like C is commonly used, along with functional and logical programming paradigms.
+- Functional programming features, such as Lambda expressions, are being incorporated into languages like Java, C#, and Python.
+
+### Event Driven Programming 
+- Event-driven programming is crucial for solving real-world problems.
+- Important to understand concurrency in web applications.
+
+### Course Focus
+- Course emphasis on software design over input-output correctness.
+- Tutor interaction during labs for feedback on design and assignments.
+- Importance of writing correct and elegant software with a focus on design patterns.
+
+
+### Instructor Introduction and AI
+- Instructor Mahi's background in teaching and research in artificial intelligence.
+- The importance of distinguishing AI from statistical modeling in the past.
+- Highlighting the current hype and misconceptions surrounding AI.
+- Encouraging critical thinking about the capabilities and limitations of technology advancements.
+
+Summary of chunk 4:
+# Lecture Notes
+
+## Technology Appreciation and Limitations
+- Understand technology's benefits and constraints.
+- Avoid biased views and acknowledge both positive and negative aspects.
+- Importance of being scientific in analyzing technology.
+- Emphasize the need for continuous learning in a rapidly changing technological landscape.
+
+## Adaptability and Continuous Learning
+- Being able to quickly learn new concepts is crucial.
+- Education is not just about current knowledge but also about the ability to grasp future technologies.
+- Constantly updating skills is essential in a competitive environment.
+
+## Artificial Intelligence (AI) and Educational Tools
+- AI tools provide quick answers but may not always be accurate.
+- Emphasize the importance of validating information obtained from AI.
+- Integration of AI tools in education to enhance learning processes.
+
+## Awareness on Plagiarism and Validation
+- Caution against plagiarism in assignments and labs.
+- Tools like JGPT4 and Llama3 help check for similarities.
+- Stress on the significance of validating answers instead of blindly trusting AI-generated content.
+
+## Implementing Validation in Industry
+- Importance of understanding basic principles for validation.
+- Use knowledge gained to validate answers in practical industry situations.
+- Basic mathematical principles aid in validating technologies like calculators and AI tools.
+
+## Deterministic Nature of Digital Computers
+- Highlight on how digital computers store information deterministically.
+- Stress on the permanence of data stored in digital systems over time.
+
+Summary of chunk 5:
+# Computer Functionality and Limitations
+
+- Computers provide consistent results with the same input each time, making them useful and efficient.
+- Introduction of a new black box, Inter, brings variability in output, challenging trustworthiness.
+- Context changes can affect the reliability of computer outputs.
+- Critical thinking and learning key concepts are crucial for practical application.
+
+## Course Administration and Exam Preparation
+
+- Course administrators, Alwin and Sai, manage assignments and communication.
+- Exam worth 50% in CC labs emphasizes the importance of preparation for traditional testing.
+- Admin team consists of skilled tutors offering support and guidance.
+- Seeking help from tutors is encouraged for successful completion of course requirements.
+
+## Software Development Principles
+
+- Emphasis on writing elegant and maintainable software for flexibility and reusability.
+- Understanding various design paradigms such as object-oriented, functional, and concurrency.
+- Importance of applying design patterns for efficient software development.
+- Handling exceptions and system reliability are vital considerations in software design.
+
+## Object-Oriented Design Process
+
+- Systematic approach to following the object-oriented design process.
+- First assignment focuses on understanding and applying design patterns.
+- Behavior patterns and exception handling are key components of software design.
+- Role of design patterns in organizing code efficiently is highlighted.
+
+## Conclusion
+
+- Encouragement to apply systematic object-oriented design processes for efficient software development.
+- Understanding and applying design patterns play a crucial role in writing maintainable and flexible software.
+
+Summary of chunk 6:
+# Lecture Notes: Software Design and Development
+
+## Introduction to Assignments
+- Focus on developing skills in creating medium skill soft systems from scratch.
+- Assignment involving understanding existing systems, identifying bad design practices, refactoring, and adding new features.
+
+## Use of Resources and Tools
+- Use Java language and VS code IDE for assignments.
+- No specific textbook, but recommended to explore outside resources.
+- Access reference material and books for additional learning.
+
+## Course Structure and Assessments
+- Structure includes 9 weeks of lectures with a break in week 6.
+- In-person tutorials and labs for practical learning.
+- Solutions for some questions released weekly.
+
+## Problem Solving Approach
+- Problem solving akin to writing a poem, involving both recognition and creation.
+- Releasing solutions for tutorials helpful for understanding but not same as creating from scratch.
+- Emphasizes learning from mistakes and practical application.
+
+## Practical Learning Approach
+- Encouraged to attempt tasks from scratch to learn effectively.
+- Learning through individual effort and experiencing failures.
+- Labs and tutorials available for guidance and support.
+
+## Conclusion
+- Access resources for verification but focus on personal learning.
+- Understand the difference between reading solutions and creating them.
+- Encouragement to seek help and engage actively in the learning process.
+
+Summary of chunk 7:
+## Lab Assignments
+- Labs are important for hands-on learning and understanding concepts discussed in lectures.
+- Seven labs, each worth 10 marks, total mark capped at 60 for leniency.
+- Marks obtained during labs are based on showing the work to the tutor, not just submission.
+
+### Assignment One
+- Worth 15% of the final mark, individual assignment due Friday of Week five.
+- Involves designing an object-oriented software.
+- Starts in Week two, due by the end of Week five.
+
+### Assignment Two
+- In pairs to refactor and add features to existing code base.
+- Pair formation by end of Week three, due in Week nine.
+- Exam experience in Week 10 to provide real-life exam conditions.
+
+### Assignment Three
+- Completely optional, bonus assignment worth 8%.
+- Challenges for students seeking additional work.
+- Due Sunday 5 p.m. of Week 10, released in Week eight.
+
+## Exam Details
+- Final exam accounts for 50% of the final mark, in-person exam only.
+- Minimum requirement of 40% in the exam.
+- Special consideration available based on criteria specified on the website.
+
+### Supplementary Exam
+- Available only if criteria are met and approved by the Special Consideration process.
+- Apply for supplementary exam if necessary, approval determines eligibility.
+
+## General Guidance
+- Regular communication with tutors for any issues or difficulties.
+- Collaboration and communication with partners for assignments to avoid last-minute problems.
+- Encouragement to take up challenges for extra assignments if desired.
+
+Summary of chunk 8:
+# Programming Language and Design Principles
+
+- **Programming Language Focus**
+  - In the past, Python was used, but currently, C is utilized.
+  - The course will involve Java coding for software design principles.
+  
+- **Software Design Emphasis**
+  - Emphasis is on designing good software rather than Java or object-oriented specifics.
+  - Core object-oriented programming through Java will be taught.
+
+# Learning Approach and Assignment Tips
+
+- **Learning Approach**
+  - Focus on critical thinking and teamwork skills.
+  - Develop time management skills as assignments progress.
+
+- **Assignment Assistance**
+  - Utilize tutors and forums actively for assistance.
+  - Start assignments early for better understanding and problem-solving opportunities.
+
+# Interaction and Learning Opportunities
+
+- **Interactive Learning**
+  - Encouragement to ask questions and seek help during tutorial sessions.
+  - Leverage the three-hour tutorial time for learning and clarification.
+
+- **Utilization of Support Channels**
+  - Availability of health sessions, tutor forums, lab assistants, and online resources for queries and assistance.
+
+# Communication and Assessment Guidelines
+
+- **Effective Communication**
+  - Emphasize asking questions and seeking clarification without hesitation.
+  - Engage with tutors actively to enhance learning and understanding.
+
+- **Assessment Approach**
+  - Separate learning time from assessment time for optimal understanding and evaluation.
+
+# Additional Resources and Assistance
+
+- **Further Assistance**
+  - Access booster forums and specialized service websites for additional aid.
+  - Reach out for help promptly in case of any issues during the term.
+
+Summary of chunk 9:
+# Lecture Notes:
+
+## Useful Websites:
+- Email class account for communication.
+- Send confidential matters directly to Speaker 1.
+- Professional websites for resources and support.
+
+## Software and Version:
+- Using Java 17 for the course.
+- Covers necessary features.
+- Utilizing VS code, Gradle, GitLab, and other tools.
+
+## Feedback and Interaction:
+- Encouragement for feedback.
+- Importance of interaction in learning.
+- Emphasis on participation.
+
+## Expectations and Respect:
+- Participation crucial for learning.
+- Respect university policies and individuals.
+- Importance of asking questions and interacting.
+
+## Course Structure:
+- Break between sessions for discussion.
+- Topics include Java basics and object-oriented programming.
+- Future lectures to engage with programming concepts.
+
+## Assignments and Grading:
+- Breakdown of bonus marks for assignments.
+- Explanation of lab marks allocation.
+- Clarification on grading process.
+
+## History and Importance of Java:
+- Java's significance in the context of multiple operating systems.
+- Origin story of Java.
+- Evolution of Java as a cross-platform programming language.
+- Purpose of Java for compatibility across systems.
+
+## Session Logistics:
+- Appropriate break times for discussions.
+- Clarification on assignment and lab grading.
+- Introduction to Java history and relevance.
+
+Summary of chunk 10:
+### Java Source Code Compilation
+- Java source code is converted into a class file, which is bytecode, not machine code.
+- Bytecode is executed on the Java runtime environment, available for various operating systems.
+
+### Java Runtime Environment
+- Built for different operating systems and freely available for download.
+- Once downloaded, enables running Java programs on different platforms.
+
+### Java Design Features
+- Absence of explicit pointers in Java, unlike in C.
+- Java utilizes references instead of pointers for memory management.
+- Automatic memory management in Java eliminates the need for manual memory handling.
+
+### Garbage Collection in Java
+- Java performs automatic garbage collection, tracks unused memory, and frees it.
+- Uses a graph data structure to manage memory and perform garbage collection efficiently.
+
+### Multi-Threading in Java
+- Java is designed as a multi-threaded language, making it easier to create and manage threads.
+- Allows for harnessing the power of multiple CPUs by creating and managing threads effectively.
+
+Summary of chunk 11:
+### Data Structures and Abstract Data Types (ADTs)
+- Multi-system in data structures
+- Creation of integer and string sets
+  - Different representations for integer sets (linked list or array)
+- Definition of ADTs for different data types
+- Mathematical set properties (no duplicates)
+- Implementation of generic data types
+- Object-oriented design principles
+- Reusability through inheritance
+- Introduction to polymorphism
+- Object-oriented framework in Java
+- Importance of object-oriented design
+
+### Programming Languages and Frameworks
+- Implementation language power (e.g., C for Java)
+- High-level frameworks for simplifying development
+- Transition from low-level to high-level languages
+- Microsoft's approach to open source
+- Introduction to C# language by Microsoft
+- Similarities between Java and C#
+- Enterprise software preference for C# and Java
+
+Summary of chunk 12:
+# Lecture Notes: Object-Oriented Programming and Design
+
+## Introduction to Programming Languages
+- **Latest Languages:** Importance of staying updated with latest programming languages.
+- **Java:** Major base software with features like multi-threaded systems and platform independence.
+- **Features of Java:** Automatic memory management, object-oriented, distributed computing, libraries like AP for easy utilization.
+- **Java Programming:** Compilation of programs into bytecode (.class files) and execution on different platforms using Java Runtime (JR).
+
+## Object-Oriented Programming
+- **Basics of OOP:** Transition from C to Java, assumption of prior knowledge of C for understanding OOP constructs.
+- **Key Concepts:** Understanding classes, inheritance, and formulating solutions using object-oriented framework.
+- **Features in OOP:** Emphasis on utilizing OOP features for designing software and learning software principles and patterns.
+
+## Contrasting Programming Paradigms
+- **Procedural vs. OOP:** Comparison of task-oriented approach in procedural programming (C) with object-oriented methodology in Java.
+- **Action-Oriented Programming:** Designing functions to manipulate data based on actions.
+- **Object-Oriented Thinking:** Shifting towards entity-based thinking, identifying entities and concepts, and storing information using abstract data types.
+
+## Course Content and Application
+- **Course Components:** Covering essential aspects of OOP, software principles, and patterns.
+- **Lambda Expressions:** Addressing advanced topics such as Lambda Expressions.
+- **Application in Software Design:** Utilizing OOP concepts for designing object-oriented software systems.
+- **Transition Challenge:** Transitioning from action-oriented to object-oriented approach, learning through practical assignments and projects.
+
+### Conclusion
+- Emphasis on the importance of understanding OOP principles for effective software design and development.
+- Integration of procedural constructs with object-oriented thinking for efficient problem-solving.
+
+## Note:
+- Focus on grasping core OOP concepts and transitioning from procedural programming to object-oriented design.
+- Practice application of OOP features in various software scenarios for comprehensive learning and skill development.
+
+Summary of chunk 13:
+## Object-Oriented Programming Concepts
+
+- In object-oriented programming, classes are used to define new types such as student, lecturer, customer, or product.
+  - Classes store information and provide functions (methods) to operate on that data.
+- To start, identify concepts and entities, decide on what information to store, and determine the methods needed.
+- Instances of classes are created to represent individual entities like students.
+  - Each instance is called an object, representing one entity in the problem domain.
+
+## Program Structure and State Machine
+
+- Programs in any language are conceptual finite state machines that solve problems by representing information.
+- Programs modify the state by operating on the data, storing and updating information.
+- Every line executed in a program changes the state by modifying variables.
+  - The overall program flow is a sequence of state modifications.
+
+## Object-Oriented Programming Paradigm
+
+- Object-oriented programming involves creating classes to represent concepts and entities.
+- Instances of classes serve as abstract data types (ADTs) to store and manipulate data.
+- Java provides inheritance, allowing reuse of existing code and introducing polymorphism.
+- Inheritance and polymorphism lead to a distinct programming framework compared to procedural programming.
+- Programs create instances of classes and utilize message passing for objects to interact by calling each other's methods.
+
+Summary of chunk 14:
+# Lecture Notes
+
+## Object-Oriented Programming (OOP) Concepts
+
+- **User-defined Types and Classes**
+  - OOP focuses on creating user-defined types called classes for specific concepts.
+  - **Classes** consist of data and methods (functions).
+  - An instance of a user-defined type is an object.
+  - Classes can have private data that is not accessible from outside.
+  - Use access modifiers in Java to control access to variables.
+
+## Encapsulation and Information Hiding
+
+- **Encapsulation**
+  - Data can be encapsulated within a class and controlled using access modifiers.
+  - Encapsulation helps in information hiding and maintaining data integrity.
+  
+## Inheritance
+
+- **Inheritance as Software Reusability**
+  - Inheritance allows creating new classes by inheriting properties and behavior from existing classes.
+  - Example: a subclass automatically has all properties of the superclass and can add more.
+
+- **Subclass Enhancements**
+  - Subclasses extend superclasses by adding more properties and attributes.
+  - Subclasses inherit all features from superclasses but can enhance them.
+  
+## Multiple Inheritance and Java's Approach
+
+- **Multiple Inheritance Conflicts**
+  - Multiple inheritance can lead to conflicts, especially in languages like C++.
+  - Java addresses this issue by allowing single inheritance for classes.
+  - Java provides ways to work around the limitations of multiple inheritance.
+
+## Modifying Properties in Subclasses
+
+- **Subclass Properties**
+  - Subclasses cannot exclude properties but can modify their behavior.
+  - Subclasses can change the behavior of inherited properties while retaining them.
+
+- Understanding how inheritance, encapsulation, and access control work is crucial in building robust and scalable software applications in Java.
+
+Summary of chunk 15:
+# Lecture Notes:
+
+## Inheritance vs. Hazard Relationship:
+- Inheritance is a powerful tool but requires careful use.
+- Can reuse everything from superclass, but conflicts between superclass and subclass can arise.
+- Hazard relationship can be used as an alternative.
+- Subclass adds more features to properties.
+- Example with students: Person → Employee → Salesperson.
+
+## Designing Classes:
+- Different classes created based on requirements.
+- Common properties are grouped into a superclass.
+- Superclass allows reuse of common features.
+- Generally, up to two or three levels of inheritance are used.
+
+## Object Properties and Types:
+- Java objects have methods and structures attached.
+- The difference between Java and C.
+- Specific properties cannot be excluded as it violates the interface.
+- Principles of object-oriented design.
+
+## Type Set and Variable Declaration:
+- Type set in Java requires specifying the type of attribute.
+- Java is more type-safe compared to Python.
+
+## Subclass and Superclass Relationship:
+- Undergraduate student as a subclass of student.
+- Objects of type subclass can be treated as superclass.
+- Subclass inherits behavior from superclass.
+- Examples of treating objects interchangeably based on their inheritance relationship.
+- Subclass can be treated as superclass.
+
+## Polymorphism:
+- Examples of treating undergraduate as postgraduate.
+- Overview of method overriding, to be discussed later.
+- Objects of subclass can be treated as superclass.
+- Polymorphism example to be explained further in the lecture.
+
+## Q&A:
+- Detailed question on the applicability of method overriding.
+- Further explanation and examples to be shared in the lecture. 
+
+# Next Steps:
+- Detailed explanation on polymorphism.
+- Explore method overriding concept with real-world examples.
+
+Summary of chunk 16:
+## Subclass and Polymorphism:
+- **Is-a Relationship in Inheritance:**
+  - Object of a subclass may also be treated as the object of the superclass.
+  - Use 'is-a' relationship only if most properties of the superclass are relevant to the subclass.
+  - Example: A circle is not a subclass of oval due to different properties (width and height vs. radius).
+- **Avoiding Improper Is-a Relationships:**
+  - Check if properties from superclass make sense in the subclass; else, consider alternative solutions.
+  
+## Has-a Relationship:
+- **Definition:**
+  - Objects of one class are part of another class.
+  - Example: Rectangle class consisting of four line objects, representing a 'has-a' relationship.
+- **Implementation:**
+  - Not inheriting properties but using the line object; choosing methods from the line class selectively.
+  - Requires more coding but offers control and safety in usage.
+  
+## Class Definition and Design:
+- **Steps in Defining a Class:**
+  - Identify problem specifications and concepts to represent.
+  - Create classes for each concept needed in problem solving.
+- **Considerations for New Types:**
+  - Determine the required functionality and methods for each class.
+  - Store data locally and provide access only as needed externally.
+  
+## Creating Objects:
+- **Initialization Process:**
+  - Consider different ways to create objects like circles, rectangles, or students.
+  - Pay attention to object initialization and data storage.
+- **Initialization Actions:**
+  - Implement proper initialization procedures rather than relying on default values.
+  
+## Future Discussion:
+- **Upcoming Topics:**
+  - Examples and further details on object creation and initialization will be covered in the next lecture.
+- **Questions and Clarifications:**
+  - Open for any additional questions or points needing clarification before the session ends.
+
+Summary of chunk 17:
+## Java Access Modifiers
+- Access modifiers in Java allow to control the accessibility of classes, methods, and variables.
+	- Public, private, protected are access modifiers.
+- The purpose is to decide whether to make it available to everybody or partially to some subclasses.
+
+## Difference in Mechanisms
+- Java provides the mechanism to decide access with access modifiers.
+	- Java grants the ability to control access explicitly.
+- In the example, access is determined by using words like public, private, protected.
+
+## Comparison with C
+- In contrast to Java, C does not offer the same mechanism for access control.
+	- Java provides this flexibility through access modifiers.
+
+## Student Queries
+- Student 2 expresses uncertainty about the execution of their first lab.
+	- Unsure why the required output is not being displayed.
+- Student 0 recalls the need for accuracy in implementing the lab content.
+- Student 2 faces issues in testing the lab despite having necessary components.
+
+## Clarification
+- The instructor poses a question to address the student's concern and facilitate learning.
+

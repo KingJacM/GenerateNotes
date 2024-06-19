@@ -1,0 +1,539 @@
+Summary of chunk 1:
+# Lecture Notes: Software Design Principles
+
+## Introduction
+- Review of previous lecture topics: exceptions, generics, collections.
+- Highlight of the importance of designing software that is easy to maintain.
+
+## Collections
+- Java provides many collections that are already implemented and can be easily used.
+- Utilizing the `Comparable` interface for sorting elements in a collection.
+- Importance of implementing the `compareTo` method for ordered structures.
+- Usage of `Collections.sort()` static method to sort collections based on element type.
+- Discussion on the natural order and how `compareTo` method follows it.
+
+## Design by Contract
+- Brief overview of the concept of design by contract.
+- Emphasis on the importance of defining clear contracts between system components.
+
+## JUnit Testing in Java
+- Comparison of testing in general with Java-specific testing using JUnit.
+- Explanation of differences and highlights of JUnit for Java testing.
+
+## Software Design Principles
+- Importance of adhering to design principles for creating robust and maintainable software.
+- Encouragement to work on assignments and seek help from forums and help sessions.
+
+## Conclusion
+- Reminder to focus on assignment tasks and seek support when needed from available resources.
+
+Summary of chunk 2:
+# Natural Order and Preserving Order
+- **Natural Order**
+  - If a = b and b = c, then a = c
+  - If a > b and b > c, then a > c
+  - Vice versa for less than comparisons
+- **Preserving Order implementation**
+  - Object complexity can impact order preservation
+  - Sorting algorithm behavior aligns with natural order
+
+# Comparable Interface
+- **Sorting Example**
+  - Comparison approach provided, sorting logic internal to algorithm
+  - Limits one comparison type per class
+  - Can't sort based on varying criteria like name, postcode, rewards points 
+
+# Comparator Interface
+- **Collection sort method**
+  - Includes two arguments for unique sorting instructions
+  - Method overloading used for sorting, different to Comparable
+  - Sorting logic externalized to another object for varied criteria
+  - Enables external sorting by providing objects with specific comparison logic
+  - Flexibility to sort objects differently without altering the collection
+
+# Comparator Interface Implementation
+- **Comparator Interface Definition**
+  - `Comparator` interface with `compare` method
+  - Compares two objects, returns zero for equality, positive or negative for order
+- **Custom Comparator Object**
+  - Object implementing `Comparator` interface for customized sorting
+  - Externalizes sorting logic to a separate object for adaptability and reusability
+
+Overall, utilizing Comparable and Comparator interfaces allows for versatile sorting methods, accommodating various comparison criteria and maintaining order based on natural order rules.
+
+Summary of chunk 3:
+### Traditional Way of Object Creation
+- Create classes to compare customers
+- Each class offers a different way of comparison
+- Implementing methods in interfaces to create new classes
+
+### Drawback of Traditional Way
+- Creating separate classes for single methods leads to overhead
+- Java offers anonymous classes to address this issue
+
+### Anonymous Classes
+- Useful when creating objects once
+- Define class on the fly without separate class file
+- Example: Implementing an interface with anonymous class
+
+### Lambda Expression
+- Introduced in Java as a more concise way
+- Eliminates the need for verbose code in anonymous classes
+- Lambda expressions will be covered in further detail in the course
+
+Summary of chunk 4:
+## Lecture Notes: Design by Contract
+
+### Introduction to Defensive Programming
+- Typically, defensive programming is employed to handle unforeseen circumstances.
+- It involves checking the validity of inputs and including statements for handling invalid inputs.
+
+### Design by Contract
+- A shift towards enforcing preconditions that assure valid inputs are provided.
+- The concept revolves around creating a contract with the client where valid inputs yield expected results.
+- Ensures that the software is robust and addresses only valid scenarios.
+
+### Implementation Considerations
+- Addresses the necessity of repeated validity checks in large software systems.
+- When designing classes and methods, considering the necessity of constant input validation.
+- Establishing preconditions for methods to ensure valid inputs.
+- Post conditions guarantee expected outcomes when preconditions are met.
+- Reduces complexity by minimizing explicit validity checks in every method.
+
+### Advantages and Trade-Offs
+- Enhances software readability and maintainability.
+- Reduces the need for excessive input validations across the codebase.
+- Ensures compliance with agreed-upon contracts between methods.
+- A balanced approach is crucial as excessive checks can lead to redundancies.
+
+### Conclusion
+- Striking a balance between enforcing contracts and minimizing redundancies is vital.
+- Prioritizing validity checks for critical scenarios while maintaining software readability.
+- Precondition and postcondition specifications facilitate clear method implementations.
+
+## Next Topic: Lambda Expressions
+- Lambda expressions provide a concise way to implement functional interfaces.
+- Offers alternatives to traditional class-based and anonymous class implementations.
+- Enhances code expressiveness and succinctness in handling functional programming paradigms.
+
+Summary of chunk 5:
+# Concept of Design by Contract
+- The idea of Design by Contract involves implementing classes with specific methods and pre/post conditions derived from software design.
+- Each method's pre and post conditions ensure that the contract is upheld.
+- The concept is not novel and can be related to real-life contracts like buying a plane ticket.
+
+## Software Specification Contract
+- Every software element should have a defined specification or contract.
+- The contract addresses three main components: preconditions, postconditions, and invariants.
+- Preconditions specify what must be true beforehand, postconditions detail the expected outcome, and invariants maintain certain constraints throughout the execution.
+- An example is ensuring that a mark value stays between 0 and 100, even when applying penalties.
+
+### Three Contract Components
+- The contract consists of preconditions, postconditions, and invariants.
+- Precondition: Defines what should be true before execution.
+- Postcondition: Indicates the expected outcome if preconditions are met.
+- Invariants: Constraints that must be maintained throughout the execution.
+
+## Formulating Contracts
+- Contracts should be declarative and focus on what should be achieved, not how.
+- Expressing contracts as precisely, formally, and verily as possible is crucial.
+- Formal specification-based languages exist for defining contracts accurately.
+- The goal is to automate code generation based on precisely defined contracts, but complexities arise in real-world applications.
+
+### Challenges in Contract Formalization
+- Complexities in the real world make it challenging to formally specify requirements.
+- While progress has been made in some domains, achieving automation in generating code from contracts remains limited.
+- Precision in defining contracts can eliminate the need for repeated error checking, making the process cleaner and faster.
+
+#### Benefits of Design by Contract
+- Reduces the need for multiple error checking and prevents redundant checks.
+- Ensures that client expectations align with the specified contract.
+- Results in cleaner, faster implementation of software.
+
+## Implementation Considerations
+- Some programming languages have incorporated the principles of Design by Contract.
+- Emphasizing precision and formality in expressing contracts can simplify code maintenance and development.
+- While challenges exist in automating code generation from contracts, the advantages of Design by Contract make it a valuable approach.
+
+Summary of chunk 6:
+# Design by Contract vs. Java Support
+- **Design by Contract (DbC)**
+  - Language: Eiffel
+  - Originator: Bertrand Meyer
+  - Feature: Native support; logic ensures pre and post conditions
+- **Java**
+  - Approach: Comments for pre and post conditions
+  - Lack of support for native DbC
+- **Workaround without Native Support**
+  - Use Unit Tests as a substitute
+  - Tests ensure the method's correctness and conformance to specified preconditions and postconditions
+  - Accuracy in documenting pre and post conditions is vital
+
+# Example of Pre and Post Conditions in Eiffel
+- **Class:** Dictionary
+- **Method:** Insert(X)
+- **Precondition:** Count ≤ Capacity, Key not empty
+- **Postcondition:** Collection has X, Given key returns X, Count increases by one
+- Eiffel enforces pre and post conditions for method validity
+
+# Pre and Post Conditions in Java
+- **Java Documentation**
+  - Use comments for precondition and postcondition
+  - Logic implementation within the method
+- **Example:**
+  - Square root calculation method
+  - Precondition: Parameter value defined, Postcondition: Square root calculated
+
+# Design by Contract vs. Defensive Programming
+- **Design by Contract (DbC)**
+  - Relies solely on stated preconditions
+  - No runtime checks, trusts user to abide by contract
+- **Defensive Programming**
+  - Includes strict runtime checks for precondition violations
+- Examples provided for better understanding
+
+# Handling Preconditions with Inheritance
+- **Considerations for Inheritance**
+  - Preconditions at superclass level flow down to subclasses
+- **DbC and Defensive Approach**
+  - DbC: Rely on contracts, Defensive: Implement checks
+
+# Summary
+- **Key Points:**
+  - Native support in Eiffel for pre and post conditions
+  - Java requires manual implementation via comments
+  - Testing crucial to ensure method correctness
+- **Approaches:**
+  - Design by Contract emphasizes contract adherence
+  - Defensive Programming focuses on runtime checks for robustness
+
+Feel free to ask if you have any questions or need further clarification.
+
+Summary of chunk 7:
+## Lecture Notes: Inheritance and Testing
+
+### Inheritance Pre and Post Conditions
+- Method in superclass calculates trajectory; precondition: A > 0 and less than or equal to 90.
+- Subclass can override superclass method with the same signature.
+- Weakening preconditions means subclass can offer more relaxed conditions, e.g., theta between 0 to 180.
+- Subclass must honor all preconditions of superclass to satisfy client's contract.
+- Post conditions in inheritance - subclass must satisfy superclass post conditions and can offer more.
+
+### Class Invariants
+- Class invariants are values that don't change, e.g., marks always 0 to 100, age always greater than zero.
+- Invariants established during construction and must be maintained before and after method execution.
+- Subclass must honor all invariants of parent classes and can add more but should satisfy all invariants.
+
+### Defensive Programming and Design by Contract
+- Focus on implementing methods based on specified pre and post conditions.
+- Use unit tests to check implementation adherence to preconditions and invariants.
+- Subclasses should honor all preconditions and invariants of superclass and can offer more but not less.
+
+### JUnit Testing
+- JUnit testing in Java for testing implementations.
+- Different layers of testing, including client expectation (acceptance testing) and system testing.
+- System behavior should match requirements specified by client.
+
+### Next Topics
+- Design principles, refactoring, and design patterns to be covered next.
+- These topics are important but not complicated to understand.
+
+### Conclusion
+- Understanding inheritance and testing concepts are crucial.
+- Topics ahead include JUnit testing, design principles, refactoring, and design patterns.
+- If any questions, feel free to ask.
+- Subsequent topics are important but not difficult to grasp.
+
+Summary of chunk 8:
+### Unit Testing and Integration Testing
+- **System with Multiple Components**: System consists of different classes that interact for integration testing.
+- **Focus on Class and Method Testing**: Start with unit testing for every method, ensuring each method knows its preconditions, postconditions, and invariance.
+- **Unit Testing Importance**: Crucial for refactoring tasks to maintain external software behavior while changing internal design.
+- **Junit for Java Programs**: Junit commonly used framework for Java unit testing.
+  
+### Basics of Unit Testing
+- **Test Case**: Java class with test methods, identified by the @Test tag.
+- **Assertions in Junit**: Use assert statements to ensure expected behavior.
+- **Test Suite**: Collection of test cases in Java classes.
+  
+### Example of Unit Testing in Java
+- **@Test Annotation**: Signifies test method, with examples on using assert methods like assertEquals and assertTrue.
+- **Comparing Arrays**: Utilize methods like equals in Java to compare arrays without manual comparison.
+- **Online Tutorial Recommendation**: Suggested tutorial for comprehensive understanding of unit testing in Java.
+
+Summary of chunk 9:
+# Lecture Notes: Writing Test Assertions
+
+## Overview of Assertions
+- Comparing values using assert methods
+- Example with `assertEqual`: method should return a specific value
+- Various assert methods available
+- Importance of handling exceptions in Java
+- Using `assertThrows` to check if a function throws an exception
+- `assertDoesNotThrow` for testing absence of exceptions
+
+## Detailed Comparison of `assertEquals` and `assertSame`
+- `assertEquals`: Compares two objects using `equals` method
+- `assertSame`: Uses `==` for object comparison
+- Consideration of the `equals` method for comparing objects
+- Special case with arrays using `equals` method for comparison
+
+## Handling Errors in Assertions
+- Error messages when assertions fail
+- Reporting errors when exceptions occur during testing
+- Importance of executing statements without exceptions
+- Reporting failed tests when exceptions are thrown
+
+## Understanding String Comparison
+- String comparison using `assertEquals`
+- Specific handling of constant and instance strings in Java
+- Use of `==` for object comparison in general
+- Recommended use of `assertTrue` for precise control
+
+## Resources and Further Learning
+- Recommendation of a popular tutorial for JUnit testing
+- Accessing documentation for more in-depth understanding
+- Overview of JUnit testing framework for Java
+- Importance of software testing and assertions in program development
+
+---
+
+These notes cover the comparison and usage of assert methods in Java testing, focusing on handling exceptions, object comparison, and string evaluation. Emphasizing the importance of using appropriate assert methods and understanding their behavior for effective testing and error handling in software development.
+
+Summary of chunk 10:
+## Running Tests with JUnit
+
+- **Setup and Teardown**:
+  - Before each test, set up values using `@Before`.
+  - After each test, do something using `@After`.
+
+- **Test Execution**:
+  - Define test cases using `@Test`.
+  - Use `@DisplayName` to make test names more meaningful.
+  - Use `assertEquals` to compare expected and actual values.
+
+- **Test Methods**:
+  - `assertEquals`: for asserting equality.
+  - Other assertions include `assertTrue`, `assertFalse`, `assertNotNull`, `assertNull`, `assertThrows`, `assertAll`.
+
+- **Dynamic Testing**:
+  - Dynamic testing generates multiple test cases programmatically.
+  - `@ParameterizedTest` can execute the same method with different inputs/outputs.
+  
+- **Lambda Expressions**:
+  - Lambda expressions can be used in dynamic testing but not necessary.
+  - `@ParameterizedTest` without lambda does the same without the need for lambda expressions.
+
+### Example: `@ParameterizedTest`
+
+- Method returning data for input-output pairs.
+- Parameters provided in arrays for different test cases.
+- `@ParameterizedTest` executes the method multiple times with different parameter sets.
+
+- **Parameterized Test Method**:
+  - Uses `@ParameterizedTest` tag.
+  - Returns a two-dimensional array of input-output pairs for testing.
+  - Each element in the array represents a test case.
+
+### Conclusion
+
+- **Benefits**:
+  - Reduces code duplication for repetitive tests.
+  - Provides a concise way of expressing multiple test cases.
+- **Implementation**:
+  - Parameterized testing offers a dynamic way to test different combinations of inputs and outputs.
+  - `@ParameterizedTest` simplifies testing with arrays of parameters.
+
+Summary of chunk 11:
+# Lecture Notes: Testing Method Execution
+
+## Testing with Arrays of Arrays in Java
+- Method returns array of array values
+- Values are arrays of arrays in Java
+- Testing examples to follow
+- Testing method using test data
+- First test data: [1, 2, 2] with expected result 2
+  - Test multiplication of M1 and M2
+- Repeat test for different inputs and outputs
+- Subsequent test data: [3, 5, 3] with expected result 15
+- Parameterized testing for multiple input-output scenarios
+- Utilizing JUnit for testing effectiveness
+
+## Software Design Principles
+- Importance of following software design principles
+- Emphasize on system satisfaction and adherence to principles
+- Recommendations for serious consideration of principles
+- Principles lead to better software quality
+- Systematic and disciplined approach suggested
+- Encouragement to review assignments for principle adherence
+- Software design is essential for flexibility, extendability, maintainability, and reusability
+- Focus on making software adaptable and reusable
+- Prioritize software principles for building good quality software
+- Need for reusability and maintainability due to constant changes in software industry
+
+## Conclusion
+- Acknowledgment of importance of software principles and principles-based approach
+- Integration of patterns for easier achievement of software objectives
+- Emphasis on continuous improvement and adaptability of software
+- Necessity to design software for flexibility, extendability, and maintainability
+- Consideration of changing requirements and continuous software improvement
+- Final remarks on prioritizing software principles alongside functional code efficiency.
+
+Summary of chunk 12:
+### Lecture Notes: Bad Software Design and Consequences
+
+- Reasons for writing bad software:
+  - Laziness and lack of attention.
+  - Time pressure and multitasking.
+- Disciplined approach helps speed up design.
+- Design patterns provide structure and ease of software development.
+- Design smells indicate poor software design.
+- Design smells result from violating software principles.
+- Refactoring required to improve software without changing external behavior.
+
+### Consequences of Bad Software Design
+
+- **Rigidity vs. Fragility**:
+  - Rigidity: Software difficult to change due to complex dependencies.
+  - Fragility: Small changes lead to breaking in multiple places.
+- **Difficulty in Reusing**:
+  - Software components not easily transferable or adaptable to new systems.
+- **Ease of Software Changes**:
+  - Implementing changes through hacks instead of preserving design principles.
+- **Difficulty in Understanding**:
+  - Software model unclear and hard to comprehend.
+- **Importance of Design Principles and Patterns**:
+  - Facilitate code understanding and documentation.
+  - Aid in communication and maintenance of software over time.
+
+Summary of chunk 13:
+# Lecture Notes:
+
+## Advantages of Using Patterns
+- Patterns provide a clear logic and implementation recipe in software development.
+- Using patterns eliminates the need for detailed implementation descriptions.
+- Reduces complexity and repetition in software design.
+- Patterns make software easier to understand and modify.
+
+## Avoiding Complexity and Repetition
+- Complexity and repetition in software design should be minimized.
+- Avoid redundant code to prevent errors and bugs.
+- Encourage simplicity and clarity in code structure.
+- Prioritize understanding over cryptic optimizations.
+
+## Design Principles: Coupling and Cohesion
+- Aim for loosely coupled and highly cohesive systems in software design.
+- **Coupling** refers to the dependency between classes or components.
+    - Minimal interdependence between classes is preferred for flexibility.
+- **Cohesion** involves how well components in a module work together.
+    - Components should be related to a specific concept or theme.
+
+## Implementing Coupling and Cohesion
+- Keep variables private and interactions within the class for minimal coupling.
+- Publicly expose only necessary elements for external interactions.
+- High cohesion ensures that all elements in a module work towards the same goal.
+- Coherent classes are easier to maintain and less prone to frequent changes.
+
+Summary of chunk 14:
+### Class Cohesion and Single Responsibility Principle
+- A class should be self-contained, not relying on other classes to function efficiently.
+- Single Responsibility Principle advocates for each class having a single responsibility to avoid low cohesion.
+- **Balancing Act:** Ensure classes are cohesive and only make methods public when interaction with other classes is necessary.
+
+### Importance of Applying Data in Software Design
+- **Quality Aspect:** Data application crucial for creating high-quality software.
+- From conceptual understanding to practical implementation, examples and refactoring are essential.
+- Design principles and patterns play a pivotal role in software development.
+
+### Design Principles and Patterns
+- **High Cohesion:** Class design should focus on one specific functionality to enhance reusability.
+- **Loose Coupling:** Reducing dependencies among classes for better flexibility and maintainability.
+- **Avoid Repetition:** Emphasize code reusability to prevent duplication and maintain simplicity.
+- **Readability:** Write methods in a modular way to ensure code is understandable and maintainable.
+
+### Design Patterns and Ongoing Learning
+- **Gang of Four Patterns:** Extensive patterns for software design to study and apply.
+- Importance of incorporating design principles and patterns in appropriate contexts.
+- Continuous learning and application of new patterns for evolving software design requirements.
+
+### SOLID Principles
+- **Single Responsibility:** Classes should have a singular responsibility, focusing on one theme or concept.
+- **Open-Closed Principle:** Classes should be open for extension but closed for modification to prevent unpredictable behavior changes and bugs with existing codebases.
+
+Summary of chunk 15:
+## Lecture Notes: Design Principles in Software Development
+
+### Open-Closed Principle
+- Open for extension without modification.
+- Allows extending classes without changing the superclass.
+- Exemplified by inheritance where behaviors are added in a subclass.
+- Ensures successful classes remain unaltered.
+
+### Liskov Substitution Principle
+- Objects should be replaceable by instances of their subtypes.
+- Subtypes should offer additional functionality.
+
+### Interface Segregation Principle
+- Promotes having multiple client-specific interfaces over one general interface.
+- Encourages segregating interfaces to allow flexible user interactions.
+
+### Dependency Inversion Principle
+- Emphasizes depending on abstractions over specifics.
+- Favors reliance on interfaces for consistent behavior rather than implementation details.
+- Provides flexibility in modifying the implementation while maintaining defined methods.
+
+### Precreational Patterns
+- Advocates indirect reliance on implementations through patterns.
+- Demonstrates the importance of focusing on interfaces for flexibility and modification.
+
+### Usage of Design Principles
+- Assist in eliminating bad programming practices.
+- Not mandatory in all scenarios; not to be enforced unnecessarily.
+- Software evaluation against checklists for addressing bad practices.
+
+### Law of Demeter
+- Principle of "least knowledge" or "low Demeter".
+- Suggests interactions with immediate neighbors, avoiding distant classes.
+- Encourages using local or adjacent class information without reaching too far.
+
+### Conclusion
+- Understanding and implementation of software design principles.
+- Emphasizes flexibility, maintainability, and efficient software development.
+- Application of principles aids in enhancing code quality and reducing design issues.
+
+Summary of chunk 16:
+# Accessing Information from Neighbors
+- Request information from different classes (B, C, D, E)
+  - Avoid duplication of data storage
+  - Information scattered across network of objects
+- Principle: Access information within class or neighbors
+  - Decrease dependency chain
+  - Reduce need to access distant data
+  - Reduce redundancy issues
+
+## Impact of Dependency Chain
+- Modifying a class affects multiple dependent classes
+- Long dependency chains necessitate extensive unit testing
+- Aims to minimize testing requirements by limiting dependencies to immediate neighbors
+- Example: Car class (A) with dependencies on owner (Person) and address
+
+## Example: Car Class Structure
+- Car object linked to owner
+  - Owner details stored in Person class (name, address)
+    - Address further includes details such as house name, postcode
+- Scenario: Need to access owner's postcode from car instance for insurance premium calculation
+- Dependency chain: Car -> Owner -> Address -> Postcode
+
+Summary of chunk 17:
+**Topic: Optimizing Linkages in Classes**
+
+- Postcode is only in one place, so long chains mean testing everything across it.
+- Solution: Each class should only look to the neighbor.
+- Example: Car should only connect to neighbor, use method to access owner's postcode.
+- Utilize single linkage between classes for efficient testing.
+- Modification in neighbor class will impact current class, reducing testing needs.
+- Focus on patterns and refactoring for optimization.
+- Next lecture will delve into examples and further discussion.
+- Encouragement to work on assignments.
+- End of the lecture, opening for questions.
+

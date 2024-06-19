@@ -1,0 +1,539 @@
+Summary of chunk 1:
+# Lecture Notes: COMP 3141 - Software System Design and Implementation
+
+## Introduction
+- Welcome to term two.
+- Course name: Software System Design and Implementation (Seeking new name).
+- Purpose of the course: Open eyes to a different kind of programming, functional programming.
+- Functional programming falls under a different paradigm.
+
+## Programming Languages Discussion
+- **Functional Programming**: Introduces a different way of programming.
+- **Paradigms**: Dictate how programming languages are designed.
+- **Experience Sharing**: Students mentioned knowing languages like Rust, JavaScript, and Java.
+- **Instructor Experience**: Instructor shared learning Haskell in undergraduate studies and finding it mind-blowing.
+- **Reason for Diverse Languages**: Different attempts at discussing algorithms.
+- **Purpose of Multiple Languages**: People think they can do better than existing languages.
+- **Longevity of C Language**: Despite being around for 50 years, C is still prominent.
+- **Comparison Discussion**: Why choose one language over another (e.g., C vs. Assembler, Rust for memory safety).
+- **Emerging Languages**: Functional programming languages like Erlang, F# gaining popularity for software development.
+- **Top Software Development Languages**: Functional languages are highlighted on the list.
+- **Specific Languages Mentioned**: Erlang, F#, Go (dropped from list), as popular functional languages.
+
+## Conclusion
+- Emphasis on exploring different programming paradigms.
+- Functional programming as a key focus in the course.
+- Importance of diverse programming languages for various purposes and advancements.
+
+Summary of chunk 2:
+# Lecture Notes:
+
+## Introduction to Functional Programming Languages
+- Functional programming paradigm introduction.
+- Benefits of functional programming:
+  - No need to manage state.
+  - Different approach to programming.
+- Emphasis on learning Haskell concepts.
+
+## About the Instructor
+- Dr. Paul Hunter, lecturer at the university.
+- Teaching experience in various computer science courses.
+- Research background in formal verification and graph theory.
+
+## Course Overview
+- Combination of teaching Haskell and exploring programming concepts.
+- Previous courses taught and connections to current material.
+- Objective: Proficiency in Haskell and understanding key programming ideas.
+- Course relevance to future courses like Rust.
+
+## Student Interactions
+- Acknowledgment of students with prior exposure to course material.
+- Interaction with students like Anna and Raphael.
+- Encouragement for students to contribute and explain concepts.
+
+## Role of Students
+- Students expected to grasp Haskell and programming concepts.
+- Importance of understanding underlying theory in programming.
+- Course as a foundation for future programming courses.
+
+## Conclusion
+- Importance of the course in shaping future programming understanding.
+- Impact on future courses like Rust.
+- Acknowledgment of student contributions and interaction.
+
+Summary of chunk 3:
+## Lecture Notes: High School Course Practical Information
+
+- Practical Aspect:
+  - **Collaboration with Rough:** Assisting with practical aspect due to speaker's rustiness in high school topics. Speaker will be in the audience.
+  - **Online Lectures:** Rough will deliver lectures online, possibly followed by Q&A sessions.
+  - **Help Sessions:** Planning help sessions in lab space or tutorial room with experienced tutors.
+  
+- **Contact Information:**
+  - **Course Website:** Use HTTPS, main contact on Ed Forum for public questions to benefit all students.
+  - **Direct Contact:** CS3141 email for course authority, encouraged to reach out to the speaker directly.
+  
+- **Assessment and Interaction:**
+  - **Question Policy:** Any query encouraged, public posting helps others and reduces repetitions.
+  - **Interaction:** Speaker may guide private queries concerning assessments for clarity.
+  
+- **Course Assistance:**
+  - **Self-Learning:** No tutorials; self-learning emphasized with help sessions when available.
+  - **University Services:** Utilize university student services or contact course staff for assistance.
+
+- **Course Overview:**
+  - **Introduction:** Focus is on mathematically supported programming rather than Haskell itself.
+  - **Software Development:** Balancing speed and cost with software correctness and security.
+  - **Spectrum of Software:** Development speed varies, emphasizing the quality and security aspects in software development.
+
+Summary of chunk 4:
+### Bug Tolerance in Software Development
+- **80% Acceptability**: 
+  - Running a program with bugs is considered acceptable most of the time.
+  - Bugs are often patched in the next release without significant impact on gameplay.
+
+- **Purpose of Removing Bugs**:
+  - In non-critical software, bugs are generally tolerated as they don't have life-threatening consequences.
+  - Questioning the need for bug removal in non-safety critical software development.
+
+### Importance of Safety Critical Software
+- **Examples of Safety-Critical Industries**:
+  - Aviation, healthcare, and financial sectors rely on error-free software.
+  - Software in X-ray machines ensuring correct radiation doses highlights the importance of bug-free code.
+
+- **Responsibility for Bugs**:
+  - Discussion on accountability for software bugs in critical systems (operators, developers, managers).
+
+### Challenges in Critical Software Development
+- **Case Study: Automated Driving Systems**:
+  - Tesla's software failing to detect objects like trains poses a serious risk in autonomous driving.
+  
+- **Thought Experiment on Responsibility**:
+  - Drawing parallels between group assignments and real-world scenarios involving critical software development.
+  - Emphasizing the need for rigorous testing and validation in safety-critical applications.
+
+### Formal Verification in Software Development
+- **Definition of Proof**:
+  - Utilizing variants and invariants to prove that code functions as intended.
+  - Concept of proof as a series of irrefutable steps ensuring software correctness.
+
+- **Goal of Formal Verification**:
+  - Ensuring software functions properly through a structured and rigorous verification process.
+  - Importance of detailed proof for reliability and safety in critical software systems.
+
+Summary of chunk 5:
+# Lecture Notes:
+
+## Introduction to Miller Primal Test
+- Michael Robin introduced the Miller Primal test, which tests if a number is prime.
+- The test runs probabilistically by repeating it to reduce the error likelihood.
+- Argument: Making the error probability extremely small proves the number is prime.
+
+## Understanding Proof and Philosophy
+- A proof is an argument convincing the reader of correctness, not just a series of steps.
+- Proof: Convincing someone of the correctness of a program.
+- Testing can be a form of proof; it depends on the test cases used.
+- Formal verification sets a higher burden than testing; it's on a spectrum of convincing.
+
+## Varying Levels of Convincing
+- Convincing levels vary based on the quality of test cases and formal verification.
+- Spectrum: Kindergarten convincing to launching software and medical safety.
+- The course aims to teach safe and correct code without full formal verification.
+- Use practically driven, sensible decisions for clean and secure code up to a certain level.
+
+## Programming Language Choices
+- Course teaches programming in a realm with Haskell due to its mathematically based structure.
+- Focus on functional programming for safe and correct coding.
+- Rust, a safer language than C, is another option for safety.
+
+## Importance of Programming Language Variety
+- Multiple languages meet different requirements for building various applications.
+- Javascript was initially designed for dynamic web page functionalities.
+- Typescript improves safety over Javascript.
+- Programming languages serve different needs: safety, functionality, logic, etc.
+
+Summary of chunk 6:
+# Lecture Notes:
+
+## History of Programming Languages
+- Web development back then with JavaScript for simple tasks.
+- JavaScript used for important applications, leading to realization of its limitations.
+- Introduction of TypeScript for type safety.
+- C language praised for efficiency over assembler.
+- Rust emerged to address memory issues.
+
+## Evolution of Coding Practices
+- Move towards efficient but complex coding languages.
+- Trade-offs in code writability vs. performance.
+- Increased effort needed for coding down the spectrum.
+- Interest in writing code with minimal side effects.
+
+## Code Analysis Example
+- Review of code with potential errors.
+- Discussion of code flaws and potential risks.
+- Emphasis on identifying fundamental errors.
+- Highlighting the importance of side effects in programming.
+
+## Understanding Side Effects
+- Explanation of side effects in programming.
+- Side effects can lead to unintended consequences.
+- Comparison with Haskell's approach to side effects.
+
+## Ethereum Code Example
+- Analysis of code deployed in Ethereum network.
+- Emphasis on concurrency issues and assumptions.
+- Demonstration of potential risks in code execution.
+- Example of a loophole leading to a financial glitch.
+
+## Conclusion
+- Appreciation for analyzing code vulnerabilities.
+- Importance of considering all possibilities in code design.
+- Acknowledgment of real-world implications of coding errors.
+
+Summary of chunk 7:
+## Lecture Notes:
+
+### Verification Group and Safety Critical Code Example
+- FA form of verification group encountered code with side effects
+- Manipulating balances array without control
+- Side effects not checked against requirements
+- Example of pre and post conditions failing due to side effects
+
+### Course Overview: Math-Based Programming
+- Intersection between math and software
+- Emphasis on mathematical-based programming
+- Covers discrete math topics: logic, sets, proofs, induction, algebra
+- No calculus required
+- Prerequisite courses inadequately teach necessary topics
+- Recommended precursor course: 9020
+
+### Software Components
+- Programming, reasoning, design, testing, types
+- Introduction to Haskell with self-learning component
+- High school knowledge not mandatory
+
+### Course Distinctions
+- Beyond high school level
+- Not a verification course like S 2011 or Comp 4161
+- Functional programming, not object-oriented
+- Not focused solely on programming languages (e.g., 3161)
+- Encouragement to explore related courses if interested
+
+### Course Challenges
+- Not as complex as advanced topics like operating systems
+- New concepts can be challenging, requiring a shift in thinking
+- Course may be difficult for some, but not intended to be overwhelming
+
+Summary of chunk 8:
+# Course Overview and Background
+- Learning functional programming will make you a better programmer with a wider array of tools.
+- Course introduces new topics for most, even seasoned programmers may have to start from scratch.
+- Functional programming is taught initially to put everyone on the same keel.
+  
+## Course Assessment
+- Inherited course structure with minimal changes.
+- Two programming assignments worth 20 marks each.
+- Weekly online quizzes and programming exercises, collectively worth 40 marks.
+- Practical exercises submitted through Give and auto-marked.
+- Final exam contributes to overall grade, calculated as mean of programming assignments and quizzes.
+  
+## Lecture Structure
+- Lecture between 11 and 1 for material introduction and motivation.
+- Fridays feature practical sessions by Raphael to reinforce weekly material.
+- Quizzes assess previous week's content with importance stressed on starting early.
+- Help sessions are being arranged, no textbook is set, but online resources available.
+  
+## Language Choice and Course Emphasis
+- Haskell used due to good support for mathematically structured programming.
+- Dedication to teaching high school principles and techniques.
+- Exposure to principles applicable in other languages.
+- Examples from other languages to be included based on feedback from last year.
+  
+## About Haskell and Course Focus
+- Haskell is an older language known for mathematically structured programming.
+- Course focus is on core programming principles applicable across languages.
+- Instructor's experience with Haskell since 1998 and the evolving versions.
+- Principles remain consistent despite the language's age, with focus on providing foundational knowledge.
+- Collaboration with Raphael for practical examples in other languages.
+
+Summary of chunk 9:
+# Lecture Notes:
+
+## Class Scheduling and Student Interaction
+- Lectures schedules often overlook lunch breaks, causing inconvenience for the speaker.
+- Interaction with students during breaks is encouraged, and the speaker enjoys distributing snacks like Kit Kats and chocolate bars.
+- Students are urged to grab food during breaks as the speaker always brings food, sometimes including healthy options.
+- Easter eggs replace Kit Kats in the first term, and satsumas are provided in the second term.
+- Students are welcomed back after breaks for further discussion.
+
+## Course Changes and Core Subjects
+- Course 3141 is being replaced by course 3142, but the transition process is unclear.
+- The speaker expresses concern about 3142 becoming a core course as it focuses more on testing rather than pushing students to excel.
+- The core course status may revert back to 3141 in the following year due to uncertainty regarding student enrollment and the need for functional programming education.
+
+## Programming Languages and Paradigms
+- Lisp's difficulty level in writing and verification is discussed, with uncertainty about its position compared to Haskell.
+- Functional programming is distinguished from imperative programming through its declarative nature, with the former considered more vital.
+- The conversation shifts to how different paradigms influence programming thought processes.
+
+## Miscellaneous Discussions and Chat Testing
+- Informal conversations and inquiries are made regarding the availability of certain individuals in the room.
+- A brief mention of setting up Haskell for an activity unrelated to the main course content.
+
+## Chat Engagement and Technical Testing
+- A humorous exchange on chat functionality testing and the speaker's amusement at the features.
+- Interaction with the chat system followed by a transition back to the main course topic.
+
+## Pending Clarifications and Student Engagement
+- Uncertainty expressed over how Haskell will be integrated into the course.
+- Student queries about a specific individual's presence are met with uncertainty.
+- An informal yet engaging atmosphere in the lecture hall is maintained throughout the discussion.
+
+Summary of chunk 10:
+## Setting up workspace in Ed
+- Teacher is strict about quality of posts
+- Use Cabal on CS E machines, recommend Stack on home machine
+- Ed set up with workspaces for code sharing
+- High school playground workspace for sharing walkthrough code
+- Ability to grant administrative rights via email invite
+
+## Accessing code after lecture
+- Access code through Ed
+- Use 3141 subs shell to ensure same build
+- Run GHCi by typing `cabal repl` for Haskell shell
+- GHCi stands for Glasgow Haskell
+- GHCi shell setup in Ed for convenient coding
+
+## Using GHCi in Ed
+- GHCi can be used as calculator
+- Perform simple arithmetic operations
+- Use high school as calculator for quick calculations
+- Load Haskell file in GHCi for coding functionality
+
+## Module setup and comments in Haskell
+- Modules for namespaces in code management
+- Example: `module firstLecture`
+- Block comments with `{- ... -}`
+- Inline comments with `--`
+- White space matters for readability
+
+## Technical difficulties with Livestream
+- Presentation formatting issues noted
+- Instructions for Livestream viewers to log off and on again for resolution
+
+Summary of chunk 11:
+## Module and Name Space
+
+- To access a variable like X in a different module, we would call it using the format `module_name.X`.
+- Default modules like `Prelude` in GHCi are automatically loaded up, containing basic functions like `div`.
+- Functions like `div` have types and classes defined by their type, e.g., type `a`.
+- Types can be queried using `:t` in GHCi to determine the type of a variable.
+
+## Understanding Programs and Computation
+
+- Programs are sets of instructions interpreted by computers, not necessarily needing to execute.
+- Programs can be seen as black boxes that take input and produce output.
+- Computation is traditionally viewed as input to output transformation but can involve continuous processes like running a web server.
+- The concept of computation has expanded to include processes that run indefinitely.
+- In a mathematical sense, programs can be seen as functions transforming input to output.
+
+## Functional Programming Background
+
+- All computation can be viewed as functions, leading to the idea of functional programming.
+- Functional programming is based on the concept that all programs are functions.
+- The history of computer science traces back to David Hilbert's mathematical problems in 1900, including algorithms and polynomial roots determination.
+
+Summary of chunk 12:
+# Polynomial Algorithms and Computation
+- **Introduction to Polynomial Algorithms**
+  - A polynomial can involve variables squared times X squared.
+  - Multiple variables can make it more complex.
+  - Introduced algorithm to determine integer value in a polynomial.
+  - Assumed existence of such algorithm and inspired the development of computation.
+
+# Development of Computation Notions
+- **Alonso Church's Perspective**
+  - Computation involves a function with input and output.
+  - Inputs can also be functions rather than just integers.
+  - Established zero as a function and defined computation as function utilization for input and output.
+  - Showed the ability to perform basic arithmetic, multiplication, division, and recursion through computation function.
+
+## Turing's Concept of Computation
+- **Turing's Definition**
+  - Computation is akin to a machine with states and paper for symbol writing and erasing.
+  - Described human-like actions of writing, crossing out, and substituting symbols.
+  - At each state, steps are followed to perform calculations like determining Y from X equaling 552.
+
+### Evolution of Computational Thinking
+- **Logic Field Adoption**
+  - Church's notion appealed predominantly to logicians due to its complexity.
+- **Turing's Machine Model**
+  - Turing simplified computation to a machine framework with step-by-step symbolic operations.
+  - This concept prevailed as the foundation for modern computers and programming methodologies.
+
+# Functional vs. Imperative Programming
+- **Innovations in Programming**
+  - Functional programming precedes imperative programming by about a year.
+  - Functional programming emphasizes the idea of treating everything as a function.
+- **Program Definition**
+  - A program essentially functionally transforms input into output.
+  - Programming is viewed as a sequence of instructions for desired outcomes.
+
+## Defining Functions in Programming
+- **Functionality of Squaring in Programming**
+  - Defining a function for squaring a number.
+  - Square function defined to take integers and output their squares.
+  - Execution involves multiplying the input number by itself, yielding the squared value.
+
+### Function Implementation Example
+- **Demonstrating Square Function**
+  - Inquiry regarding the square of two resulting in four.
+- **Interactive Learning Approach**
+  - Engaging with live coding to reinforce understanding and practical application of concepts.
+
+Summary of chunk 13:
+## Lecture Notes:
+
+### Function Application in Functional Programming:
+- Functional programmers tend to drop parentheses when defining functions.
+- In functional programming, functions are represented followed by input separated by whitespace.
+- Parentheses can be used to clarify but are not always necessary.
+- Example: Function application involving square and plus functions.
+- Function composition is left-associative, brackets go to the left.
+
+### Function Composition and Passing Functions:
+- Function application in Haskell is left-associative.
+- Passing functions as arguments is possible in Haskell.
+- First-class citizens in Haskell allow passing functions as arguments.
+- Error arises when passing a function into itself due to type mismatch.
+- Correction: Use parentheses to pass functions sensibly.
+
+### Writing Functions in Haskell:
+- Code snippet in imperative language (e.g., C, Java, JavaScript).
+- Square function definition: "N square in X return X times X."
+- Comparison between imperative and functional language syntax.
+
+### Type Definition in Haskell:
+- Type definition specifies the type of the function.
+- Domain and codomain of a function defined in the type.
+- Domain corresponds to the input type, and codomain corresponds to the return type.
+- Type definition example: Square function is of type "int to int."
+
+Summary of chunk 14:
+### Lecture Notes: Understanding Haskell Programming Concepts
+
+#### Return Operation in Imperative Languages
+- In imperative languages, a series of steps are performed to return a specific value.
+- The concept of mathematical equality is different from assignment in imperative programming.
+- Usage of the equality sign in Haskell denotes exact equivalence of values on both sides.
+
+#### Variable Management in Haskell
+- Haskell treats variables differently compared to other programming languages.
+- Variables in Haskell are bindings where values are associated with names.
+- Changing the value of a variable after assigning it is not allowed in Haskell due to the declarative nature of the language.
+- Haskell follows declarative programming principles instead of the step-by-step instructions in imperative programming.
+
+#### Declaration vs. Execution in Haskell
+- Declarative programming in Haskell involves setting up function definitions without immediate execution.
+- Haskell emphasizes declaring properties rather than direct execution.
+- The entire Haskell code consists of declarations, with no distinct outermost level for execution.
+- An example is declaring a variable `X` as `X = X + 1` where incrementing `X` programmatically is valid but not mathematically logical.
+- Haskell allows declaring expressions like `X = X + 1` even though it doesn't add up mathematically.
+
+#### Logical Inconsistencies in Haskell Declarations
+- In Haskell, logical inconsistencies may arise due to the declarative nature of the language.
+- Trying to assign conflicting values to the same variable simultaneously leads to errors in Haskell.
+- Haskell permits statements like `X = X + 1` in the code, even though it may not align with mathematical logic.
+- Haskell's declarative approach allows for flexible variable declarations but can lead to logical inconsistencies if not carefully managed.
+
+#### Conclusion
+- Haskell's declarative programming style focuses on defining relationships between variables rather than executing operations step by step.
+- Understanding the principles of declarative programming in Haskell is crucial for effectively managing variables and avoiding logical errors in code.
+
+### End of Lecture Notes
+
+Summary of chunk 15:
+# Lecture Notes:
+
+## Variables and Constants
+- **Variables** are like constants.
+- They serve as **placeholders** and cannot change value.
+- Used to denote placeholders like `X`.
+- Assign values as placeholders for operations.
+- **Variables** are treated as constants.
+
+## Data Types
+- **Characters**: Denoted with single quotes.
+- **Strings (ABC)**: Concatenate with `+`.
+- **Functions**: Take one input, produce one output.
+- **Multiple arguments** in functions like `take` and `drop`.
+  
+## Functions in Haskell
+- Functions take multiple inputs and produce an output.
+- `Take` and `drop` functions used with multiple inputs.
+- Define custom function like `my take`.
+- Interpret function types.
+- Example: `my take 3 applied to ABC DEF -> ABC`.
+
+## Function `log base`
+- Function `log base` takes two arguments.
+- First argument: base of logarithm.
+- Second argument: number for logarithm.
+- Type of `log base`: `A -> A -> A`.
+- Define custom function `my log`.
+- Example: `log base 2 of 64 -> 2 ^ 6`.
+
+## Conclusion
+- **Variables** in Haskell act as constants and placeholders.
+- Data types include **characters** and **strings**.
+- Functions in Haskell have **one input, one output**.
+- Functions like `take` and `drop` can handle **multiple arguments**.
+- Understanding function types is critical for function application.
+
+Summary of chunk 16:
+# Logarithm Functions
+- Log base 2 (log 2): Logarithm function that works with base two. For example, log₂64 = 6, log₂8 = 7.
+- Log base 10 (log 10): Logarithm function with base 10. For instance, log₁₀28.
+
+# Functions with Multiple Arguments
+- Functions with multiple arguments are built up one argument at a time.
+- A function with multiple arguments is seen as a function that takes one input and returns a function requiring the remaining inputs.
+- Example: Defining "add two" function:
+  - Initial definition: add two of X = 2 + X
+  - Alternative definition: add two = plus two, where plus two is a function that adds two to a number.
+
+# Infix and Prefix Operators
+- Parentheses are used to transform an infix operator to a prefix operator. 
+- For example, (+) is used to make infix "+" a prefix operator.
+- Infix operator example: 3 + 4 transformed into prefix form: (+) 3 4.
+
+# Application of Functions
+- Applying a function with incorrect number of arguments results in an error due to type safety.
+- For instance, trying to apply plus 3 to 4 will lead to an error as 7 is not a function.
+
+# Equivalence of Functions with Different Notations
+- Two functions are considered equal if their outputs match for every input.
+- Example: myTake and take functions are equivalent as they produce the same output for the same input, allowing simplification of notation.
+- "my take X" simplifies to "take X" due to equivalent behavior.
+
+# Function Reduction
+- Function equivalence and simplification to reduce notation is known as reduction.
+- It involves representing functions in a simpler form by eliminating redundant notation.
+- Example: Simplification of "add two" function to a prefix representation is a form of reduction.
+
+Summary of chunk 17:
+- **Definition of Equality of Functions**:
+  - If the output of one function is the same as the output of another function for all the same inputs, we can simplify by saying those two functions are equal.
+
+- **Upcoming Topics**:
+  - Recursion and multiple agreements will be addressed in the next session.
+
+- **Module Setup**:
+  - A module was established where functions like "my_first_lecture.square" can be specified to refer to a particular function.
+
+- **Type Implication in Functions**:
+  - Type implication states that a must be of type number for certain functions to work effectively.
+
+- **Class-Based Definition**:
+  - Functions, like "plus," are defined specifically for certain classes, such as numbers.
+

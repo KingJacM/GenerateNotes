@@ -1,0 +1,1733 @@
+SPEAKER 0
+mhm.
+
+SPEAKER 1
+Okay, I think we should start. Takes time to set up everything. IN the monthly model form. And somebody has not put this microphone for charging, so it may die soon, but then we'll look for the other one. Okay, OK, let's start now. Uh, online if you can hear me, and I'm sure you can see my screen. Um Hello?
+
+SPEAKER 2
+Hello? Hello? Hello? Hello? Hello? Hello? Hello? Hello? Hello?
+
+SPEAKER 1
+Hello? OK, can you hear me? Uh, can you hear properly now? Uh, if you're online, can you let me know if you can hear me now? I hope it's OK now. Yeah. Okay. There a RE a few things we have to set here. Okay, So look, let's get started. And, uh, thanks for everybody who has appeared here at nine o'clock today and this nice, crispy warning. Um, so I have already posted a message at the end of the last week or the weekend or the weekend? Yeah, about this course. Uh, it's a com 2511 original name as object oriented design and programming. But we kind of considered now that as the art of software design, because we're covering many different aspects apart from simply object oriented programming. That is, of course, a very important part. But and this course is different to many courses you have done so far in computing. And so before I go through, slide by slide and we can talk about what this course is. Uh, let me tell you just why this course is different and interesting, Hopefully for you. But apart from all these, uh, as you guys are very much interested in going out and working in industry. And we a while ago we had a speaker from, uh uh Fairfax, which is now nine news. Whatever. And, uh, he indicated that when he went through the syllabus this is exactly what he wants from somebody who comes and works for him. So it's very much relevant to what you will be using in industry also. So what is this course is about why we call it Art of software Design online. Guys, if you have any questions, please post it. So in 1511, which was your first programming course, you learn how to write programmes. So you started with 10 lines, 20 lines and maybe you've written a few 100 lines for a second assignment. So it's all about, like, how do I write my logic in in C and get it right and test it for different test cases? Very, very important to get your software correct this follow up many courses you have done. But logically, the other one is 2521 data structures and algorithms. So what was that? There are structures algorithm. Your focus is on. Well, how do I structure my data? You know, can I store it as a link list or a tree or a graph structure of data? And importantly, we focused on algorithms and it's not about just writing a solution, but is it efficient? Time Point of view is order and and log N so on and so forth. So what's happening so far is that you learn how to write correct software in 151, one small one. Then you realise that when you go bigger, then you may need to kind of start using some abstract data types. Uh, you need to make sure your algorithms are faster and smarter. Um, you can use different structures like, you know, Internet. If you want to represent as a graph structure tree structure are good for searching and so on and so forth. OK, so so far the focus is on correctness and efficiency, which is absolutely required. So it's not that it is not required. But, you know, today, in Software World, where things are changing constantly on your laptop on your phone, your applications are always updated. In fact, when I started, I'm a bit slight today because my windows had some update. So it was saying 70 minutes in Wait, I'm updating something now. Why? I'm talking about all the updates right now is that whatever software you deliver today, tomorrow whatever you may need to fix bugs in it, or you may want to add more features to it. Your generative A. I is also going from 3 to 3.5 to 4 and four and five, and so on and so forth. Everything is changing in this landscape. It is, of course, required to write a correct software. It is, of course, required to write uh, efficient software. But it is also important to write a software which you can reuse, which you can update easily, which in
+
+SPEAKER 3
+which you can find bugs easily, which is portable.
+
+SPEAKER 1
+You have never learned what these things are and how to achieve them, and they are absolutely essential when you're working in an organisation or wherever, where they have software. Pretty much every industry companies, government organisations run on software and the software base may be worth millions of dollars, sometimes billions. They are not going to go and radically change their existing software. They need to update it to incorporate new technology. They need to reuse what is already there. You can't just go and say, Well, I like Python. I like rust. So I'm going to write this software in RUS I say, Hang on. We are using XYZ framework and I want you to develop in that so that the future teams can also use your software. So it's good to to know all these fantastic Softwares, new one new languages. But sometimes you have to be pragmatic.
+
+SPEAKER 4
+And even with the new software, all the start up
+
+SPEAKER 3
+companies also keep on improving the software. So this course, the reason why we say about art
+
+SPEAKER 1
+of software design, is our focus is of course, you need to write correct software and also efficient. But the focus is, how can you write good software? How can you write software, which is easy to reuse, which is easy to debug, extremely important feature? That's what I'm talking about here. This is not something you do. It is extremely important.
+
+SPEAKER 3
+So the focus in these scores, of course, you need to get the correct answer.
+
+SPEAKER 1
+So that's just It's not that it's not required. But the focus is mainly how you design your software so that it has all these important characteristics.
+
+SPEAKER 3
+Now, in a way, it is an art because you
+
+SPEAKER 1
+can design good software with all these features in many different ways. There's no one way to do it, so we call it as art. But having said that, we don't want to make it as a black art in which you just get something. I don't know how I did it. I just This came to my mind. Well, that may not be that useful, so we are
+
+SPEAKER 3
+going to teach you in this course a systematic way
+
+SPEAKER 1
+to design a good software.
+
+SPEAKER 4
+Now, at the end of it, there is still art
+
+SPEAKER 1
+there. May you go one way or the other. That's fine.
+
+SPEAKER 3
+But there is a systematic way now you may ask me at this point, what do you mean by systematic
+
+SPEAKER 1
+way in the art about how we work together. So, you know, one thing important thing is that, like in this course, we look at so called bad software practises, OK?
+
+SPEAKER 3
+And if you simply avoid bad software practises, your software
+
+SPEAKER 1
+will already be very good. And we say, Look, look at your software.
+
+SPEAKER 3
+Go through this checklist. If you have any of them, can you address them? You do do that in your assignments, and you will
+
+SPEAKER 1
+learn how you can improve somebody's software or your own
+
+SPEAKER 3
+software. You're going to write your first assignment.
+
+SPEAKER 1
+Interesting assignment. You will release next week, sometime and most of the time. This is the past. Experience is that people start writing the code. We cover few material in first week two or three, and your submission is Week five. At that time, they realised lots of things I did. I may want to so called technical what is called Refactoring, so the external behavioural software is the same. But you just change the design so again it has got all these lovely characteristic of reusability, flexibility, readability and all of them. And hopefully you start appreciating at the end of the course. And then whatever you write is going to have this kind of characteristics.
+
+SPEAKER 3
+And in in achieving this goal, there are a few
+
+SPEAKER 1
+things called software principles. So I said, These are the things we should be achieving as far as possible.
+
+SPEAKER 3
+And then this is a classic, very simple example.
+
+SPEAKER 1
+The Gang of four came up with this lovely book a long time ago, but it's still quite relevant and remember, one important thing. It's not always latest is the best. A lot of time it is, but not always. Some of the classic theories came out in the sixties seventies eighties in maths and computational. Uh, problem solving Still stand up Very great. You know, DACA algorithm. All these things are used in a graph theory. Many of the algorithms, even Larry Page and those used were not that new. In fact, if you look at the research a lot of things based on some past algorithms, so the anyway coming back to this course, they come up with so
+
+SPEAKER 3
+called software design patterns in simple language.
+
+SPEAKER 1
+What are these patterns? I don't know how to cook very well so I can go to online and there's a recipe and say, Look, I need this ingredient and I follow the recipe. And if you know as far as to follow the recipe, it is reasonably confidently say the output. Whatever dish you prepare will be reasonably good because you're just following the recipe and it will already have a certain flavour. Certain characteristic may not be perfect.
+
+SPEAKER 3
+We understand that, but still there now I'm talking about
+
+SPEAKER 1
+cooking recipe here, so design patterns are like recipes.
+
+SPEAKER 3
+So they say, If problem is like this, just use
+
+SPEAKER 4
+this design pattern because then it will give you all
+
+SPEAKER 3
+the good things we talked about.
+
+SPEAKER 1
+Flexibility, ability, all of that.
+
+SPEAKER 3
+If the context is this, if the problem with this type use this pattern and they came up with so many patterns, which are still extremely useful, and they will
+
+SPEAKER 1
+teach you exactly so that a very easy way to
+
+SPEAKER 3
+achieve most of the important aspects we need in designing
+
+SPEAKER 1
+a good software.
+
+SPEAKER 3
+So at the end of the course you will learn the software principles you will learn. Very important. There are many patterns, but at your age we will
+
+SPEAKER 1
+cover all the important one and the rest you can
+
+SPEAKER 3
+pick up.
+
+SPEAKER 4
+And when I talk about software principles, when I'm talking
+
+SPEAKER 3
+about software design patterns, they are not relevant to object oriented. They are not relevant to Java, the programming language we
+
+SPEAKER 1
+are going to use and I will talk about that later on. Today they are relevant to any programming language, even the latest one.
+
+SPEAKER 3
+So this is not about object oriented alone or not only about Java. By the way, we are using Java and object oriented
+
+SPEAKER 1
+framework to learn design principles and design patterns.
+
+SPEAKER 3
+We will also touch upon many other paradigms like functional
+
+SPEAKER 1
+programming. So in Java, most of the languages now including Python and all of them have something called Lambda expression, some kind of functional. So what's the ways the the technology is going now is that there are different paradigms of programming. Are you aware of that? You are only using one paradigm, which is procedural, which is C. Java is also like that. There's another way to programme. It's called functional programming and then logical programmes is a different way to write programmes, OK? And so there are some aspects of functional programmes which are quite useful people find OK, uh and so most of the languages also give some of those features not completely. If you are purist functional programmer, you say No, no, no, this is not functional but they try to incorporate different features. So Java originally did not have it C# and all of them now python even start giving those Lambda expressions functionality in that we also also touch touch about event driven programming extremely important when you solve many real world problems and we will also then touch upon something called concurrency briefly.
+
+SPEAKER 3
+All these are extremely useful when you are solving real
+
+SPEAKER 1
+world problem. When I just show you one problem with the concurrency you realise I never thought about this before I never did it. But you will every time encounter that when you're writing any web application, OK, But you have never written most of you anyway written any programme in your past courses at least here, uh, to address that you never even
+
+SPEAKER 3
+thought about the programme exist. So in this course I'll I'll go through now slide by slide. But I just want to motivate that this course is not about, uh you know, of course, we are already
+
+SPEAKER 1
+assumed that you know how to write a programme. You know how to write efficient programme. The focus is and therefore in this course, when you submit your lab, it's not like I run auto test and give you Mark.
+
+SPEAKER 3
+Your tutor will interact with you in the lab.
+
+SPEAKER 1
+Your tutor will look at your design and give you feedback and mark accordingly your assignments.
+
+SPEAKER 3
+They will look at the design So it's not about input output here. It's not the black box, even though those things you need to pass anyway because programme is to be correct doesn't how elegant the programme is. If it doesn't do what it's supposed to do, nobody
+
+SPEAKER 1
+is going to buy it or use it. So correctness is important first of all, but on top of it, the focus is on designing the software. This is the third course you're doing at least in this 15112521 This one. So by now we expect you to be reasonably mature. OK? You can search through the Internet use lots of tools available online. There are so many free websites where they give you lots of design patterns Examples. We are picking some of them which are important in this course. And I hope that at the end of this course,
+
+SPEAKER 3
+you will have this confidence that no, I can write
+
+SPEAKER 1
+nice libraries. I can write nice software, you know, which has all these good characteristics. So that's the aim of this course. OK, so any questions, please ask me at this point
+
+SPEAKER 3
+Otherwise I'll just, uh, go through the course introduction and
+
+SPEAKER 1
+I will go through the different content in this course and then time permitting Sorry. Uh, yeah, I guess.
+
+SPEAKER 2
+OK, so hello.
+
+SPEAKER 1
+Can you not? It showed me the low. So I have to search for another microphone. By the way, previous lecture and used to put it here. They did not this one. Thank you. It's too heavy. Ok, OK. Can you hear me now? Be better now. Can you hear me? Ok, that's good. OK, so we are here at turn two, so mine,
+
+SPEAKER 3
+OK, I should introduce myself first.
+
+SPEAKER 1
+My name is uh, uh mahi. And, uh so I've been teaching at this. This uni, uh, all the courses I've taught you have done it before. I haven't taught data structure recently. I've taught it in the summer term. Uh, but many other courses. My research area is artificial intelligence, which everybody knows about. But when I did my PhD right here, uh, nobody knew What is a I OK. And, um, there was a fun thing to say. You know, they thought a I is artificial insemination rather than art artificial intelligence. OK, I'm not joking. This is real stuff, and we need to go and give a talk that a I is different to statistical modelling. Literally. I gave a talk on that because in banking sector, they said, Well, I got all the statistic by why do I need a I So we have to convince them. Now I need to convince you that whatever you hear
+
+SPEAKER 3
+in the media is not all true because there is
+
+SPEAKER 1
+too much hype about it. So that's being academic being honest about. And I hope that you are also critical about knowing what a technology can do and cannot do. Now it is going to radically change your future. Surely there's no issue with that. I'm not denying that. But there are a few other hypes about it, also including Gene TV and so on and so forth. OK, so you need to balance it out and understand exactly what it does. So today, the whole world, all the CTO S. You know, Chief technology officers and all of them are struggling to find out How can I use LL MS large language models in which context it looks great. But then does it fit my bill? And many of them haven't found the answer yet. Friend of mine is working in Amazon and he was telling me that we have burned so many trees because CTO S are just using. It's it's extremely power consuming. OK, this is all the processes, uh, because they are just using trying to use LLM in some one way or other to to get it work. But, you know, many of them haven't really got some of them. Have some of them not, but all all I'm getting here is that the role? I'm not talking about LLM here. It's not the context. But the role for you is to appreciate what is good about technology. And what are the limitations? Be a scientist about it. OK, Don't have just pious view because some, you know, groups in on the Internet chat have a I love object or I hate objected. I love these. You will find many groups like that. I'm not in any of these categories. You always find some good aspect of a particular framework or a technology and limitation of that. It is you who have to find that out. Okay, now, So the team is basically myself. I've been teaching here for long, long time just to show my age. Maybe before we were born, many of you. OK, so but, uh, that was at the point. Things have changed a lot. And I always say that you guys will have much more challenging task than people like us had because of the technological growth. Because at one time, you know, you can predict what may happen in next five years. Now things will change very radically. OK, that's for sure. So what you need to do is to be able to learn quickly, which is what the education is all about.
+
+SPEAKER 3
+So today you learn something, but can you pick up new thing tomorrow quickly, that will put you ahead of
+
+SPEAKER 1
+the game. Just because you learn here three or four years and you go off doesn't mean that you will be ahead of the game all the time. You need to be constantly picking new concepts because somebody in the other part of the world is doing it anyway. And it's competitive world out there. OK, so learn to pick up new technology, grasp it very quickly. And in that regard, if I may say so, um, generating a I is is very interesting. OK, so any time you have a question you can type, it gives you some answer very quickly and it may be right. It may not be right, OK, but often it's quite useful. So the question is already educational everywhere in the world, thinking Well, how do I use that in my education? How can I get from using this? You know, it's like, you know, when we created a calculator first, you know? So do I just throw up all the mathematical skills I need? Or do I still teach that You know, I also allow people to use calculator, then Excel spreadsheet came. I mean, not excel. Spreadsheets came across the board, so we have touched upon
+
+SPEAKER 3
+briefly. But this is a bit more radical. There are a few things about this, Uh, and I
+
+SPEAKER 1
+may be important here before we go here, because I know all of you are going to use Gene even though I say don't use it, OK, be honest about it, because you will have assignment.
+
+SPEAKER 3
+You will go and try it out. We say, Don't do it.
+
+SPEAKER 1
+But I don't. There is no way for me to check it. But therefore all our labs, all our assignments to take a look at your solution. We find any similarity, we find anything. I'm still going through some interviews for plagiarism from last time. OK, so don't be part of that, because I don't like to do that. I'm a teacher. I'm not a policeman. But we we have tools to check it. Not across this class, across the historical classes and across the Internet. So a I also gives you all these great tools to check similarities and so on and so forth. So again, back to it.
+
+SPEAKER 3
+So the way whatever the tool is J GP T
+
+SPEAKER 1
+four or claw three. And there are many other lama three and so on and so forth.
+
+SPEAKER 4
+They will give you something. Now how do you know it's right or wrong?
+
+SPEAKER 3
+If you look at the research paper, there's a work
+
+SPEAKER 1
+called hall hallucination, meaning that it comes up with the answer, which it doesn't know is right or wrong. So unless you know good software practises, unless you know
+
+SPEAKER 3
+what is the correct answer, unless you validate that. And for that you need knowledge. If you just trust as it is, it's not going to work.
+
+SPEAKER 4
+So validation is still very, very important part. And so therefore, it is still important for you to
+
+SPEAKER 1
+understand everything from the first principle and try to do
+
+SPEAKER 3
+it by yourself, then down the track in the industry.
+
+SPEAKER 4
+If you want to use it by all means, use it.
+
+SPEAKER 0
+But then you know how to validate because you have
+
+SPEAKER 4
+learned the basic maths principle. So if the calculator is see, the calculator is not
+
+SPEAKER 0
+right. Example Because calculator is deterministic, it will never give you a wrong answer.
+
+SPEAKER 4
+Do you realise? Sorry. One more topic.
+
+SPEAKER 3
+I say always about this LLM DS is that when
+
+SPEAKER 1
+we invented digital computers, it became a deterministic machine. Very fast, very efficient. So if I store your mark as a 95 today after 20 years, it is still 95. It doesn't change if I calculate some particular way every
+
+SPEAKER 3
+time. The same input exactly gives me the same output. Is it right? Therefore computers are very useful very fast.
+
+SPEAKER 0
+Suddenly we have got this another new black box, which
+
+SPEAKER 4
+is Inter. Which black box is this? General TV. If I give the same input, it may give me
+
+SPEAKER 0
+a different answer and I can't trust the answer.
+
+SPEAKER 4
+So this is a very different machine. I have, but some. But the whole world is gaga about it. Do you see what I'm like? And this is real.
+
+SPEAKER 0
+Do you like it? If I 95 a store and after one year I
+
+SPEAKER 4
+say market is 59. Would you like it?
+
+SPEAKER 0
+LLM? I can't trust what it will say tomorrow to me
+
+SPEAKER 3
+The same thing because context will change.
+
+SPEAKER 0
+It will. So it is quite useful. But do you know the limitation?
+
+SPEAKER 4
+Do you know there are a lot of positives also,
+
+SPEAKER 3
+hopefully somebody will teach you down the deck in some
+
+SPEAKER 1
+other course.
+
+SPEAKER 3
+So all I want to teach you is be critical and learn in this course what you are supposed to
+
+SPEAKER 1
+learn because you will use that in one or other context with the tool or not.
+
+SPEAKER 3
+But in this course, we are not using the tool
+
+SPEAKER 1
+because you will have exam worth 50% of the mark in the CC labs. So there is no lm available there. OK, so you better prepare yourself for the exam if you want to get good marks because that's where you you you have a traditional exam in which and that's what the whole top universities are taking these kind of exams. So it's not weird only because if you want to enter the quality, you still need to have certain skills. OK, so I think, uh, let's get back to this. So myself and Alvin and Sai are the main two admins. They fantastic, uh, help, uh, and, uh, is follow following from the previous very good admins in this course, uh, Nick and, uh, Breen and so on and so forth. Ok, um, and in fact, there's a team of four
+
+SPEAKER 3
+of them. Uh, Carl and Amanda also.
+
+SPEAKER 1
+So they look after, uh, particular assignments while Alwin and um uh, sai basically are the So whenever you send an email to the to the court email account which you may be used to by now, basically you will get reply from Cai or or myself depending on the question and so on and so forth. But as you may realise, And of course, we have
+
+SPEAKER 3
+many, many tutors.
+
+SPEAKER 1
+The last class and we just had a tutors meeting. And, uh so overall, the the the the feedback is quite good about the tutors. OK, so please seek help from all the tutors. OK, now I just look a T the time I'll move on a little bit. So all I'm saying is that, uh, this is the basic context. So this is one of the computer science courses which teaches you how to write a good software and then in the third year or the later part is all about OK. Specific principles of data systems, networking, operating systems, A I neural network, whatever, but the core courses This is one of them. Yes, me. It should be working so far I was just talking.
+
+SPEAKER 4
+That's the general this was. Or if you if you don't get the answer from
+
+SPEAKER 1
+that, only then you send email to please don't send email. Get delayed. So here many people are monitoring these, but start to add forum and then do it. And then you was his oesophagus structure.
+
+SPEAKER 3
+So all this stuff you've done so far and I
+
+SPEAKER 1
+wanted to mention what? OK, we can write the code, but how can that
+
+SPEAKER 3
+work that elegant and beautiful All these?
+
+SPEAKER 1
+Because you want to say that this is very important. It's not about getting it right. But you're right, something. There is, of course, the shades of grey here that we call no, the things major things I reckon I covered many of. So I will go a bit quickly, develop an application
+
+SPEAKER 3
+for elegant software. All these characters is flexible maintainable, which is very, very
+
+SPEAKER 1
+that so and so forth, you know, to reuse a
+
+SPEAKER 3
+design system and, uh, that one part search engine or
+
+SPEAKER 1
+retrieval or it is usually flexible. Can I use that in a now?
+
+SPEAKER 3
+Can I just unplug and plug it as soon as
+
+SPEAKER 4
+possible?
+
+SPEAKER 3
+Now we have to understand different design paradigms.
+
+SPEAKER 1
+OK, so object Oriente paradigms. We will touch upon functional paradigm and we also brief into this concurrence.
+
+SPEAKER 3
+There's a lot to cover here.
+
+SPEAKER 4
+Major themes understand and apply the principle of object audited
+
+SPEAKER 1
+design. So So in this regard system, the part of today's lecture also same one, you understand the you that's fine
+
+SPEAKER 4
+as a citizen so forth and you say well, which
+
+SPEAKER 3
+is ribs.
+
+SPEAKER 1
+So So we want you to be able to systematically
+
+SPEAKER 3
+follow up the object or a design process. Your first assignment is mhm. Then understand the role of applying design patterns.
+
+SPEAKER 1
+That's what I was talking about. Recipes. OK, so basically you can divide them into different categories, behaviour patterns, one of the major, of course.
+
+SPEAKER 3
+Then we will also talk about how to handle exceptions
+
+SPEAKER 1
+and generally which maybe.
+
+SPEAKER 3
+And then we also you have done Hopefully this already in one 53.
+
+SPEAKER 1
+Ok, Ok.
+
+SPEAKER 3
+Can you hear me?
+
+SPEAKER 4
+Daniel, can you hear me down there?
+
+SPEAKER 3
+Is there any anything in person that can tell him
+
+SPEAKER 1
+he can't hear?
+
+SPEAKER 4
+Hello? Can you hear Eric Better now?
+
+SPEAKER 0
+Ok, I have to shout.
+
+SPEAKER 4
+Hello.
+
+SPEAKER 3
+Hello. It became it just muted by itself. I don't know why.
+
+SPEAKER 4
+Ok, guys, if you can't hear, just let me know, OK? For some reason the setting changed. I don't know why it just doesn't hold here.
+
+SPEAKER 1
+It's not strong enough to hold it. OK, maybe that's good. OK, um major themes develop skills in both creating medium
+
+SPEAKER 4
+skill soft systems from scratch which is basically our the
+
+SPEAKER 1
+first assignment.
+
+SPEAKER 4
+And also you will learn how to look at the
+
+SPEAKER 3
+existing system and refactor it understand the, uh, bad design
+
+SPEAKER 1
+practises we call code smell, but basically bad practises and how to ref factor it so the external behaviour remains the same. But you improve the software design and then also you add more features to that. So the two assignments very nicely crafted, uh, which exposes to these objectives. And, uh, you will learn a great deal if you genuinely try to do them. And in that if you have any problem, seek help from tutor. OK, so that way you actually use that resource and learn from that rather than copy from somewhere. Or just get more mark because that's not going to help you. Ok, uh, in this competitive world, you want to learn rather than get good marks because you will be exposed one day anyway. Ok, Uh, Java language and the VS code ID, which you have used already, But you will use it for
+
+SPEAKER 3
+Java Now there's no textbook Lexus cover. Uh, and all the examples we, uh, discuss cover most
+
+SPEAKER 1
+of the things you need to know, But there are So there are so many websites available outside you. You're always encouraged to go and look at the reference material reference books. So these are some of the, uh, other materials which you can access, and you should be able to go and read them easily.
+
+SPEAKER 3
+OK, so material is out there.
+
+SPEAKER 1
+It's not like, uh, you know, it's a secret that but do you know it? Have you learned it? And the most important thing are you applying it when you design a software? I think it's short. OK, how do you obtain a rad? So, of course, there are lectures for nine weeks. Week six is a break week. Look at a tutorial one hour tutorial and, uh uh, to our lab. If face to face, you must go face to face. If it is online, then online. Otherwise don't go online. OK, now we will release the solutions for some of the questions at the end of the week. But I always say this in any course I teach, so maybe I'd say it here first time. It's very interesting thing. Interesting way to look at the problem solving. OK, so computational problem solving, in a way is is is like writing a poem. OK, not that I'm poetic, but what example I gave you from the cog cognition point of view, there's some similarity. For example, if you give me a poem written by Shakespeare or any good great poem, I'll be able to
+
+SPEAKER 3
+read it. I'll be able to understand it. I'll be able to appreciate it.
+
+SPEAKER 1
+You give me a blank piece of paper and say, Can you write a poem? I can't do that.
+
+SPEAKER 3
+These two tasks are very different Cognitively, they actually activate
+
+SPEAKER 1
+different part of the brain Also, one is recognition, the other is creation from scratch. You ask at JP T it gives you answer. You read and understand You are reading a poem. You understand it Tomorrow blank piece of paper. You would write a programme from scratch, just like writing a poem, a poem on a blank piece of paper. Maybe you will be asked to do that in the interview hall or in the example There are two different
+
+SPEAKER 4
+things. So when I release solutions for the tutorial and you wait for that and you read the solution, you are
+
+SPEAKER 3
+reading poem, you will understand them.
+
+SPEAKER 0
+You will have confidence. I understood the solution.
+
+SPEAKER 4
+But it is completely different compared to writing from scratch.
+
+SPEAKER 0
+And here we are here to help you. So try it right from scratch. Make mistakes. I can't. Nobody can help you ride a bike.
+
+SPEAKER 3
+They can only teach you what to do. But you have to ride the bike.
+
+SPEAKER 1
+You have to swim. Nobody can just inject something in you so you can learn that you have to make effort. You have to make mistake. You may fail, but you will learn. That's exactly where you learn problem solving. So please do it.
+
+SPEAKER 3
+There are a lot of things available out there, and it will give you this comfort that I read it and I understood it.
+
+SPEAKER 4
+What's the big deal about it?
+
+SPEAKER 3
+But don't deceive yourself. It's very different than writing from scratch. And that's what I hope you learn in this course. OK, so even though those things will be available don't
+
+SPEAKER 4
+rely on that. Just should be for verification, But at least try something
+
+SPEAKER 3
+and seek help. And again, Same thing. There are labs to our labs on that. Now, the, uh, the number of labs, the marks for them, all of them is is listed.
+
+SPEAKER 1
+When you go to the lab and and you will see that all these labs have been designed over terms and terms, they have refined and overall, I think they are very good. And that's where you're going to learn hands on what we talk about in lectures. OK, so please do labs by yourself Any problem? Ask your tutor. Learn. Let me tell you. You learn a great deal from your labs and tutors, OK? And they will be very useful when you take your exam. Seriously useful. OK, so that's where you really the learning takes place. Hands on.
+
+SPEAKER 3
+First assignment is worth 15% of the mark.
+
+SPEAKER 1
+There are seven labs, each worth 10 marks.
+
+SPEAKER 3
+We will keep the total mark to 60. OK, so you see there is one less mark. So if you miss one lab, don't come and say
+
+SPEAKER 1
+what I do because we already have leniency for that. We we basically add up all this, uh, lab marks and we kept it to say 60. So if you take all seven and if a mark is more than 60 then you get 60 out of 60. We really encourage you to do lab exercises and you get only Mark when you show it to your tutor. You don't get it by just submitting it, OK, if
+
+SPEAKER 3
+you attend all seven lab, the specific marking creator lab
+
+SPEAKER 1
+is provided in the specification, and the general guidelines are if you follow this link, OK, Assignment one, um is
+
+SPEAKER 3
+will be available next week, sometime due Friday, Week five,
+
+SPEAKER 1
+just before the break. And it's an individual assignment.
+
+SPEAKER 3
+It will be about designing an object oriented software. Okay, so you can pretty much start working on it
+
+SPEAKER 1
+when we release it. Uh, because we are covering a lot of things the first week and the first lecture of the week two and then the rest of it.
+
+SPEAKER 3
+You will learn in week two and three.
+
+SPEAKER 1
+But you still have two moors four and five to finish it. Assignment two is where you basically know how to refactor
+
+SPEAKER 3
+and add, uh, some more features to the existing code
+
+SPEAKER 1
+base. OK, it is in pair, and you need to F, uh, form the pair by end of week three. And that will be due, Remember not week 10, but
+
+SPEAKER 3
+week nine, because I Week 10, we run exam in
+
+SPEAKER 1
+the lab. So we give you real experience of what the exa M environment will look like. And you will go through a couple of questions. Okay, So that kind of you know and and we'll also give you we we if you need, uh, yeah. Uh, and so week nine is is the due date. OK, so keep your tutor informed if you have any difficulty if you're in pair. If something is not going wrong, don't wait until the last minute. Don't come in Week nine and say I had a problem with my partner. I mean, if your partner reported that week so we can address it Otherwise, you know, you may just come back and you are sleeping. They are sleeping, and then, you know we can't do anything. So very important is that you report it to you as soon as possible so we can address that and even give you more mark if you are participating more or less for the other. But that can be resolved at that time.
+
+SPEAKER 3
+Now, Assignment three is completely bonus.
+
+SPEAKER 4
+It is not compulsory.
+
+SPEAKER 1
+We can completely skip it. The reason is because we have very large course, uh,
+
+SPEAKER 3
+cohort here and, uh, a very large cohort here. And, uh so some of the students really want challenging
+
+SPEAKER 1
+problems. OK, so we basically have third assignment.
+
+SPEAKER 0
+So those who wants to pick up the challenge, You see, the marks are also only eight percent.
+
+SPEAKER 4
+Not much.
+
+SPEAKER 3
+It's more like I need a challenge and I want
+
+SPEAKER 1
+to do something.
+
+SPEAKER 3
+So if you don't do it, you can still get
+
+SPEAKER 4
+100 out of 100.
+
+SPEAKER 3
+You don't lose anything. But if you do it, then you got this.
+
+SPEAKER 4
+But still, the mark is still kept at 100.
+
+SPEAKER 1
+You don't get 100 and five out of 100 but
+
+SPEAKER 3
+so there's an additional mark here In case you want
+
+SPEAKER 1
+to pick up the challenge you pick otherwise not so It's not compulsory. It's just a bonus, OK? And that will be due Sunday. Ah 5 p.m. Week 10 and it will be released
+
+SPEAKER 3
+sometimes in week eight.
+
+SPEAKER 4
+Final exam is 50%. Remember, it is in person.
+
+SPEAKER 3
+In the lab, there is no online exam whatsoever, OK? And, uh, the hurdle is that in the exam you need to get 40% of the marks in the exam.
+
+SPEAKER 1
+So that's another reason why you don't want to take too much help from other people or other Softwares. OK, Um all students are required to take the final exam in person so on and so forth. Ok, students are ready for supplementary.
+
+SPEAKER 3
+Uh, only if those criteria which are specified on the
+
+SPEAKER 1
+Special Consideration website if you satisfy them you apply for that.
+
+SPEAKER 3
+If they approve, we can give supplementary. If they don't approve, we can't.
+
+SPEAKER 1
+So if you have any reason to apply for supplementary exam, please apply because we are not in charge.
+
+SPEAKER 3
+They give us a list and only those people get
+
+SPEAKER 1
+supplementary. OK, so get all the documents apply. If it's approved, you'll get it.
+
+SPEAKER 3
+If not, you won't, uh, please ask me if you have any questions, guys, uh, confident in programmers PC Uh, maybe not python Nowadays, they don't use python.
+
+SPEAKER 1
+Uh, in 1531, right?
+
+SPEAKER 3
+Yeah. So basically, C that's C is correct. OK, earlier they used to use python.
+
+SPEAKER 1
+So the slide is python here. OK, we also will be using gate.
+
+SPEAKER 3
+Um and if not, of course tutors a RE there
+
+SPEAKER 1
+to help you out. Um, understand basic testing principles from 1531 Again, we'll add
+
+SPEAKER 3
+more material to that. But basically, that's enough in a way for this course and understand the basic software design principles. But again, we'll be covering them here also.
+
+SPEAKER 1
+So this is pretty much from year 1531 Uh, we
+
+SPEAKER 3
+don't assume that you know, Java, and we are also
+
+SPEAKER 4
+not going to cover the entire Java. It's not about Java, it's not even about object oriented.
+
+SPEAKER 1
+It is about designing good software, nice software.
+
+SPEAKER 3
+So art of software design.
+
+SPEAKER 1
+And by the way, we are using code in Java. OK, so we will cover those two relevant to this
+
+SPEAKER 3
+course because java can be used for networking and for XYZ. And I'm not going to cover all those a PS.
+
+SPEAKER 1
+So it's not about Java in depth.
+
+SPEAKER 3
+It's about understanding the core object oriented programming through Java
+
+SPEAKER 1
+and same thing, um, for the object oriented. We will cover what is important for this context, which
+
+SPEAKER 4
+is pretty much what you need to know anyway in J. So it's not like a less subset.
+
+SPEAKER 3
+But I mean, it's not gonna be everything in that. And again, I said, This course is not about Java,
+
+SPEAKER 4
+not even completely for object oriented, but we are using
+
+SPEAKER 3
+them for good software design. Guys ask me if you have any questions, Of course, for a step up from the first year courses, definitely,
+
+SPEAKER 1
+as you can see so far, challenging but, uh, easily you can achieve all the goals, develop skills in time
+
+SPEAKER 3
+management, teamwork and so on and so forth. All this critical thinking I kept on repeating whatever technology
+
+SPEAKER 1
+critically evaluate that you will be working in a pair in the second assignment. Time management. We are learning lots of things don't fall behind, you know? And, um, believe me, you will find it quite useful even when you go to work outside or for study. And so on and so forth. We are here to help you. There will be lots of health sessions.
+
+SPEAKER 3
+Lots of tutors are there a forum is active, of course, during the assignment time, but otherwise also. So there are a lot of help there.
+
+SPEAKER 1
+OK, Please use it.
+
+SPEAKER 3
+Please please use it.
+
+SPEAKER 4
+And second thing is that if your assignment is due
+
+SPEAKER 3
+in a particular week and if you just two days ago you expect somebody to reply instantly, please. Sorry you can't. So you have to wake up a bit early. Don't just wake up in week end of week four to say Well, I, I have the assignment, so I'm
+
+SPEAKER 1
+going to crack on it now. That's just the way it's going to work. You need to start early, so therefore you can address the problem, Uh, understand it interact with the tutor or through the forum or in person and so on and so forth. Ok, Um yeah, all these topics.
+
+SPEAKER 4
+Yeah, OK, um add forum if you don't get answer
+
+SPEAKER 3
+here. And if you really think it's something you want to send to the class account but that should be your first step and most likely you can get the answer. And if you don't want to put public post, then put private post. OK, uh, and also, um, during your your tutor. You know, during your tutorial, you your tutor and also the lab assistant. And that's the best way to get a lot of information about this course.
+
+SPEAKER 4
+And on that, let me tell you, important thing is
+
+SPEAKER 3
+that I always say that that because we give you landmarks So people think that that three hours is for
+
+SPEAKER 4
+some kind of assessment and so therefore I can't ask
+
+SPEAKER 3
+basic questions.
+
+SPEAKER 1
+So called silly questions to my tutor.
+
+SPEAKER 3
+I want to be seem to be very smart.
+
+SPEAKER 1
+Know what I'm doing because I want to get good marks? That's wrong.
+
+SPEAKER 3
+I always say to my tutors, Is that this is
+
+SPEAKER 1
+the three hours where you can should be able to
+
+SPEAKER 3
+ask whatever question you want to ask.
+
+SPEAKER 4
+Only when you say Now, can you assess my lab?
+
+SPEAKER 3
+After that? Whatever they ask you, they will use that for their assessment. But you otherwise use this three hour to learn to
+
+SPEAKER 4
+ask questions. So these three are there for you to ask questions and learn.
+
+SPEAKER 3
+OK, so don't think that because the assessment So I
+
+SPEAKER 4
+don't want to ask the question and then find out the answer from somewhere and then use it. In fact, you should be interacting with your twitter a lot.
+
+SPEAKER 3
+And then you say, Now you assess my lab. Only then they will look at your answer and assess
+
+SPEAKER 1
+accordingly.
+
+SPEAKER 4
+Go to health sessions.
+
+SPEAKER 0
+Booster forum. All these are basic, so I'll just leave it there
+
+SPEAKER 4
+now. Special construction website, S service website In case you applied,
+
+SPEAKER 1
+you know it already.
+
+SPEAKER 3
+And, uh, of course, uh, if you have any issues during the term, there are a few useful, um uh,
+
+SPEAKER 1
+websites here. You should approach them accordingly.
+
+SPEAKER 3
+Uh, if something you want to talk with us, you can always send an email to class account.
+
+SPEAKER 1
+In the worst case, if you really want to be confidential, send it to me directly. But generally, I think these are the professional peoples. Um, where you can go and, uh, see care in case required. OK, this is just to highlight here. Ok, now we're going to use, uh, Java again.
+
+SPEAKER 4
+This particular version is not that I mean 17 higher
+
+SPEAKER 3
+because we're not going to use all the latest features. What we need to cover is already there and even
+
+SPEAKER 1
+Java 11 or you know. So now we are using 17 because that's currently on
+
+SPEAKER 3
+the CS C platform. And that gives you everything you need to do.
+
+SPEAKER 1
+Uh, progra mming for this course. OK. And for generally most of the Softwares anyway, VS code
+
+SPEAKER 3
+grad git lab and and few other things we'll be
+
+SPEAKER 1
+using this course. OK, we love your feedback.
+
+SPEAKER 3
+Uh, I'm more than happy to receive your feedback during
+
+SPEAKER 1
+the term. Then my experience also let us know what you think. Uh, as you know very well. It's very challenging after covid to to keep interaction in the first lecture. I see many of you here. I hope this continues, but I'm quite sure it will not.
+
+SPEAKER 3
+The problem I say to you is that your tutor
+
+SPEAKER 1
+is getting money, whatever they are supposed to. I get reward for whatever I do. If you don't participate, you lose out. You guys are not losing out anything, so just think
+
+SPEAKER 3
+that way. So for you to interact in the lecture in the Lab Institute is very important. It is very important OK for learning purposes.
+
+SPEAKER 1
+Basically. So please do that.
+
+SPEAKER 4
+And please ask me if you have any questions and,
+
+SPEAKER 3
+uh yeah, please please respect everybody.
+
+SPEAKER 1
+You know any, uh, uh students in your in your lab or tut your tutors lecturers. So on and so forth, everybody, That's just the university policy. Could be good with everybody. Ok, uh and yeah, that's now let's start.
+
+SPEAKER 3
+OK, Any questions? I see it's a 10 o'clock right now, so I
+
+SPEAKER 1
+can take a break of five seven minutes.
+
+SPEAKER 3
+We'll come back and we will discuss what is Jabba? Why? It is different. Why? It is useful and you will see a lot of good features here. And then we'll start depending on the time on object
+
+SPEAKER 1
+oriented. Uh, framework. OK, And then next lecture, we will actually go and write the first programme and start realising the concepts interactively. OK, so I'll just take a break of, say, 56 minutes, not long, and they'll come back.
+
+SPEAKER 3
+Any questions online? Please ask me, guys.
+
+SPEAKER 4
+Thanks. Good questions.
+
+SPEAKER 3
+Ok, um I may slowly start. So there was some query about, uh, the assignment bonus mark. So we have 8% bonus mark, but that's part of the assignment. So assignment one and Assignment two together will be 35%
+
+SPEAKER 1
+of the total cost. OK, so if you do all three and get 100% in all three, you will get 35 plus 843 marks. OK, In that case, you will get 35 out of 35 for the assignment. So this mark is restricted to still the assignment group. OK, Similarly, lab mark total can be 70 maximum, but
+
+SPEAKER 3
+we will cap at 60 and that's we don't take average or anything, so that's good for you. OK, whatever. Mark seven lab. We add them and we'll keep it at 60. OK, just for clarification. Please ask me if you have any questions. Any clarifications you need otherwise let's start with object oriented
+
+SPEAKER 0
+programming.
+
+SPEAKER 4
+So java as a programming language. OK, now a couple of slides do more. Uh, but it may be useful to know the history
+
+SPEAKER 3
+of Java. At one time it was a very popular language, very
+
+SPEAKER 1
+useful language. And, uh, OK, so and why we are using it
+
+SPEAKER 3
+in this course and why it's still important for you.
+
+SPEAKER 0
+So first of all, you go back to the time
+
+SPEAKER 3
+which you guys may think as a history. But it was reality that IBM has its own operating
+
+SPEAKER 4
+system. Sun Microsystems has own operating system.
+
+SPEAKER 3
+Of course. Bill Gates has got his Windows operating system.
+
+SPEAKER 4
+Apple has got operating system. Each of these operating systems are different, so there are many not like two right now or three.
+
+SPEAKER 0
+And the thing was that if I write a software on one operating system, it won't work on the other
+
+SPEAKER 4
+operating system.
+
+SPEAKER 0
+Even the C language on one operating system was different to another one. So if I am a software company and if I want to write software and I want to send it to my client and they use different operating system, I literally have to design my software and adapt it for
+
+SPEAKER 3
+different operating environments. So that's quite time consuming, As you can see at that time, Java came into the market and the whole
+
+SPEAKER 0
+purpose of Java, as they used to call it that
+
+SPEAKER 4
+time right once, and execute on multiple platforms.
+
+SPEAKER 0
+So the aim of the Java was that can I And there was open source even now today. So the idea was that we only write programme once, which is in Java. But then I can execute my software on different platforms. So how do you do it? So what they did come up with that is that when you write a java so the Java source code is converted. Java compiler converts into so called a class file, which is nothing but a byte code, which is a high level.
+
+SPEAKER 4
+It's not like a machine code. And how can you execute this byte code?
+
+SPEAKER 0
+You can execute this bytecode on so called Java runtime environment, so that's a Solari windows, another windows, different Windows
+
+SPEAKER 4
+version. You can IBM operating system and so on and so
+
+SPEAKER 3
+forth.
+
+SPEAKER 4
+What is Java runtime environment? So what they did is that they built a runtime
+
+SPEAKER 0
+environment for all the operating systems, but then they had to do it only once. It's freely available, open source freely available so anybody can download that. Or there may be some charge for commercial use, but
+
+SPEAKER 4
+not much.
+
+SPEAKER 0
+So once you download JR on that platform, I can run Java now. So as a software designer, I only write once and then I install JR, which is specifically different operating environment but then it can execute my Java. So this was a radical at that time. It's a great idea and there are a few things in Java which are different to what you see and
+
+SPEAKER 4
+see programming like this.
+
+SPEAKER 0
+Now you take this as a granted now python programme will run everywhere because they are using this.
+
+SPEAKER 4
+But they were the innovators at that time came up
+
+SPEAKER 0
+with that idea. The second thing when they designed Java they already had
+
+SPEAKER 4
+experience with C and everything.
+
+SPEAKER 0
+So in C, what do you hate the most?
+
+SPEAKER 4
+Do you know how to deal with punter to pointer to punter? There are so many programmes which don't work when you go one or second level and gone So pointers are not very popular. People can a lot of bugs because of the pointers
+
+SPEAKER 1
+referencing and so on and so forth.
+
+SPEAKER 4
+So there is no explicit pointer in Java.
+
+SPEAKER 0
+There is no explicit pointer but pointers Conceptual! You need pointers So there are, in a way point references we call it but there is no explicit pointer
+
+SPEAKER 4
+So I cannot like in C you know Ra means
+
+SPEAKER 0
+a is nothing pointed to the first element.
+
+SPEAKER 4
+Then I can say plus plus plus I can go All those things you can't do It's just a reference
+
+SPEAKER 0
+in C.
+
+SPEAKER 4
+You want to create an array?
+
+SPEAKER 0
+Hm? You want to create a linguist prest structure graph.
+
+SPEAKER 4
+What do you do to get memory? And then you heard to free that isn't it? Is your responsibilities, right?
+
+SPEAKER 0
+Java says You don't need to Melo. You don't need to free anything. Automatic memory management. You don't do anything. There's no new in a way, it does that behind the scene. Of course you have to do it, but it is taken care of by Java completely. So in the early days, Java was very slow because constantly it needs to decide which memory is no more used and it will free it.
+
+SPEAKER 4
+That's how it does genuinely. It keeps track of every memory created behind the scene. So here you will see we create objects, for example, and instances. OK, and so it remembers all of them.
+
+SPEAKER 0
+It creates, makes keeps the data structure and it tracks it constantly at the right time. It does garbage collection called garbage collection, so it basically
+
+SPEAKER 4
+freeze all the space which is not used. And guess what to do that it needs to use
+
+SPEAKER 0
+a data structure which data structure it is using graph
+
+SPEAKER 4
+data structure. So you have a node which is basically memory location.
+
+SPEAKER 0
+Any other reference using it is incoming pointer link. When all these links vanish, that means I have a note with no incoming link because nobody is using it. I That's a very simple way of explaining it.
+
+SPEAKER 4
+Of course. Now can I do it extremely fast behind the scene?
+
+SPEAKER 0
+So they say work automatic galve collection. There are many features in Java which you don't find in safe. So then they say, Well, the biggest one. So C was very popular. C is based on, you know, one Norman architecture, anybody. What is one? No, in architecture. So it's a sequential programming, so it simply says programme is you know it but you don't know.
+
+SPEAKER 4
+It's It's a wonder an architecture programme is nothing but sequence of instruction. And what a programme sequential execution does fetches instruction, executes it next, execute simple. He came up with his architecture sixties seventies, whatever I
+
+SPEAKER 3
+forgot, but it became very popular, but there was an assumption here There is an assumption here. I only got one CP U by Java. We already had two cores. Three cores. Now we've got many, many cores in laptop 3264 Whatever you got. Multiple CPS. If you write programming C it is based on one number architecture It is sequential.
+
+SPEAKER 4
+Unless you go and create sub processes, it is going
+
+SPEAKER 3
+to use only one CPU.
+
+SPEAKER 4
+You may have 32 on your laptop or your machine.
+
+SPEAKER 3
+It will only use one CPU java came.
+
+SPEAKER 0
+It is designed to be multi threaded, much more easy to create different threads so each thread can.
+
+SPEAKER 4
+Then we will use different CPUs so I can now harness the CPU power. Now, of course, I need to create a thread and we will go through one thread creation management also later
+
+SPEAKER 3
+on in this course.
+
+SPEAKER 4
+So it has got a multi system also, you then
+
+SPEAKER 0
+in data structures and see what you did You create set EDT Have you done it?
+
+SPEAKER 4
+So I want to create integer set. So you write AD T for integer. Is it right?
+
+SPEAKER 0
+That's a no No. But I want to create a set for all the names.
+
+SPEAKER 4
+Can I use your set for integer? Because integer set may have link list for integers or
+
+SPEAKER 3
+array for integers. Now strings are different, so I need to write another ADT to have set of strings.
+
+SPEAKER 0
+Then I said, Hang on. I won't set off all the students.
+
+SPEAKER 3
+I need to write another EDT for a different data
+
+SPEAKER 1
+type.
+
+SPEAKER 0
+Logic is, the same mathematical set is defined the same.
+
+SPEAKER 4
+No duplicates, blah, blah, blah. But I had to rewrite it.
+
+SPEAKER 0
+So all the new languages, including Java at that time they give you so called, Um uh, just before I proceed.
+
+SPEAKER 4
+So for those who are online, it would be useful
+
+SPEAKER 0
+if you use this chat for the thing we are discussing in the lecture. Because every time you type something, I look at it,
+
+SPEAKER 4
+and if it is chat between yourself, then it distracts
+
+SPEAKER 0
+everybody. Now, there are many other channels you can use to chat between yourself.
+
+SPEAKER 3
+So just by all means, use that. But don't use this for private jet here, because otherwise
+
+SPEAKER 1
+it's it's distracting. Ok, thanks for that, guys.
+
+SPEAKER 3
+So, uh, where was I?
+
+SPEAKER 1
+Uh, so that's a distraction already, so yeah.
+
+SPEAKER 4
+So? So all the new languages, and we'll discuss that give you generic data type. So I create a Saturn, for that matter, anything. And I say my type.
+
+SPEAKER 0
+It is set of a generic type, and that generic
+
+SPEAKER 4
+type can be integer, string or even completely new structure.
+
+SPEAKER 0
+But I need to write only once.
+
+SPEAKER 4
+Implement that only once. And that type can be changed with few things you
+
+SPEAKER 0
+have to provide with that. And we'll talk about that so called generic types and
+
+SPEAKER 4
+the last but the most important one, which we're going
+
+SPEAKER 3
+to cover here, but many more. But the important one we are able to cover here
+
+SPEAKER 4
+is it says we give you inheritance so you can
+
+SPEAKER 3
+create a particular type. And then the new type you can create by saying well, which we are going to cover briefly today or
+
+SPEAKER 4
+in the next lecture, is same as before, but something more on top of it.
+
+SPEAKER 0
+So the reuse of what you have written is already
+
+SPEAKER 4
+part of your Java design object oriented design.
+
+SPEAKER 3
+So it's an object oriented framework. C is not C++ is, but C is not.
+
+SPEAKER 4
+So it gives you, and that gives you object oriented is one aspect which you learn.
+
+SPEAKER 0
+But what it gives you is something called polymorphism, which
+
+SPEAKER 3
+we will touch upon next lecture or next week sometime. That is a killer that does things which you can't
+
+SPEAKER 4
+do with simple java.
+
+SPEAKER 3
+By the way, C Sorry, Java is written in C,
+
+SPEAKER 0
+so if you come and ask me everything you can do in Java, you can see Python is implemented in sea. Linux is implemented in C, so C is extremely powerful.
+
+SPEAKER 4
+Don't take me wrong, but it takes a lot of
+
+SPEAKER 0
+things to achieve something. High level frameworks allows you to achieve that in a
+
+SPEAKER 4
+simple, easy way, so don't take it wrong. It's an extremely fast, low level language close to operating
+
+SPEAKER 3
+system, particularly in the next year. Even nowadays, Windows is also pretty much based on that, and so the idea is that it is very good.
+
+SPEAKER 0
+But there are a few things you get extra when you go to Java or other language like that, the
+
+SPEAKER 4
+other important thing before I move on.
+
+SPEAKER 0
+And I need to say that because a lot of times people why object to Java, you know, you need to see there are things which are quite useful today across the board.
+
+SPEAKER 4
+Python also have objects in it. Tomorrow, your javascript and other will also have some kind of objects in it cleaning here or something.
+
+SPEAKER 3
+Maybe So you need to know all these concepts, OK,
+
+SPEAKER 0
+and the last one is now. Microsoft was never kind of full heartedly with open source
+
+SPEAKER 4
+Java for obvious reasons.
+
+SPEAKER 3
+They had their own, you know, development environment was making
+
+SPEAKER 4
+a lot of money and they have their own languages
+
+SPEAKER 3
+and so on and so forth.
+
+SPEAKER 4
+So they were OK, it's open source.
+
+SPEAKER 0
+So they went with the bandwagon, but really not there. Eventually, what they have come up with now is something called C#. Have you heard of C#? So C# is kind of so C# is basically Java, but some extra features from Microsoft and it's a Microsoft
+
+SPEAKER 4
+language. OK, now what I'm saying is because it's same object
+
+SPEAKER 0
+oriented, you know, Java, you will pick up C# very
+
+SPEAKER 4
+quickly.
+
+SPEAKER 3
+Similar kind of notion few things differently, but otherwise the
+
+SPEAKER 4
+same. Why I'm saying it because if you take Java and C# still significant and majority of the enterprise software are
+
+SPEAKER 0
+in something like C# and Java.
+
+SPEAKER 4
+That's why you need to know.
+
+SPEAKER 0
+It's not about, you know, uh, Latest, you need to know latest language also. But this also you need to know Lot of our good tutors go and work in a class.
+
+SPEAKER 4
+There are many Softwares. One of the entire base is in Java.
+
+SPEAKER 3
+How then JavaScript and so on and so forth.
+
+SPEAKER 4
+So it's, uh it's something you need to know.
+
+SPEAKER 0
+Put aside, You can know new language also also no python, javascript nor jazz.
+
+SPEAKER 4
+All those things. But this you should have in your repository.
+
+SPEAKER 3
+Okay, so I already covered lots of the java give
+
+SPEAKER 4
+multi threaded systems is platform independent because you see right
+
+SPEAKER 3
+ones execute on different platform.
+
+SPEAKER 4
+Of course, you need GRE for that platform.
+
+SPEAKER 0
+But then GRE available for almost all the platforms now
+
+SPEAKER 4
+OK, memory management Automatic memory management OK is reasonably secure. Uh, it's object oriented and it also has got distributed computing and many more features already available. It has got lots of libraries called a P, so you can use existing libraries much more easily so on
+
+SPEAKER 3
+and so forth. Ok, so all these things and I said to Java
+
+SPEAKER 4
+programme you compile goes into the bytecode called dot class files and they are executed by JR that that's basically about Java. OK, any questions there? An object oriented? So that was about Java?
+
+SPEAKER 0
+No, we are going to talk about object oriented programming. Then we will talk about object oriented design.
+
+SPEAKER 4
+OK, so first we want to know well how to
+
+SPEAKER 0
+write programmes which use object oriented features Just simple.
+
+SPEAKER 3
+Let's learn it Like I learn C we learn Java
+
+SPEAKER 4
+But of course we assume that you know C anyway So basic constructs are like C four OP and everything
+
+SPEAKER 3
+like C Slight change, but otherwise same.
+
+SPEAKER 4
+But then we'll talk about what is a class?
+
+SPEAKER 3
+What is inheritance so on and so forth?
+
+SPEAKER 4
+Then I'll give you one lecture If you have a new problem How do you formulate your solution or your
+
+SPEAKER 3
+software using object Orient framework And that is different to writing AC programme or C uh, functional design OK, and we'll touch upon that.
+
+SPEAKER 1
+I think the first slide here.
+
+SPEAKER 3
+OK, so there are many things we are going to
+
+SPEAKER 0
+cover in this course, So these are the features we
+
+SPEAKER 4
+need for this course and they cover most of the
+
+SPEAKER 3
+important thing you need to know about object oriented framework,
+
+SPEAKER 1
+object oriented programming.
+
+SPEAKER 3
+And we are using these features then in designing object
+
+SPEAKER 4
+oriented Softwares. And then we are going to go and learn software principles. Software patterns touch upon briefly a few other things, like
+
+SPEAKER 1
+Lambda Expressions and so on and so forth.
+
+SPEAKER 4
+So we are trying to put a lot of things
+
+SPEAKER 0
+in these codes, which are relevant important for you.
+
+SPEAKER 4
+So this is important.
+
+SPEAKER 0
+OK, so in a procedural programming like C, the programming tends to be action oriented while in Java object oriented.
+
+SPEAKER 4
+Now it's very easy for me to say so.
+
+SPEAKER 0
+Well, what? What do you mean by a action and object oriented?
+
+SPEAKER 4
+So when you write a programme in C So you
+
+SPEAKER 0
+said this is my task. What do you learn? So in 1511, maybe you just wrote that in the main programme to start with So you have a task. I know I need to have step by step algorithm. I write in the sea.
+
+SPEAKER 4
+It becomes your answer 50 line 20 line to start with. Then he said, Hang on.
+
+SPEAKER 0
+My answer is 100 line now. So what I do divide and conquer. So then I design functions. One function does something so a function is carrying out a particular action. So action oriented function Take this input does something another function takes it in but does something so every function So basically your main programme is calling 10 different functions. They may in turn call another five function. Every function is action oriented. Give me something I do manipulate. Give me average of whatever Add three marks.
+
+SPEAKER 4
+Deduct three marks Whatever Action oriented And that's how what
+
+SPEAKER 0
+you have done so far I act on on my data current data OK, right in object or programming the
+
+SPEAKER 4
+way you think is different and it will take some
+
+SPEAKER 0
+time for you to do that and you will face that problem in your first assignment. You will write action oriented programmes because that's how you train. So you have to switch back and after some time you realise I could have done it differently. So from this slide onwards, I'll try to focus on how to start thinking in object oriented way, which uses procedural constructs. Don't take me wrong, but the way you design your software is different. So what I mean by this? So if I want to represent this cohort, OK, in
+
+SPEAKER 4
+object oriented software design or programming, you first identify entities
+
+SPEAKER 0
+and concepts which I may need to deal with. So I need to deal with any number of students.
+
+SPEAKER 4
+So that's one entity. How can I represent an entity? You have done this before already, like abstract data type. So can I have a data type in which I can store information about a customer about a patient about
+
+SPEAKER 3
+a product?
+
+SPEAKER 0
+So what the abstract data type does? It stores information about a concept about an entity, and it provides functions which operate on that set EDT Q
+
+SPEAKER 4
+AD D. So student Ed T, for example, In object oriented, I
+
+SPEAKER 0
+call that as a class I'm defining a new type
+
+SPEAKER 4
+student lecturer, customer product.
+
+SPEAKER 0
+These different types, called classes, will store information about that product that customer that patient, that student and provide functions in Java. We call them as a method, basically their function. We offer methods which operate on that data. So first thing, what you do is you identify concepts and entities in your problem, and then you decide what information I need to store for them and what methods I need to provide methods.
+
+SPEAKER 4
+And I think that functions.
+
+SPEAKER 0
+Then I got, say, 500 students to represent each of you I'll create instance of the class student. So I got 500 instances. Instance saws a call as an object. So I got 500 objects. Now each object represents one student. All I have done so far is represent the world I want to deal with.
+
+SPEAKER 4
+Yes, When to run very fast.
+
+SPEAKER 0
+One means yeah. OK, so the question is the following Is that OK? I am just describing all this stuff.
+
+SPEAKER 4
+Um I'm just looking one message here he said, Well,
+
+SPEAKER 0
+ok, you're talking about all these objects and instances, but how do I start it? Ok, who is going to create the first object and
+
+SPEAKER 4
+so on and so forth? Ok, I'll come to that.
+
+SPEAKER 0
+That's a very good question. You're asking me. Ok, so the idea is that what's up? You know, when you're writing a programme, conceptually is a finite state machine.
+
+SPEAKER 4
+What is finite set machine? So any programme you write what you what are you
+
+SPEAKER 0
+doing when you write a programme. What are you doing? You are solving a problem. Which problem? Problem in the physical world or maybe virtual world. Nowadays we virtual world also. So when you write AC programme and you want to do the same thing you know story information about every student in this course blah, blah blah, you say? Well ok, what I'm gonna do, I'm gonna create a structure. It's got certain name blah, blah, blah Then array for all the lab marks or the link list. Whatever then under the landmark what are you doing? You are You are working out how to represent the world in my programme. The first thing you do always. Then when you write your programme you're operating on this data. So as you said, I want to know about the first student my C programme will say Ok, give me the name the phone number initially zero mark or dot mark or whatever like that and I store them so finite state machine means every programme every line you run Java or python or C doesn't matter All it is doing my first state I don't know anything. I execute one statement in C or Java doesn't matter. All I'm doing is modifying the state. I'm just modifying some variable name. That's all. Any programme is only doing this.
+
+SPEAKER 4
+This is our complete theoretical view of this.
+
+SPEAKER 0
+So it's a finance set machine which starts from a state. And every statement changes the state. That's it. Hopefully at the end you got a state where you
+
+SPEAKER 4
+got the answer? No, in C, back to your thing.
+
+SPEAKER 0
+So overall framework about how to represent the world is about structure link list arrays in object oriented.
+
+SPEAKER 4
+No, no, no.
+
+SPEAKER 0
+Let me define the class and create instances of all the concepts. Do you understand that just the representation of the world is through instances of objects? Objects basically objects are there, but instances of classes and
+
+SPEAKER 4
+classes we define like abstract data type. So far, then, by all means, I need some main
+
+SPEAKER 0
+function where I read information about a student. Now I'm not updating array or something. I'm creating an instance and storing that instance somewhere. Eventually it's the same thing. I need to represent that student or customer or a patient in my programme. Just that when I'm doing it, I'm doing it through objects for instances which are basically at this point for you abstract data types. But there's much more than that. I'll add that later on, but at this point it
+
+SPEAKER 4
+is like creating an abstract data type. You may ask me So what's the big man?
+
+SPEAKER 0
+I can also create ADT. I already mentioned that to you.
+
+SPEAKER 4
+You don't have generic CC so abstract data type you
+
+SPEAKER 3
+have to create for every type. You don't need to do it for Java. The second most important thing is that Java gives you inheritance, which we'll talk about in the next slide so
+
+SPEAKER 1
+you can reuse existing code very quickly.
+
+SPEAKER 4
+And that gives me polymorphism, which I have to go through example to show you these features are not available in C.
+
+SPEAKER 0
+So up to this it is like ADT, but adding this extra feature, it gives you a radically different framework. So first thing is that don't start thinking what I need to do. I divide into functions and my functions. That's procedural. First, let me represent the world through classes and then instance of classes. Then we will write a programme. Now the technical word is the programme will create the instances, and then we will do so called message passing. It's a buzzword. But what it says is that so one object will call a method of the other object and modify that object, or this object may modify another object. The whole programme is just doing that. It creates objects, and then these instances will call each other's method. But and that will change the state. At the end, I got updated instances and hopefully that's
+
+SPEAKER 3
+the answer.
+
+SPEAKER 0
+So this is the different way. But when I talk about inheritance polymorphism generic types, you will say it's a completely different piece now, OK, that's that's how you start thinking So again, in oop, programmers concentrate on creating their own user defined types called classes, and these types are, for a particular concept, relationships so on and so forth. Each class contains data and the corresponding methods, which are the functions. An instance of a user different type is a class, and the instance is called instance or an object. Few more things when I create a class, so I store information about a customer, for example, or a patient. Now I say Hang on. There are a few things private. I don't want to expose that to anybody. And the outside The other part of the software should only be able to do few things with this information.
+
+SPEAKER 3
+Not much so in Java, when we define a class,
+
+SPEAKER 0
+we can provide access modifiers. So we can say this variable is private. Nobody outside their class can access it if they want to. They have to go through some method which will have
+
+SPEAKER 4
+some checks.
+
+SPEAKER 0
+OK, we'll cover all this. Don't worry. But conceptually, that is also something different to pure a T.
+
+SPEAKER 4
+So I can encapsulate data which is only available in
+
+SPEAKER 0
+their class and not to the outside clients outside world.
+
+SPEAKER 4
+OK? And so we can also control access using those access
+
+SPEAKER 3
+modifiers.
+
+SPEAKER 4
+All this will cover, but I'm just giving you that.
+
+SPEAKER 0
+These are the extra things. So you have a very nice property of information hiding
+
+SPEAKER 3
+if you want to do and you can encapsulate everything
+
+SPEAKER 4
+in their class and so on and so forth. You will use this kind of executive a lot because
+
+SPEAKER 3
+that's going to give us a good software, Kay. No, this is the one which is very, very important. Yes, ma'am, same.
+
+SPEAKER 4
+It's just two different words. Instance and objects are the same. OK, now inheritance.
+
+SPEAKER 0
+That's a big new thing. OK, so what is inheritance? It's a form of software reusability, in which new classes are created from the existing classes by absorbing all their
+
+SPEAKER 4
+properties and behaviour. And this is where the reuse comes into the picture. OK, so let's go through the example and that will make it much more clearer to you. OK, so let's say these are different examples.
+
+SPEAKER 0
+So say I define a class for a student or a person. There are different hierarchies. OK, here there are different examples.
+
+SPEAKER 3
+They are not the same. OK, they are different examples here.
+
+SPEAKER 4
+So now a student is a AD T if you
+
+SPEAKER 0
+want to call that. But here let got a class. It stores information about a student So student first name, last name. Then it says student's phone number. Now I. I want a method which says before I store the phone number, I want to verify the correct one.
+
+SPEAKER 4
+Right number of digits are given and right, you know, 04 whatever. Like that it's mobile, so I want to validate before
+
+SPEAKER 3
+I add something If you give the name I want to validate. You know, If you give me the date of birth, I want to validate The date is valid and so
+
+SPEAKER 4
+on and so forth. So everything goes in that student class.
+
+SPEAKER 0
+So can you think about it that I have a student class already there which does all everything in store information about a student so on and so forth Now I want to. For every undergraduate student I need everything what is available in this? But I also want to now add in information about different courses they have enrol it. All I do is that undergraduate student is a subclass of student class So every property and attribute defined here are automatically available here. I don't need to do anything, but I can add more property and more attributes here Attribute means the information I want to store property means the methods. So interestingly, in a subclass has more features that the superclass in mathematics subset has got equal or less elements is different here. Subclass will have everything available in a superclass. But I can add more to it in my subclass.
+
+SPEAKER 4
+So I actually reuse what already have available by just
+
+SPEAKER 0
+creating a subclass and then add something more to it.
+
+SPEAKER 1
+Yes, yeah, sunglasses.
+
+SPEAKER 2
+Can something be a not in Java, so we will
+
+SPEAKER 0
+touch upon that. Also So idea is that if there are two classes and but you can do that indirectly, so can I have a class with a subclass of a and subclass of B. It can create semantic problems if the same property exists in both of them. Which one I'm going to use in my subclass. It's called multiple Inheritance, so C++ allows it. But then it used to have a lot of errors because the way people misunderstand there is a problem. So Java came up with a deliberate decision of having only single inheritance. But then you can easily address the other one, and we have an example for that. So when we go there, we'll discuss how to use multiple how to achieve that.
+
+SPEAKER 4
+Also, yes, the question is that can subclass exclude, um
+
+SPEAKER 0
+can subclass exclude some of the property? Very good question. Answer is no, but it can change the behaviour of
+
+SPEAKER 3
+a property, and that gives you very interesting property called
+
+SPEAKER 4
+polymorphism, and we'll go through all this with very simple
+
+SPEAKER 0
+good examples. So that's where it's going to be interesting right now. So the first thing is that you only use inheritance. It's like a very powerful tool. It's like a very sharp knife. Use it carefully, otherwise you can cut your finger also. But it's very powerful. I can reuse everything from Superclass. But what if something in superclass doesn't make sense in subclass? Well, you have a problem you have to solve. No, you don't need to use inheritance. You can also use another relationship called hazard relationship and we're gonna go to both of them in this week's lectures. OK, so first thing you decide is OK, so let me go through this example. We have time. OK, so you understand same thing here, person. So everything person then is an employee is also a person. So everything is available here. But some extra features here Salesperson is employee with some extra thing. So every time you go to subclass, you are adding more and more features in property. Is it clear so far? OK, and there are just different trees here. You know, general information about every loan in the car loan, you will have the registration of the car and so on and so forth. In a in A in a mortgage loan, you will have information about the house. But so the way it works in case you want
+
+SPEAKER 4
+to know how you design This is the following and
+
+SPEAKER 0
+this is what you may do in first assignment, you say what I want to represent is undergraduate, student and postgraduate student. What I want to represent is car loan, home improvement loan and mortgage loan. So you go and create in this class, start with two easy. You create two classes one for undergraduate, one for postgraduate because these are the two kind of students I have. So I create undergraduate. I write down everything I need post grill, everything I need. Then you say. Are there anything common between them? Yes. Then you form a class student and make that as
+
+SPEAKER 4
+a superclass.
+
+SPEAKER 0
+You got it. So a lot of time it works like this. You create different classes as per your requirement. If there are commonality, you create a class and make that a super class. So that common thing is only implemented once and use multiple times and we can have multiple layers Also. Now, in reality, what we find is that object oriented people only use up to two or three levels after that. Generally, it is not used, but potentially you can. But generally even one or two layers are quite useful and important.
+
+SPEAKER 4
+Okay. OK, Now, uh, there are some discussions here.
+
+SPEAKER 0
+Um OK, Uh the ok, where is this thing? Here? Java objects can have a methods on them structures count.
+
+SPEAKER 4
+That's the difference between C and Java. Also wouldn't needing to exclude specific properties mean you are
+
+SPEAKER 0
+violating the interface. You are right. So you can't exclude it. That's the answer is and we will talk about interfaces
+
+SPEAKER 4
+and everything more in detail here. Eric, Uh, please mind your language. Mind don't use that word. Um, something not pleasant here.
+
+SPEAKER 0
+It's a design principle and so on and so forth.
+
+SPEAKER 4
+Ok, so Y uh, if any specific question to me, please ask online guys also now.
+
+SPEAKER 0
+Uh, so that's here. You know, every property about the shape, then a rectangle may need to store few information like two sides circle Need to store information about the centre and the radius and so on and so forth.
+
+SPEAKER 4
+Ok? Yes, ma'am. Type Set.
+
+SPEAKER 0
+So what is the type? Set type set means that any time I declare an attribute, I need to say what type it is. Python doesn't. You can just start using variable. It will have to predict what the type is. And you know, Java is reasonably type safe.
+
+SPEAKER 1
+Super.
+
+SPEAKER 4
+Then you Yeah, we'll go through all the examples.
+
+SPEAKER 0
+And so the idea is that OK, so first of all, what is superclass subclass? Ok, now the advantage is that a lot of examples are coming exactly to address that the advantage of this is that any object of type undergraduate student can be treated as a normal student. Also, anything which is of type circle can be treated as a shape also. Why? Because undergraduate student has got all the property of student anyway, Do you understand that it may have more property, but it does have property of the student already so I can teach the student so I can go from subclass to superclass. I can't do vice versa. And there are some very good examples coming. But so the idea is that object of the subclass can be treated as the corresponding superclass in all of them because superclass will have less behaviour and every behaviour Superclass is already available in the subclass.
+
+SPEAKER 4
+Yes.
+
+SPEAKER 2
+Uh, does that functionality Does that apply to what we talked about earlier method? Uh, overriding.
+
+SPEAKER 0
+I haven't mentioned that, but we'll we'll talk about that.
+
+SPEAKER 3
+Yeah, to the of a subclass.
+
+SPEAKER 2
+Also, if you want the original method to change it does what you just described still apply.
+
+SPEAKER 4
+Yeah, the question is a bit detailed.
+
+SPEAKER 0
+I would defer that when? But it's a very interesting one. And we have a very good example coming exactly for that and that gives you polymorphism. So But let's wait because I have to explain the whole concept. So the question is that yes, you can treat undergraduate as postgraduate and when you define subclass, you can change behaviour of some of the methods. And if you're not sure, don't worry. We have very nice simple examples to communicate that and
+
+SPEAKER 4
+then polymorphism OK, now so this is called is a
+
+SPEAKER 0
+relationship is inheritance is a relationship object of a subclass may also be treated as the object of the superclass. Somebody asked that question already, for example, and gas can be treated as a student you should use is a relationship only if all or most of the property of the sub superclass are relevant. Otherwise, don't use is a It's very powerful. So if everything in the superclass makes sense in subclass or almost all of them use it. Otherwise there are other ways to solve the problem. OK, for example, mathematically a circle is an oval, so you may have a class for O, and then you think circle is subclass of oval. Don't do that because in the oval you have got two properties attributes, width and height. Now do you want to have width and height for the circle? Circle doesn't have a notion of width and height. It only has a notion of radius. So a lot of time in a natural language like English, we may use circle is an oval. But that is not. This is a relationship, so check it are the odd properties or most of it from Superclass makes sense in the subclass. Otherwise, don't use it now and you see the reason why. Now the other one, which is used quite frequently. It requires a little bit of extra effort but is used more frequently than I. A is called Hazar relationship. So you see what is a hazard relationship. So remember, in object or programming, we want to represent everything as a class or as an object of a particular class. So hazard relationship, a class object, has objects of other classes. So what do you mean by that? So there's an example say, I want to create a class for rectangle, a class which stores a rectangle so as a rectangle is made up of four lines. Now line itself is a class is an object, so rectangle is consisting of four line objects. That's it. This is hazard. So rectangle has four lines now. Why do I need to have a line as an object? Primarily because there is a way to draw a particular line. Line can have a colour, no colour thickness. So why don't I write a separate class to represent line, how to draw the line, how to measure the distance of the line? Whatever. And here I simply create instance of that line four times to make up my rectangle. This is your hazard relationship Now in a hazard relationship. This is called a hazard relationship now in a hazard relationship. And again, I have a very good example, which we'll cover in the next lecture in the hazard relationship in the rectangle class. I am not inheriting property of line. I'm just using line object, and through that object, I will only use those methods which I want. Otherwise I'll ignore the rest. So I'm in control in rectangle class, which method from line class I want to use. I don't want to use. So I need to write a bit more code there. But I'm in control. Nothing is inherited, which I don't want to inherit. So a lot of time hazard relationship is a bit safer with more coding with more lines. But again, not that much coding, but it's safer. You You only use what you want to use for
+
+SPEAKER 4
+other class. Yes?
+
+SPEAKER 2
+Yep. Uh, think you yourself is then the exact same.
+
+SPEAKER 0
+Yep, So subclass is is a relationship subclass represent is a relationship that's better of saying it and a hazard relationship. When we go through example, I briefly explain that to you, but when we go through example, you will know exactly what I mean by hazard relationship. OK, now, uh, that's the last slide and then we finish. So how do I define a class? So you look at the requirements, the problem specification. You're going to identify concepts you want to represent in your problem solving space. And for each of them you want to create a class. And so when you're designing a class when you are designing a new type, these are the things we consider. So think carefully about all the functionality you need to offer for that class. Like if I have a customer, what methods? I want to provide whatever entity. If I have a line, what methods I want to provide what information I need to store for that line now, always keep all the data as local as possible. So the idea is that when I create a line, I may need to store a lot of information. But I only want to make those available to the outside world, which they need. Otherwise I keep it to myself. All this will make sense when I go through example in the next lecture. Ok, um, consider different ways I can create a circle different ways. I can create a rectangle different ways. I can create a student Instances Creating an object may require different actions. Initialization How to create that object Always initialise data just like C. OK, don't go for default value even though the default initialization in Java is far better than C Ok, now we'll we'll touch upon these two, I think tomorrow when
+
+SPEAKER 4
+we go through the rest of the example Ok, Any
+
+SPEAKER 0
+other questions? Ok? Yes.
+
+SPEAKER 3
+Fine centre.
+
+SPEAKER 2
+Bye. You send it? Yeah. Just because then say you have an object.
+
+SPEAKER 0
+Yeah, so answer to the question we can decide so we can decide whether you want to make it private. I want to make it available to everybody or I want to partially make it available to some subclasses so we can decide and we'll we'll do that later on In the example No, we we we write a word public, private, protected accordingly. Access will be so it's called access modifiers and so we can decide it. Java C doesn't give you that mechanism. Java gives you that? Yep. Yep.
+
+SPEAKER 4
+OK, I'll see you on Thursday, guys. Yes, ma'am, Go for it.
+
+SPEAKER 2
+Um, I've done the first lab. I don't know if I'm doing it right, because you mean the it must be a chief. I don't know why it's not there. I'm able to run, and I show OK, right?
+
+SPEAKER 0
+Yeah. Yeah. I mean, I, I don't remember what it was.
+
+SPEAKER 2
+It's I don't know why. It's not letting me test it, though. And I do have all the So what is the
+
+SPEAKER 4
+question here to let you mister?
+
+SPEAKER 2
+Oh.

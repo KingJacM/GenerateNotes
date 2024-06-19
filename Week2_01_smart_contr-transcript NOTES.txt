@@ -1,0 +1,427 @@
+Summary of chunk 1:
+# Smart Contracts and Blockchain Technology
+
+## Overview of Smart Contracts
+- Smart contracts are user-defined code deployed and executed across a Blockchain network.
+- They are like functions on the Blockchain that can maintain state on the ledger.
+- Acts as a computational element in a Blockchain architecture, allowing for business logic implementation.
+- Can hold and transfer digital assets managed within the contract.
+- Similar to traditional programming with source code as a class and the deployed contract as an object.
+- Behavior is deterministic, providing transparency and predictability in outcomes.
+- Execution occurs through transactions or message calls in Ethereum terms.
+- Trustworthiness stems from the immutable nature of Blockchain, ensuring high transparency and predictability.
+
+## Comparing Smart Contracts and Legal Contracts
+- Contrast between smart contracts' automated execution based on predefined conditions and legal contracts' interpretation by legal entities. 
+
+## Tokens and Oracles
+- Tokens are assets issued through smart contracts on the Blockchain.
+- Oracles enable bidirectional data flow between the Blockchain and real-world, facilitating data connectivity.
+- Tokens and oracles contribute to the dynamic functionality of smart contracts in managing digital assets and business logic.
+
+## Invocation and Behavior of Smart Contracts
+- Smart contracts can be invoked only through transactions on the Blockchain.
+- Code persistence and immutability ensure consistent outcomes based on inputs and ledger state.
+- Transparent and integrity-driven execution due to Blockchain's transparent and predictable nature.
+- Human intervention is required to initiate transactions that trigger smart contract execution.
+- Predictable behavior of smart contracts ensures trustworthiness similar to Cryptocurrency transactions.
+
+## Conclusion
+- Smart contracts leverage Blockchain technology to enable transparent, predictable, and automated execution of business logic and asset management.
+- The deterministic nature of smart contracts ensures trust and integrity in Blockchain transactions and operations.
+
+Summary of chunk 2:
+### Lecture Notes:
+
+#### Smart Contract Deployment and Interactions on Blockchain:
+- **Transaction Deployment**: A user deploys a smart contract on the blockchain, allowing interaction with it.
+  - Alice deploys the contract, Bob executes a transaction, and later Charlie can view the actions.
+  - Observers see the addresses involved, e.g., Alice deploying and Bob executing.
+  - Visibility on the blockchain depends on permissions and type of blockchain used.
+  
+#### Smart Contracts' Functions and Usefulness:
+- **Purpose**: Smart contracts enable new and trustworthy ways of cooperation and secure digital asset control.
+  - They ensure exclusive management of digital assets like non-fungible tokens.
+  - Smart contracts benefit from blockchain's immutability and transparency, inheriting these properties.
+  
+#### Programmable Shared Behavior with Smart Contracts:
+- **Shared Behavior**: Smart contracts enable shared actions and decisions among parties.
+  - For example, deciding on lunch venues among friends or managing supply chain transactions.
+  - They facilitate programmable management of various assets and data in collaborations.
+  
+#### Smart Contracts and Digital Assets Management:
+- **Asset Control**: Primarily used for managing digital assets like non-fungible tokens.
+  - Some smart contracts, like Forage, are used for schemes like Ponzi schemes for asset management.
+  - Used to control different forms of assets and behaviors on blockchains.
+  
+#### Interacting with Smart Contracts:
+- **Smart Contract Interaction**: Users interact with deployed contracts via transactions invoking functions.
+  - Contracts include executable code, private storage, and functionality like currency balances.
+  - Transactions broadly classified as monetary (transfers) and invoking (actions like adding friends, voting).
+  - Users need to know the functions being invoked and their respective inputs for interaction effectiveness.
+  
+#### Smart Contract Deployment in Ethereum:
+- **Deploying Smart Contracts**: Solidity is a common high-level language for Ethereum smart contract deployment.
+  - Support for other languages exists, but Solidity is widely used for deploying contracts.
+  - Users receive a globally unique address to interact with the deployed contract after deployment.
+  - Functions in smart contracts may call other functions, even across different contracts for extended functionality.
+
+### End of Lecture Notes.
+
+Summary of chunk 3:
+# Ethereum Virtual Machine and Application Binary Interface
+- Solidity code goes through a compiler to generate Ethereum Virtual Machine Byte code.
+- Ethereum node running the code is called Ethereum Virtual Machine, similar to a virtual machine in cloud computing.
+- Application Binary Interface specifies function names, inputs, and outputs.
+- Solidity is a high-level, Turing complete, object-oriented language with syntax similar to JavaScript and some Python behaviors.
+- Statically typed language checks variable types during compilation and supports features like inheritance and reusable libraries.
+
+# Solidity Example and Read-only Functions
+- Pragma solidity specifies compiler version restrictions for deterministic behavior.
+- Example includes an unsigned integer variable with get and set functions.
+- Read-only function indicated by the "view" keyword allows querying ledger state without updating it.
+- Writing functions update ledger state, requiring mining process for inclusion in a block on the longest chain.
+
+# Escrow Contract
+- Escrow contract holds funds as a third party for transactions.
+- Example scenario: Alice pays Bob with the intermediary Charlie ensuring fair exchange.
+- Escrow contract includes addresses for Alice (payer), Bob (recipient), and Charlie (approver).
+- Constructor specifies Charlie as approver, Bob as recipient, and Alice as the contract deployer.
+- Function "pay" can only be called by the approved (Charlie) to transfer cryptocurrency from the contract to the recipient (Bob).
+
+Summary of chunk 4:
+# Smart Contract Features
+- **Transfers and Read Only Function**
+  - Bob's address recipients will transfer according to contract balance.
+  - Address and balance of contract used for transfers.
+  - View function added to check current balance.
+
+# Solidity Features
+- **Object Oriented Structure**
+  - Interfaces and extending contracts in Solidity.
+  - Importing functions from one contract to another.
+  - Overloading functions with caution due to same name.
+
+- **Arrays and Constructors in Smart Contracts**
+  - Array declaration and value setting.
+  - Constructor execution upon smart contract deployment.
+  - Passing inputs during smart contract deployment.
+
+# Voting System Example
+- **Voter Struct and Weighted Votes**
+  - Voter struct includes voter details and vote status.
+  - Weighted votes based on ownership (e.g., stocks).
+  - Delegation feature for voting on another's behalf.
+
+- **Proposal Structure and Chairperson Role**
+  - Proposal struct for vote counting.
+  - Chairperson manages voting process.
+  - HashMap structure with addresses and votes.
+
+- **Function Visibility Types in Solidity**
+  - Public functions open to all.
+  - Private functions limited to the contract.
+  - Internal functions accessible by derived contracts.
+  - External functions callable via transactions.
+
+- **Function Calls and Visibility**
+  - Internal calls within the contract.
+  - External calls executed by external transactions.
+  - Types of function visibility: public, private, internal, external.
+  - Accessing external function within contract using "this" keyword workaround.
+
+Summary of chunk 5:
+# Function Visibility in Smart Contracts
+- **Understanding Function Visibility**
+  - Function F must be explicitly called within the contract
+- **Examples Demonstrating Function Visibility**
+  - **Contract One**
+    - Private variable data
+    - Functions: C, data set (public), data get (view), compute (internal)
+  - **Contract Two**
+    - Function data read in Contract Two
+    - Issue with calling private function in Contract One from Contract Two
+  - **Contract Three**
+    - Contract Three extends Contract One
+    - Public function G and function compute behavior in derived contracts
+
+# Best Practices in Smart Contract Development
+- **Simplicity in Contracts**
+  - Easier understanding and fewer issues
+- **Upcoming Topics**
+  - Best practices, especially regarding security
+- **Open Source Nature**
+  - Transparency via open-source code
+- **Documentation Importance**
+  - Rapid evolution, importance of following latest documentation
+
+# Understanding Smart Contract Interfaces
+- **Standard Contracts like ERC20**
+  - Managing fungible tokens
+- **ABIs (Application Binary Interfaces)**
+  - Interface visibility outside of deployed code
+- **Interacting with Contracts**
+  - Need for function signatures, not implementations
+
+# Decentralized Applications and Smart Contracts
+- **Decentralized Applications (dApps)**
+  - Execution on Blockchain using smart contracts
+- **Data Manipulation through Smart Contracts**
+  - APIs and interactions with Blockchain in labs
+
+# Conclusion & Future Concepts
+- **Application Interaction**
+  - Need for understanding how interactions occur between applications and contracts
+
+Summary of chunk 6:
+## Lecture Notes: Data Storage and Smart Contracts
+
+### Decentralised Data Storage
+- **User Interface:** Mobile devices have their user interface on the device.
+- **Off-chain Data:** Data not stored on the Blockchain, could be stored on decentralised platforms like IPFS (Interplanetary File System).
+- **State of DApps:** Thousands of decentralised applications available, explore options for data storage off the blockchain.
+
+### Smart Contracts and Shared Behaviours
+- **Managing Data:** Smart contracts manage data and achieve shared behaviours.
+- **Turing Completeness:** Not all smart contract languages are Turing complete. Some languages are non-deterministic.
+
+### Ledger State and Transactions
+- **Changing Ledger State:** Ledger state can change between issuing a transaction and its inclusion in a block.
+- **Transaction Priority:** Transactions with higher fees may get included earlier, affecting ledger state changes.
+
+### Solidity and Smart Contracts
+- **Private Functions:** In Solidity, private functions cannot be called from another smart contract.
+- **Visibility:** Functions must be public, external, or internal to interact with other contracts.
+
+### Smart Contracts and Legal Relationships
+- **Vending Machine Analogy:** Views differ on whether a vending machine represents a legal contract.
+- **Legal Interpretation:** Lawyers may debate the legal standing of interactions with vending machines.
+
+### Conclusion
+- **Contractual Obligations:** Smart contracts may have legal implications, but interpretations vary among individuals and legal professionals.
+
+Summary of chunk 7:
+# Lecture Notes: Smart Contracts and Legal Implications
+
+## Introduction of Smart Contracts
+- Vending machine example: no written contract between user and machine provider.
+- Credit given to Ethereum for platform for smart contracts, emerged in 2015.
+- Nick Sabo discussed smart contracts in 1997, embedding contractual clauses in hardware and software.
+- Smart contracts extend beyond vending machines to embedding contracts in valuable digital properties.
+
+## Definition and Function of Smart Contracts
+- Smart contracts defined as computer programs stored on a distributed ledger, outcomes recorded on the ledger.
+- ISO notes smart contracts can represent legal terms, creating legally enforceable obligations.
+- Legal enforceability depends on the jurisdiction's legislation regarding smart contracts.
+
+## Code as Law and Societal Governance
+- Lawrence Lessig proposed "code is law," emphasizing the need to govern codes to reflect societal values and rules.
+- Requires choices about values due to the significant impact of coding on daily life.
+- Shift from traditional government enforcement to societal governance for managing software.
+
+## Crypto Anarchist Perspective and Challenges
+- Some view power of code as capable of replacing traditional laws, advocating for Blockchain and smart contracts as governance.
+- Challenges arise from unforeseen program behaviors and bugs despite intended functions.
+- Emphasize the importance of ensuring that the executed behavior aligns with the intended purpose of the smart contract.
+
+Summary of chunk 8:
+# Governance by Law and Code
+- Lawrence Lessig's concept of court being governed by law, not taking over.
+- Example of the Decentralised Autonomous Organisation (DAO) on Ethereum.
+    - Raised $150 million but leaked $50 million due to a bug.
+    - Specification equating to code; reflected in recovery of lost funds by changing protocol rules.
+    - Split Ethereum network into Ethereum and Ethereum Classic.
+    - Value of Ethereum Classic 1/100 of Ethereum today.
+
+# Smart Legal Contracts
+- Ability of smart contracts to operationalize legal contract aspects.
+- Example of insurance contract on Blockchain for compensating farmers after a hail event.
+- Possibility of smart contracts also serving as legal contracts, jurisdiction-dependent.
+- Interpretation challenges for judges in disputes over smart contract code.
+
+# Understanding Tokens
+- Three examples of tokens:
+    1. Paper-based tokens for movie or park admissions.
+    2. Poker chips for gambling in a casino.
+    3. Airline ticket tied to a specific person.
+- Tokens represent rights of admission, gambling, boarding.
+- Tokens defined as assets that are non-copyable, representing specific rights and assets.
+
+Summary of chunk 9:
+## Tokens and Their Attributes
+
+- Tokens can be more easily copied compared to other physical forms such as poker chips.
+    - Constraints may be attached to tokens, like one-time use or specific access rights.
+    - Token ownership may allow for transferability, usage as a tip, or selling.
+- Tokens represent certain rights, like authorization, ownership, or privileges.
+    - They can signify access to services, licensing, or property ownership.
+    - Verification may require personal identification like a driver's license or passport.
+- Formal definition: digital representation of an interest that grants benefits or specified functions.
+    - For example, tokens can be exchanged for currency or carry voting weight in decisions.
+    - Some tokens, like most cryptocurrencies, do not represent other rights.
+
+## Tokenization Process and Benefits
+
+- Tokenization involves issuing digital tokens that may represent physical assets or other digital entities.
+    - Can occur on a Blockchain or centralized systems.
+- Benefits of tokenization:
+    - Automation through smart contract management.
+    - Reduction of third-party dependence.
+    - Enhanced transparency and financial advantages like liquidity.
+
+### Liquidity and Efficiency in Clearing and Settlement
+
+- Tokenization enables fractional ownership, enhancing liquidity by allowing partial investments.
+- Efficient clearance and settlement processes streamline transaction finalization and asset transfer.
+- Example: Trading Bitcoin and Ethereum tokens ensures separate ownership allocation.
+
+## Comparison of Cryptocurrencies and Tokens
+
+- Both cryptocurrencies and tokens are digital assets on a shared ledger.
+    - Cryptocurrencies are integral to their Blockchain platforms, managed according to protocol.
+    - Tokens are created and managed by individuals deploying smart contracts.
+- Token attributes like creation, destruction (burning), and transfer are defined by smart contracts.
+- Accounting and validation rules are predefined for cryptocurrencies, determining ownership and circulation.
+
+Summary of chunk 10:
+### Native Currencies and Tokens on Ethereum Platform
+- Bitcoin and ether are native currencies on the platform, used for transactions and fees.
+- Other tokens on Ethereum include stablecoins like USDT and ERC-20 tokens managed through smart contracts.
+- Smart contracts define creation and destruction rules for tokens.
+- Single individuals cannot create Bitcoin or ether, unlike tokens managed by smart contracts like stablecoins.
+- Tokens can be fungible or non-fungible, fungible tokens being identical and interchangeable.
+- Examples of fungible tokens include Binance coin and USDT.
+- Non-fungible tokens (NFTs) are unique and non-interchangeable, representing unique assets like houses, artwork, or patents.
+  
+### Fungible Tokens vs. Non-Fungible Tokens
+- Fungible tokens are interchangeable and identical in value.
+- Non-fungible tokens like NFTs are unique and have varying values based on unique properties.
+- Examples of NFTs include digital kitties like Crypto Kitties and unique artworks, which can have high monetary value due to uniqueness.
+  
+### ERC-20 and ERC-721 Tokens
+- ERC-20 is a standard for fungible tokens under Ethereum Improvement Protocol (EIP).
+- ERC-721 is used for non-fungible tokens, defining unique and non-interchangeable assets.
+
+### Conclusion
+- The distinction between native currencies, tokens, fungible, and non-fungible tokens is crucial in understanding the functionalities and values associated with different types of digital assets on the Ethereum platform.
+
+Summary of chunk 11:
+# Lecture Notes: Smart Contracts and Token Management
+
+## Smart Contract Overview
+- Smart contract functions as a table with account addresses and balances.
+- Functions include transfer, mint, and burn, used for token creation and destruction.
+  
+## Token Creation and Management
+- Deployer defines token name, symbol, total supply, and minter.
+- Minter can mint and burn tokens and assign roles to other users.
+- Transfer function allows for token transfer, with from address deduced from message.sender.
+  
+## Token Transactions and Delegated Transactions
+- Transfer from function enables third-party token transfers.
+- Approval function allows users to authorize others to spend on their behalf.
+
+## Decentralized Exchange and ERC-721 Non-Fungible Tokens
+- Decentralized exchange facilitates token transactions without direct user involvement.
+- ERC-721 standard manages non-fungible tokens with unique token IDs and owner addresses.
+  
+## Token Security and Additional Features
+- Safe transfer from function adds security features for token transfers.
+- Oracles bridge real-world data with Blockchain to enable external data flow.
+- Additional smart contract functions may be included in updated versions for enhanced functionalities.
+
+Summary of chunk 12:
+# Lecture Notes: Linking Blockchain to the Real World with Oracles
+
+## Connecting Blockchain to the Real World:
+- Blockchain value lies in influencing real-world events.
+- Examples like insurance payouts and buying goods using cryptocurrency illustrate this connection.
+- Off-chain actions depend on on-chain events.
+- Oracles establish bidirectional link between real world and Blockchain.
+- Oracles operated by third parties due to decentralized nature of Blockchain.
+- Oracles essential for bridging on-chain and off-chain information flow.
+- Oracles raise concerns about single point of failure and security risks.
+
+## Classifying Oracle Functions:
+- **Inbound Information Flow**:
+  - Off-chain data submitted to smart contracts.
+- **Outbound Information Flow**:
+  - Action on Blockchain communicated externally.
+- **Push-Pull Data Flow**:
+  - Requesting off-chain data (push) or sending Blockchain data externally (pull).
+  - Push: Blockchain notifying off-chain component of events.
+  - Pull: Off-chain component retrieving on-chain state.
+
+## Types of Oracles:
+- **Introducing External State**:
+  - Oracle sends signed transaction to inject external data into smart contract.
+- **Validating Oracle Transactions**:
+  - Blockchain verifies sender's address and digital signature for authenticity.
+
+Summary of chunk 13:
+# Smart Contracts and Oracles
+
+## Decentralized Oracle
+- Oracle must be trustworthy third party for smart contracts.
+- Risks of single point of failure if Oracle misbehaves or fails.
+- Decentralized oracle involves multiple independent parties reporting events.
+- Each oracle sends a transaction to Blockchain independently.
+- Smart contract verifies transactions from all oracles for consensus.
+- Majority decision considered authoritative result.
+- Challenge: Oracles may rely on same data source, not truly independent.
+
+## Benefits and Challenges
+- Enhances trust compared to centralized oracle model.
+- Reduces single point of failure.
+- Higher cost due to multiple transactions and transaction fees.
+- Slower process; majority decision required for smart contract action.
+- Possibility of collusion among oracles a concern.
+
+## Reverse Oracle or Pull-Based Oracle
+- Reverse information flow from Blockchain to real world.
+- Off-chain component relying on smart contract conditions.
+- Push or pull option available.
+- Pull data by calling smart contract function; push by subscribing to Blockchain events.
+- Nakamoto consensus requires confirmation blocks for transaction finality.
+
+Summary of chunk 14:
+### Lecture Notes: Smart Contracts and Blockchain
+
+- **Finality in Blockchains:**
+  - Inclusion in a block does not mean finalization.
+  - Probabilistic finality can cause issues, especially in Bitcoin and Ethereum.
+  - Hyperledger Fabric treats transactions as final upon being written on a peer.
+
+- **Smart Contracts Relationship with DApps:**
+  - Not all smart contracts belong to DApps.
+  - DApps use smart contracts but not all smart contracts are part of a DApp.
+
+- **Tokenization and Smart Contracts:**
+  - Assets can be tokenized as either fungible or non-fungible tokens (NFTs), not just NFTs.
+  - Tokens can represent various assets, not limited to NFTs.
+
+- **Smart Contracts and Legal Contracts:**
+  - Smart contracts can operationalize parts of legal contracts.
+  - Smart contracts assist in executing specific terms of legal agreements.
+
+- **Centralized vs. Decentralized Oracles:**
+  - Decentralized oracles enhance trust and availability over centralized ones.
+  - Multi-node oracles are more reliable, available, but may incur higher costs.
+  - Centralized oracles may be cost-effective but lack trust and availability benefits.
+
+- **Summary of Smart Contracts:**
+  - Smart contracts are code running on the Blockchain with shared behaviors.
+  - Immutable and transparent nature of Blockchains enable shared behaviors.
+  - Deterministic behavior ensures consistent outputs for the same input under constant ledger state.
+  
+- **Tokens and Oracles in Blockchain:**
+  - Tokens differ from native cryptocurrencies and can be created by deploying a smart contract.
+  - Oracles facilitate external data flow in and out of a Blockchain, crucial for various applications.
+
+- **Conclusion:**
+  - Smart contracts facilitate shared behaviors on the Blockchain ecosystem.
+  - Tokens can represent diverse assets and oracles manage external data interactions effectively.
+
+- **Upcoming Labs:**
+  - Further discussions on tokens and oracles will be elaborated in upcoming labs.
+

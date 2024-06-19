@@ -1,0 +1,1657 @@
+Summary of chunk 1:
+# Lecture Notes
+
+## Notices and Assignments
+- Follow notices published by Amanda weekly and as needed.
+- Begin first assignment promptly to avoid last-minute stress.
+- Utilize available resources and health sessions for assistance.
+- Assignment focuses on understanding object-oriented programming (OOP).
+  - Identify entities, properties, methods, and relationships between them.
+  - Think in terms of object-oriented frameworks.
+
+## Significance of Practical Learning
+- Learning by doing: essential for mastering skills.
+  - Example: Learning to swim or ride a bike requires practice.
+- Theoretical knowledge is important but must be complemented with practical application.
+
+## Current Schedule and Topics Covered
+- Importance of eco 360 recordings and Teams links for missed sessions.
+- Topics up to now include:
+  - Domain Modelling.
+  - Today’s focus: Exception Handling and Generics in Java.
+  - Future topics: JUnit Testing, Design by Contract, and various Design Principles.
+
+## Upcoming Topics
+1. **Exception Handling**
+   - Definition: An event during execution that disrupts normal program flow.
+   - In C, use assertions (`assert`) for error handling. Java provides more refined options.
+
+2. **Generics and Collections**
+   - Not available in earlier languages like C.
+   - Extremely useful for handling collections and ensuring type safety.
+
+3. **JUnit Testing**
+   - Revisiting the testing framework with a focus on Java.
+
+4. **Design Principles**
+   - Introduction to concepts that ensure software flexibility, reusability, extensibility, and readability.
+
+5. **Design by Contract**
+   - Ensuring components interact correctly based on predefined agreements.
+
+## Key Learning Points
+- Start assignments early and seek clarifications actively.
+- Practical task completion enhances understanding substantially.
+- Ensure you grasp OOP basics and proactive problem-solving skills.
+- Prepare for upcoming sessions on advanced topics like Generics, Testing, and Design Principles.
+
+### Typical Example of Java Exception Handling:
+```java
+try {
+    // Code that may cause an exception
+} catch (ExceptionType name) {
+    // Code to handle the exception
+} finally {
+    // Code that will execute regardless of an exception
+}
+```
+
+### Example of Using Generics with Collections:
+```java
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating a generic ArrayList
+        ArrayList<String> list = new ArrayList<String>();
+        list.add("Hello");
+        list.add("World");
+        
+        for(String element : list) {
+            System.out.println(element);
+        }
+    }
+}
+```
+
+### Reflection on Learning Method:
+- Remember, nobody can do the learning for you.
+- Seek help strategically, but focus on internalizing problem-solving skills through practice.
+
+---
+
+**Note:** Continue reviewing slides and preparing questions for upcoming lectures, actively participate, and engage with provided resources to deepen understanding.
+
+Summary of chunk 2:
+## Lecture Notes on Exception Handling in Java
+
+### Introduction to Exception Handling
+- Exception handling is crucial in programming languages like Java, Python, etc.
+- **Exceptions**: Indicate that something has gone wrong.
+- Instead of crashing the program abruptly, exceptions allow for graceful exits.
+- Graceful exit involves:
+  - Informing the user about the error.
+  - Releasing resources (e.g., closing databases or files properly).
+
+### Concept of Exception Handling in Java
+- Java is an object-oriented language; everything is treated as an object.
+- When an error occurs, Java:
+  - Creates an exception object.
+  - Populates it with error messages.
+  - Throws the exception object.
+- Exception object needs to be caught and handled to prevent the program from crashing.
+
+### Exception Handling Mechanism
+1. **Throwing Exceptions**:
+   - If something goes wrong in a method, it throws an exception object.
+   - Example scenario: Trying to open a non-existent file throws an `IOException`.
+
+2. **Catching Exceptions**:
+   - **Inside the Method**: The exception is caught and handled within the same method.
+   - **Propagating Up**:
+     - If not caught in the method, it propagates to the calling method.
+     - Continues propagating up till it reaches the main method if not caught earlier.
+     - If not caught even in the main method, the program crashes.
+
+### Example: Method Calling Stack
+- **Main Program** calls `Method M1`
+  - `Method M1` calls `Method M2`
+    - `Method M2` calls `Method M3`
+
+- **Scenario**:
+  - If something goes wrong in `M3`, it throws an exception.
+  - Options to handle it:
+    - **Catch in M3**: Exception is handled and does not propagate.
+    - **Propagate to Caller**: If not caught in `M3`, `M2` handles it.
+    - Further propagate up to `M1` and finally the main method if not caught.
+  
+### Types of Exceptions
+- **Checked Exceptions**:
+  - Must be caught and handled.
+  - Program will not compile if not handled.
+  - Example: `IOException`, `SQLException`.
+
+- **Unchecked Exceptions**:
+  - Not mandatory to catch and handle.
+  - Occur during runtime.
+  - Example: `NullPointerException`, `ArrayIndexOutOfBoundsException`.
+
+### Example Code Snippet: Basic Exception Handling
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        try {
+            method1();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void method1() throws Exception {
+        method2();
+    }
+
+    public static void method2() throws Exception {
+        method3();
+    }
+
+    public static void method3() throws Exception {
+        throw new Exception("An error occurred in method3");
+    }
+}
+```
+
+- **Explanation**:
+  - `method3` throws an exception.
+  - If not caught in `method3`, it propagates up to `method2` and `method1`.
+  - Finally, caught in the `main` method, preventing program crash.
+
+### Summary
+- Exception handling allows for graceful handling of errors.
+- Java creates an exception object when an error occurs.
+- Exceptions can be handled within the method or propagated to the caller.
+- Two main types: Checked (must handle) and Unchecked (optional to handle).
+
+**Any Questions?** Please ask for clarification on any part of the exception handling process.
+
+Summary of chunk 3:
+### Exception Handling in Java
+
+#### Advantages
+
+- Forces handling potential errors - Java requires you to handle exceptions; if not, the program won't compile.
+- Ensures robustness by thinking through error handling before running the program.
+
+#### Comparison with C
+
+- Java is more stringent: will not let you compile without handling certain exceptions.
+- C lacks this: can return values and continue processing without handling errors explicitly.
+
+#### Verbosity
+
+- Java's exception handling is verbose: often, the actual logic is shorter than the exception handling code.
+- Helpful in catching and dealing with issues upfront despite the verbosity.
+
+#### Checked vs. Unchecked Exceptions
+
+- **Checked Exceptions**
+  - Must handle examples: SQL exceptions, file I/O errors.
+  - Forces the programmer to handle these via `try-catch` blocks or `throws` clause.
+  
+- **Unchecked Exceptions**
+  - Can choose to handle; not mandatory.
+  - Examples: OutOfMemoryError, VirtualMachineError, array out-of-bounds (runtime exceptions).
+
+#### Hierarchy
+
+1. **Throwable Class**
+   - Base class in Java for all errors and exceptions.
+  
+2. **Error**
+   - Unchecked.
+   - Represent serious issues that applications shouldn't try to handle (e.g., VirtualMachineError).
+
+3. **Exception**
+   - Needs to be subclassed.
+   - **Runtime Exception (Unchecked)**
+     - Examples: ArithmeticException, IndexOutOfBoundsException.
+   - **Non-Runtime (Checked)**
+     - Examples: IOException, SQLException.
+  
+4. **Custom Exceptions**
+   - You can create your own exceptions by subclassing `Exception`.
+
+#### Basics of Usage
+
+- Always handle checked exceptions with `try-catch` or `throws`.
+- Optionally handle runtime exceptions.
+
+#### Example Code
+
+```java
+// Handling checked exceptions (mandatory)
+import java.io.*;
+
+public class Example {
+
+    public static void main(String[] args) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("test.txt"));
+            String line = reader.readLine();
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();  // Handle the IOException
+        }
+    }
+}
+
+// Handling unchecked exceptions (optional but recommended for robustness)
+public class UncheckedExample {
+
+    public static void main(String[] args) {
+        try {
+            int[] nums = {1, 2, 3};
+            System.out.println(nums[10]); // IndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace(); // Handle the exception gracefully
+        }
+    }
+}
+
+// Custom exception
+class MyCustomException extends Exception {
+    public MyCustomException(String message) {
+        super(message);
+    }
+}
+
+public class CustomExceptionExample {
+
+    public static void main(String[] args) {
+        try {
+            testMethod();
+        } catch (MyCustomException e) {
+            e.printStackTrace();  // Handle MyCustomException
+        }
+    }
+
+    public static void testMethod() throws MyCustomException {
+        throw new MyCustomException("This is a custom exception");
+    }
+}
+```
+
+#### Summary
+
+- Java enforces error handling for robustness.
+- Verbose but catches issues before runtime.
+- Understand the hierarchy and difference between checked and unchecked exceptions.
+- Use examples and practice writing code that handles exceptions properly.
+
+Summary of chunk 4:
+### Java Exception Handling 
+
+#### Overview
+- Purpose of exercise: Understand Java exception handling.
+- PrintWriter: Predefined Java class; used for writing to files (as a stream).
+- Debugging and learning: Reference Java API documentation when unsure.
+
+#### Java Exception Handling Mechanism
+- C vs. Java: 
+  - In C, `assert` crashes on error with no options.
+  - Java allows handling exceptions gracefully.
+- Java Error Handling:
+  - Throws an Exception object when something goes wrong.
+  - Catch and handle exceptions using custom logic.
+  - Can either terminate or continue based on logic.
+
+#### Syntax
+- **Try-Catch Block:**
+  ```java
+  try {
+      // Code to execute
+  } catch (ExceptionType1 e) {
+      // Handle ExceptionType1
+  } catch (ExceptionType2 e) {
+      // Handle ExceptionType2
+  } // ... add more catch blocks if needed
+  ```
+
+#### Key Points
+- **`try` block:**
+  - Contains code that may throw an exception.
+- **`catch` block:**
+  - Catches thrown exceptions.
+  - Multiple catches for different exception types.
+  - The variable `e` represents the caught exception object.
+  - Access exception message using `e.getMessage()`.
+
+#### Exception Types
+- Checked vs. Unchecked Exceptions:
+  - Unchecked Example: `IndexOutOfBoundsException`.
+  - Can catch exceptions of specific types or use a general `catch` for `Exception`.
+  
+#### Practical Example
+- General `catch` Statement:
+  ```java
+  try {
+      // Code that might throw an exception
+  } catch (Exception e) {
+      System.out.println("Error: " + e.getMessage());
+  }
+  ```
+
+- Specific Exception Handling:
+  ```java
+  try {
+      // Code that might throw different exceptions
+  } catch (IndexOutOfBoundsException e) {
+      // Handle index out of bounds
+  } catch (IOException e) {
+      // Handle input/output exception
+  }
+  ```
+
+#### Final Block
+- **`finally` block:**
+  - Ensures code runs regardless of exception occurrence.
+  ```java
+  try {
+      // Code that might throw an exception
+  } catch (Exception e) {
+      // Handle exception
+  } finally {
+      // Code always executed
+  }
+  ```
+
+#### Tips
+- Use specific exceptions for precise control.
+- Use generic `Exception` in `catch` for broad handling.
+- Always clean up resources (like files) in `finally` block to prevent resource leaks.
+
+#### Example Code Snippet
+```java
+import java.io.PrintWriter;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        PrintWriter out = null;
+        
+        try {
+            out = new PrintWriter("output.txt");
+            out.println("Hello, World!");
+        } catch (IOException e) {
+            System.out.println("IO Error: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("General Error: " + e.getMessage());
+        } finally {
+            if (out != null) {
+                out.close();
+            }
+        }
+    }
+}
+```
+### Summary
+- Use Java API for reference.
+- Handle exceptions gracefully with `try-catch`.
+- Clean up in `finally`.
+- Exception handling enhances program robustness.
+
+Summary of chunk 5:
+### Exception Handling and Resource Management
+
+- **Problem**: An exception occurs, and the program terminates without closing the file.
+- **Solution**: Use a `finally` block to release resources.
+  - **`finally` block**: Executes regardless of whether an exception was thrown or caught.
+  - **Usage**: Place logic to carry out tasks to be executed irrespective of an exception (e.g., closing a file).
+  
+```java
+try {
+    // Code that may throw an exception
+} catch (ExceptionType e) {
+    // Handle exception
+} finally {
+    // Code to clean up resources, e.g., close file
+}
+```
+
+- **Catching Exceptions**: Use specific or general types.
+  - **General Catch**:
+    ```java
+    catch (Exception e) {
+        // Handles all exceptions
+    }
+    ```
+  - **Specific Catch**:
+    ```java
+    catch (IOException e) {
+        // Handles IOException specifically
+    }
+    ```
+
+### Scoping Rules
+
+- **Variable Declaration**:
+  - If a variable is declared inside `{}`, its scope is limited to that block.
+  - If declared outside, it is available within `{}` where it is declared.
+
+### Example - Writing to a File
+
+1. **Package and Imports**:
+   - Import relevant classes from `java.io` package.
+   - Import `ArrayList` from `java.util`.
+
+2. **Class and Method Setup**:
+   ```java
+   import java.io.FileWriter;
+   import java.io.PrintWriter;
+   import java.io.IOException;
+   import java.util.ArrayList;
+   import java.util.List;
+   import java.util.Random;
+
+   public class Example {
+       public static void main(String[] args) {
+           List<Integer> list = new ArrayList<>();
+           Random rand = new Random();
+           for (int i = 0; i < 10; i++) {
+               list.add(rand.nextInt(100)); // Generating random numbers
+           }
+
+           PrintWriter out = null;
+           try {
+               FileWriter fileWriter = new FileWriter("output.txt");
+               out = new PrintWriter(fileWriter);
+               for (int num : list) {
+                   out.println(num);
+               }
+           } catch (IOException e) {
+               e.printStackTrace();
+           } finally {
+               if (out != null) {
+                   out.close();
+               }
+           }
+       }
+   }
+   ```
+
+### Important Points
+
+- **File Handling in Java**:
+  - `FileWriter`: Used to open a file with a specified file name.
+  - **Throws**: `IOException` if the file cannot be opened or if it's a directory.
+  - API Documentation: Check for methods and exceptions they throw.
+
+### Q&A
+
+- **Question**: Does the `catch` block also clean up resources?
+  - **Answer**: No, it handles the exception. Cleanup should be done in `finally`.
+
+- **Question**: Scope and variable declaration?
+  - **Answer**: Variables declared inside `{}` are scoped within that block. Declare variables outside if needed across the entire block.
+
+### Theoretical Example to Practical
+
+- **Example**:
+  - Generate a list of random integers.
+  - Write integers to a file using `PrintWriter`.
+  - Ensure `PrintWriter` is closed using a `finally` block.
+
+By carefully structuring the try-catch-finally blocks, it ensures resources are properly managed and exceptions are handled gracefully.
+
+Summary of chunk 6:
+### Java I/O Package Structure
+- **FileWriter Class**
+  - Subclass of `OutputStreamWriter`, which is a subclass of `Writer`.
+  - Various constructors:
+    - Takes a `File` object:
+      ```java
+      FileWriter writer = new FileWriter(file);
+      ```
+    - Takes a file name as a `String`:
+      ```java
+      FileWriter writer = new FileWriter("filename.txt");
+      ```
+- **Exception Handling**
+  - Methods can throw exceptions, indicated in method signature with `throws` keyword.
+  - Must handle these exceptions:
+    - By catching them using `try-catch` block.
+    - By propagating them using `throws` keyword in the method declaration.
+
+### Example 1: Propagating Exceptions
+- **Purpose:** Demonstrate handling of exceptions by forwarding them to the calling program.
+- **Key Points:**
+  - If exception is not handled within the method, it must be declared to be thrown.
+  - Example of deliberately causing an `ArrayIndexOutOfBoundsException`:
+    ```java
+    public void writeList() throws IOException {
+        // Logic causing exceptions
+        for (int i = 0; i < 15; i += 5) {
+            System.out.println(numbers[i]);
+        }
+        // Writing to file
+    }
+    ```
+  - **Calling Method:**
+    ```java
+    public static void main(String[] args) {
+        ListOfNumbers list = new ListOfNumbers();
+        try {
+            list.writeList();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    ```
+    - Creates an object `ListOfNumbers`.
+    - Executes `writeList` which may throw `IOException`.
+    - Catches and handles the exception in `main` method.
+
+### Example 2: Catching Exceptions in Method
+- **Purpose:** Catch exceptions directly within the method rather than forwarding.
+- **Key Points:**
+  - Catch the exception inside the `writeList` method:
+    ```java
+    public void writeList() {
+        try {
+            // Logic that may throw exceptions
+            for (int i = 0; i < 15; i += 5) {
+                System.out.println(numbers[i]);
+            }
+            // Writing to file
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    ```
+  - **Calling Method:**
+    ```java
+    public static void main(String[] args) {
+        ListOfNumbers list = new ListOfNumbers();
+        list.writeList();
+    }
+    ```
+    - Simplifies `main` method by internalizing exception handling within the `writeList` method.
+
+### Practical Implications
+- **Handling Checked Exceptions:**
+  - Checked exceptions must be either caught or declared to be thrown.
+  - Example: `IOException`.
+- **Handling Unchecked Exceptions:**
+  - Unchecked exceptions do not require explicit handling.
+  - Example: `ArrayIndexOutOfBoundsException`.
+
+By understanding and implementing these practices, one ensures robust error handling in Java applications, leading to more resilient and manageable code.
+
+Summary of chunk 7:
+### Lecture Notes: Exception Handling in Java
+
+#### Object Creation and Exception Handling in Methods
+
+- **Object Creation and Constructor:**
+  - Constructor initializes an object and randomly places 10 numbers in a list.
+  - Intend to handle potential exceptions within the method itself.
+
+- **Writing to a File:**
+  - Open file for writing and write data.
+  - Potential to encounter `ArrayOutOfBounds` exception.
+
+- **Exception Handling Flow:**
+  - Catch and handle `IOException`.
+  - Catch any other exceptions with a general exception handler.
+  - Ensure file is closed in the `finally` block.
+
+- **Key Example of a Method:**
+  ```java
+  public void writeFile() throws IOException {
+      FileWriter writer = null;
+      try {
+          writer = new FileWriter("output.txt");
+          for (int i = 0; i < 10; i++) {
+              writer.write(dataList.get(i).toString() + "\n");
+          }
+      } catch (IOException e) {
+          System.out.println("An I/O error occurred.");
+      } catch (Exception e) {
+          System.out.println("An error occurred.");
+      } finally {
+          if (writer != null) {
+              writer.close();
+          }
+      }
+  }
+  ```
+
+- **Calling Program:**
+  - Simply creates the object and calls the method without handling exceptions explicitly since the method signature does not include `throws`.
+
+---
+
+#### Creating Custom Exceptions
+
+- **Purpose and Advantage:**
+  - Allows more precise identification of the exception source.
+  - Example: If a tutorial class capacity exceeds, a custom `TutorialFullException` can be thrown.
+
+- **Creating a Custom Exception:**
+  - Extend from the `Exception` class to utilize its mechanisms.
+  - Pass custom messages for ease of understanding error sources.
+
+- **Example of Custom Exception:**
+  ```java
+  public class MyException extends Exception {
+      public MyException(String message) {
+          super(message);
+      }
+  }
+  ```
+
+- **Using Custom Exception:**
+  - Throw `MyException` if specific conditions (like index out of bounds) occur.
+  - Catch the custom exception to perform specific tasks based on the message.
+
+- **Example Usage:**
+  ```java
+  public void writeFile() throws IOException {
+      FileWriter writer = null;
+      try {
+          writer = new FileWriter("output.txt");
+          for (int i = 0; i < 10; i++) {
+              if (i >= dataList.size()) {
+                  throw new MyException("Index " + i + " out of bound");
+              }
+              writer.write(dataList.get(i).toString() + "\n");
+          }
+      } catch (MyException e) {
+          System.out.println(e.getMessage());
+      } catch (IOException e) {
+          System.out.println("An I/O error occurred.");
+      } catch (Exception e) {
+          System.out.println("An error occurred.");
+      } finally {
+          if (writer != null) {
+              writer.close();
+          }
+      }
+  }
+  ```
+
+- **Key Advantage:**
+  - Custom exceptions provide clear identification of the problem and its source, facilitating targeted error handling.
+
+---
+
+#### Conclusion:
+- Implementing exception handling within methods can simplify calling programs.
+- Custom exceptions enhance readability and specificity of error sources.
+- Always use `finally` to handle resource closure, ensuring resources like files are closed properly even if an exception is thrown.
+
+Summary of chunk 8:
+## Notes on Exception Handling in Java
+
+### File Handling Example
+- **Purpose of `No my data dot text`:**
+  - A simple .txt file containing 10 random numbers.
+  - Used to demonstrate exception handling, not performing any other function.
+  
+### Checked vs Unchecked Exceptions
+- **Checked Exceptions:**
+  - Must be caught somewhere in the program.
+- **Unchecked Exceptions:**
+  - Do not need to be explicitly caught.
+
+### Handling Exceptions
+- **Example 1: Throwing and Catching Exceptions in Main Program:**
+  ```java
+  try {
+      // some code that throws an exception
+  } catch (Exception e) {
+      // only catching the general Exception, not IO Exception
+      // if exception occurs, main program throws it and can crash
+      throw e;
+  }
+  ```
+  - In this code, IO Exception is not caught individually.
+  - If an exception occurs, it crashes the program.
+  - Can carry out preliminary tasks before crashing (e.g., saving state).
+
+- **Advantages:**
+  - Custom handling of exceptions.
+  - Provides flexibility to add pre-crash logic.
+
+### Inheritance and Exceptions
+- **Throwing Exceptions in Inherited Classes:**
+  - Subclass can throw the same or a subset of the exceptions that the superclass throws.
+  - **Cannot throw more or different types of exceptions**.
+
+### Java `assert` Keyword
+- **Usage:**
+  - Java allows use of `assert`, similar to C.
+  - Disabled by default during compilation.
+  - Enable using a compilation flag.
+  - Generally not recommended; exceptions preferred.
+  
+  ```java
+  assert condition : message;
+  ```
+  - If `condition` is `true`, nothing happens.
+  - If `condition` is `false`, program crashes and prints `message`.
+
+- **Typical Use Case:**
+  - Not common in practice; used for debugging or sanity checks during development.
+
+### Best Practices
+- **Try and Catch:**
+  - Use primarily for error handling, not for checking value ranges or logic flow.
+  - For value checks, use regular conditionals (e.g., `if` statements).
+  
+- **Asserts:**
+  - Enable asserts specifically if needed, but generally avoid them.
+
+### Summary Points
+- Understanding exception handling is crucial for robust programming.
+- Subclasses should respect exception hierarchies of superclasses.
+- Exception handling should be meaningful and combined with logical error management.
+  
+### Transition to Next Topic
+- **Generics and Collections:**
+  - Introduction to more advanced concepts following exception handling.
+  
+---------
+**Any Questions?**: Open for online questions or comments. Moving to `Generics and Collections` next.
+
+Summary of chunk 9:
+### Generics in Java
+---
+
+#### Importance of Generics:
+- **Generics Enable Types**:
+  - Types in Java can be classes or interfaces.
+  - A type defines what behaviors/methods an object offers.
+  
+- **Parameterizing**:
+  - Classes, interfaces, or methods can be parameterized.
+  - Logic remains the same while only the type changes (e.g., Integer, String).
+
+#### Practical Example:
+- **Set Implementations in C**:
+  - For Integer, String, Double, etc., separate implementations are needed.
+  - Generic types allow a single set implementation for any type.
+  
+- **Java Example**:
+  ```java
+  Set<Integer> intSet = new HashSet<>();
+  Set<String> stringSet = new HashSet<>();
+  Set<Student> studentSet = new HashSet<>();
+  ```
+
+#### Core Concept:
+- **Type Safety at Compile-Time**:
+  - You can specify the type once and reuse the logic for multiple types.
+  
+- **Mechanism to Compare Objects**:
+  - For each type, a method to compare two objects must be provided.
+  - Example methods:
+    ```java
+    int compare(T o1, T o2);
+    ```
+
+#### Benefits of Generics:
+- **Eliminates Casting**:
+  - Pre-Java 5: Retrieve elements from collections and cast them.
+  - Post-Java 5: Use generics to avoid casting.
+  ```java
+  List<String> stringList = new ArrayList<>();
+  stringList.add("hello");
+  String s = stringList.get(0); // No casting needed
+  ```
+
+#### Implementing Generics:
+- **Generic Class & Method Definition**:
+  - Classes can be defined with type parameters.
+  ```java
+  public class Box<T> {
+      private T t;
+      public void set(T t) { this.t = t; }
+      public T get() { return t; }
+  }
+  ```
+  
+- **Generic Methods**:
+  - Methods can also be generic.
+  ```java
+  public static <T> void printArray(T[] array) {
+      for (T element : array) {
+          System.out.println(element);
+      }
+  }
+  ```
+
+- **Multiple Type Parameters**:
+  - You can define classes or methods with multiple type parameters.
+  ```java
+  public class Pair<K, V> {
+      private K key;
+      private V value;
+      public Pair(K key, V value) {
+          this.key = key;
+          this.value = value;
+      }
+      public K getKey() { return key; }
+      public V getValue() { return value; }
+  }
+  ```
+
+#### Key Terminology:
+- **E**: Commonly used type variable name in collections (Element).
+- **T**: Type.
+- **K**: Key.
+- **V**: Value.
+
+#### Additional Benefits:
+- **Code Reusability**: Write once, use for different types.
+- **Type Safety**: Errors are caught at compile-time rather than runtime.
+
+#### Examples:
+##### Creating a Generic Set in Java
+```java
+Set<Student> studentSet = new HashSet<>();
+studentSet.add(new Student("John"));
+studentSet.add(new Student("Jane")); 
+
+for (Student student : studentSet) {
+    System.out.println(student.getName());
+}
+```
+
+##### Generic List
+```java
+List<Integer> intList = new ArrayList<>();
+intList.add(1);
+intList.add(2);
+
+for (Integer num : intList) {
+    System.out.println(num);
+}
+```
+
+#### Questions:
+Feel free to ask questions for clarity or to dive deeper into specific examples!
+
+Summary of chunk 10:
+### Generics in Java
+
+---
+
+#### Basic Concept
+
+- **Types and Parameters:**
+  - **Type:** Refers to element or value.
+  - **Without Generics:** 
+    - Example: `class Box { Object obj; void set(Object obj) { this.obj = obj; } Object get() { return obj; } }`
+    - Downcasting needed when retrieving the object.
+  - **With Generics:**
+    - Example: `class Box<T> { T obj; void set(T obj) { this.obj = obj; } T get() { return obj; } }`
+    - No need for downcasting. T can be any type (Integer, String, etc.).
+
+---
+
+#### Type Inference
+
+- Java can infer types to save typing:
+  - Without type inference: `Box<Integer> integerBox = new Box<Integer>();`
+  - With type inference: `Box<Integer> integerBox = new Box<>();`
+  - **Inference Rule:** If not explicitly stated, Java will infer from the left-hand side.
+
+---
+
+#### Parameterized Interfaces and Classes
+
+- **Interface Example:**
+  ```java
+  interface Pair<K, V> {
+      K getKey();
+      V getValue();
+  }
+  ```
+- **Implementation Example:**
+  ```java
+  class OrderedPair<K, V> implements Pair<K, V> {
+      private K key;
+      private V value;
+
+      public OrderedPair(K key, V value) {
+          this.key = key;
+          this.value = value;
+      }
+
+      public K getKey() { return key; }
+      public V getValue() { return value; }
+  }
+  ```
+
+- **Usage Example:**
+  ```java
+  Pair<String, Integer> p1 = new OrderedPair<>("Even", 8);
+  Pair<String, String> p2 = new OrderedPair<>("hello", "world");
+  ```
+
+- **Type Inference in Usage:**
+  - Without type inference: `Pair<String, Integer> p1 = new OrderedPair<>("Even", 8);`
+  - With type inference: `Pair<String, Integer> p1 = new OrderedPair<>();`
+  - Java infers right-hand side type from left-hand side if not explicitly stated.
+
+---
+
+#### Important Notes
+
+- Always ensure the types are compatible when inferring.
+- Generics increase code reusability and type safety.
+- They simplify code by removing the need for explicit type casting.
+
+---
+
+These notes cover the use of parameterized types, generics, and type inference in Java.
+
+Summary of chunk 11:
+### Lecture Notes on Generics in Java
+
+#### Pairs with Parameterized Types
+
+- **Key-Value Pairs**: 
+  - You can create pairs where the key is a `String` and the value is a `Box` of an `Integer`.
+  - Understanding the complexity: Generics can get involved, so it's important to understand step-by-step.
+  - Example:
+    ```java
+    Pair<String, Box<Integer>> p; // Key: String, Value: Box of Integer
+    ```
+
+#### Clarifications on Generic Syntax
+
+- **String and Type Specifiers**:
+  - Syntax: `String x = "myString";`
+  - Cannot use `var` in place of specific or parameterized types. It must be either a parameterized type or a specific existing type in Java (class, interface).
+
+#### Generic Methods
+
+- **Using Generics in Methods**:
+  - Classes and interfaces can be generic, and so can methods.
+  - Example method `compare`:
+    ```java
+    public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {
+        return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
+    }
+    ```
+
+#### Explanation of Generic Method
+
+- **Static Method Example**:
+  - The `compare` method takes two parameters `p1` and `p2` of type `Pair<K, V>`.
+  - Checks if keys are equal using the `equals` method available in all Java objects.
+    ```java
+    p1.getKey().equals(p2.getKey())
+    ```
+  - Similarly compares values:
+    ```java
+    p1.getValue().equals(p2.getValue())
+    ```
+  - Method returns `true` if both keys and values are equal, otherwise `false`.
+
+#### Using the Method
+
+- **Explicit Type Inference**:
+  - You can specify the types when calling the method or let Java infer them:
+    ```java
+    Pair<Integer, String> p1 = new Pair<>(1, "value1");
+    Pair<Integer, String> p2 = new Pair<>(1, "value1");
+    boolean result = compare(p1, p2);
+    ```
+
+#### Type Inference Simplification
+
+- **Simplification for Readability**:
+  - Java can infer types if `p1` and `p2` are of the same type:
+    ```java
+    boolean result = compare(p1, p2); // Types inferred
+    ```
+
+#### Practical Applications
+
+- **Future Usage**:
+  - This approach is fundamental for collections and design patterns.
+  - Although examples might seem trivial, they teach the necessary concepts to handle more complex problems later.
+
+- **Example usage in Collections**:
+  ```java
+  List<Pair<String, Integer>> pairList = new ArrayList<>();
+  pairList.add(new Pair<>("SomeKey", 123));
+  ```
+
+### Summary
+
+- Generic types in Java allow for flexible and reusable code.
+- Pairs can be created with parameterized types.
+- Methods can also be parameterized with types.
+- Understanding type inference can simplify code.
+- The principles learnt here will be crucial for more complex applications in collections and design patterns.
+
+---
+
+Is everything clear? We'll discuss more advanced topics in the next part.
+
+Summary of chunk 12:
+### Method Execution and Type Parameters
+
+- **Consistent Types for Comparison**:
+  - Method needs same type parameters for comparison.
+  - Example: Pass integer, integer if comparison required.
+
+- **Flexibility for Different Types**:
+  - Execution of method can have varying types, like `T1`, `T2`, `T3`.
+  - Once method is called with specific types (e.g., integer), the execution is locked to that type.
+  - Subsequent calls can use different types, e.g., string or student.
+
+- **Type Example**:
+  ```java
+  Box<Integer> integerBox = new Box<>();
+  // Later
+  Box<String> stringBox = new Box<>();
+  ```
+
+### Collections in Java
+
+- **Java's Built-in Collections**:
+  - Java provides built-in data structures like arrays, linked lists, and more advanced collections.
+  - Arrays aren't dynamically supported well; instead, use ArrayLists.
+
+- **Advanced Structures**:
+  - Java features built-in balanced trees, maps (key-value pairs), and more.
+  - Collections framework offers ready-made implementations.
+
+- **Collection Framework Overview**:
+  - Java Collection Framework abstracts common collection operations.
+  - Provides methods for creating, adding, removing elements, checking equality, and counting elements.
+  - Works across different structures: arrays, linked lists, trees, graphs, hash maps.
+  - Framework ensures that common methods are consistently available across collections.
+
+- **Interoperability of Collections**:
+  - Collections can be transformed into other collection types seamlessly using constructors.
+  ```java
+  // Example:
+  ArrayList<Integer> arrayList = new ArrayList<>(List.of(1, 2, 3));
+  TreeSet<Integer> treeSet = new TreeSet<>(arrayList);
+  ```
+
+### Java Collection Framework Structure
+
+- **Unified Architecture**:
+  - The framework provides a standard way to handle collections.
+  - Contains interfaces, implementations, and algorithms.
+
+- **Interfaces and Implementations**:
+  - Core interfaces include `Collection`, `Set`, `List`, `Queue`, etc.
+  - Each type captures different kinds of collections.
+  - Common interfaces ensure shared operations across different structures.
+
+```java
+// Example interfaces
+public interface Collection<E> extends Iterable<E> {
+    boolean add(E e);
+    boolean remove(Object o);
+    int size();
+    // other common methods
+}
+
+public interface List<E> extends Collection<E> {
+    E get(int index);
+    E set(int index, E element);
+    void add(int index, E element);
+    // other list-specific methods
+}
+```
+
+### Advantages of Using Collection Framework
+
+- **Ease and Efficiency**:
+  - Developers don't need to design fundamental data structures.
+  - Focus shifted to solving higher-level problems.
+  - Efficient implementations already provided by Java (e.g., sets, balanced trees).
+
+```java
+Set<String> names = new HashSet<>();
+names.add("John");
+names.add("Jane");
+```
+
+### Example Code and Use Cases
+
+- **Creating Collections**:
+  ```java
+  List<String> arrayList = new ArrayList<>();
+  arrayList.add("example");
+  
+  Set<Integer> hashSet = new HashSet<>(arrayList);
+  ```
+
+- **Transforming Collections**:
+  ```java
+  TreeSet<String> treeSet = new TreeSet<>(List.of("apple", "banana", "cherry"));
+  List<String> list = new ArrayList<>(treeSet);
+  ```
+
+### Conclusion
+
+- **Key Takeaways**:
+  - Collection framework standardizes collection handling.
+  - Provides rich, ready-to-use data structures.
+  - Streamlines operations across different collection types.
+  
+Continue slides and examples to understand more specific use cases.
+
+Summary of chunk 13:
+### Collection Framework in Java
+
+#### Interfaces and Implementations
+- **Set Interface**:
+  - Methods: `create`, `add`, `delete`, etc.
+  - Implementations:
+    - Hash table (class)
+    - Balanced tree
+    - Lithe (probably typo, likely List)
+
+- **List Interface**:
+  - Methods: Basic list operations (`add`, `remove`, etc.)
+  - Implementations:
+    - ArrayList
+    - LinkedList
+
+- **Map Interface**:
+  - Key-value pairs (`put`, `get`)
+  - Implementations:
+    - HashTable
+    - Trees (balanced trees are preferable for guaranteed log(n) complexity and ordered structure)
+
+#### Choosing Implementation
+- Check corresponding API for time complexity to choose the suitable implementation.
+- Example: Using three sets in a current example but other types can be used in future.
+  
+#### Wrapper Classes
+- **Purpose**: Wrap around primitive types to provide additional methods.
+- Example: `Integer` wraps around `int`
+  - Methods: `parseInt(String)`, `toString(int)`, etc.
+
+#### Demo Example
+
+```java
+// Customer class demonstrating collection framework and generic types
+public class Customer implements Comparable<Customer> {
+    private String name;
+    private int rewardsPoints;
+    private String postcode;
+
+    public Customer(String name, int rewardsPoints, String postcode) {
+        this.name = name;
+        this.rewardsPoints = rewardsPoints;
+        this.postcode = postcode;
+    }
+
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getRewardsPoints() {
+        return rewardsPoints;
+    }
+
+    public void setRewardsPoints(int rewardsPoints) {
+        this.rewardsPoints = rewardsPoints;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
+    // toString method
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", rewardsPoints=" + rewardsPoints +
+                ", postcode='" + postcode + '\'' +
+                '}';
+    }
+
+    // Implementing Comparable interface
+    @Override
+    public int compareTo(Customer other) {
+        return this.name.compareTo(other.name);
+    }
+}
+```
+
+- **Usage**:
+  - Create customers with name, rewardsPoints, and postcode.
+  - Implement `Comparable` interface to impose total ordering on `Customer` objects.
+  - **`compareTo()`** method: Specifies natural ordering based on customer name.
+
+#### Key Points
+- Interfaces define methods to be implemented by classes.
+- Concrete implementations provide specific functionality and performance characteristics.
+- Check APIs for details about methods and time complexity.
+- Wrapper classes for converting between primitive types and objects.
+- Example provided to illustrate how collections and generics are used in practical Java programming.
+
+#### Resources
+- **API Documentation**: For detailed methods and time complexities.
+- **Online Tutorials/Documentation**: Basic overview and deeper understanding of collections framework and associated concepts.
+
+Summary of chunk 14:
+### Parameterized Types and Comparison in Java
+
+- **Parameterized Type T**:
+  - If given an object of type T, you can compare it with the current object, which is also type T.
+  - Returns:
+    - `0` if both objects are the same.
+    - `-1` if the first object is less than the second.
+    - `1` if the first object is greater than the second.
+
+### Example: String Comparison
+- Compares two strings:
+  - Returns `0` if they are the same.
+  - Returns `-1` if the first string is less than the second.
+  - Returns `1` if the first string is greater than the second.
+
+### Implementing `Comparable` Interface
+
+- **Mandatory Implementation**: When implementing `Comparable`, you must implement the `compareTo` method, otherwise, it will not compile.
+- **Example with `Customer` class**:
+  - `T` here is `Customer`.
+  - Compare `Customer` objects based on `postcode`.
+
+#### Example `compareTo` Method:
+```java
+public class Customer implements Comparable<Customer> {
+    private String name;
+    private int postcode;
+
+    @Override
+    public int compareTo(Customer other) {
+        return Integer.compare(this.postcode, other.postcode);
+    }
+}
+```
+
+- **Logic Explanation**:
+  - Compare `postcode` of the current customer with another customer.
+  - Return:
+    - `0` if postcodes are the same.
+    - A negative value if the current postcode is less.
+    - A positive value if the current postcode is greater.
+
+### Custom Comparison Logic
+
+- **Name Comparison**:
+  - Change the logic inside `compareTo` to compare based on names:
+  ```java
+  @Override
+  public int compareTo(Customer other) {
+      return this.name.compareTo(other.name);
+  }
+  ```
+- **Combining Multiple Criteria**:
+  - Combine comparison logic for name and postcode:
+  ```java
+  @Override
+  public int compareTo(Customer other) {
+      int nameComparison = this.name.compareTo(other.name);
+      if (nameComparison != 0) {
+          return nameComparison;
+      }
+      return Integer.compare(this.postcode, other.postcode);
+  }
+  ```
+
+### Indicating Class Is Comparable
+
+- **Implements Comparable**: By saying a class implements `Comparable<Customer>`, you communicate that the `compareTo` method is implemented.
+
+### Using a `TreeSet` with Comparable Objects
+
+- For `TreeSet`:
+  - All elements must implement the `Comparable` interface because `TreeSet` maintains order.
+  
+#### Example:
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        TreeSet<Customer> treeSet = new TreeSet<>();
+        // Add customers to treeSet
+        // Example:
+        treeSet.add(new Customer("Alice", 12345));
+        treeSet.add(new Customer("Bob", 67890));
+    }
+}
+```
+
+- **API Documentation**:
+  - `TreeSet` is part of the Java Collections Framework.
+  - To understand its functionalities and support, refer to the API documentation.
+
+### Recap
+
+- **Ordered Structure**: `TreeSet` ensures that elements are ordered according to their natural ordering defined by `compareTo`.
+- **Elements in `TreeSet` must implement `Comparable`**: This allows the `TreeSet` to maintain its ordering.
+
+### Further Topics
+- **Synchronization and Advanced Features**: Will be discussed later as they are part of the course curriculum.
+
+Summary of chunk 15:
+## Lecture Notes
+
+### Trees and Comparable Interface
+
+- **Tree Structure**: 
+  - Trees are ordered structures.
+  - Cannot create a tree structure without knowing how to compare elements.
+
+- **Comparable Interface**:
+  - Type used in a `TreeSet` must implement the `Comparable` interface.
+  - `Comparable` interface has the `compareTo` method.
+  - Used to compare two objects.
+
+- **Example with Customers**:
+  - Creating a `Customer` class:
+    ```java
+    class Customer implements Comparable<Customer> {
+        // Customer properties, e.g., name, rewards points, postcode
+        
+        @Override
+        public int compareTo(Customer other) {
+            // Implement comparison logic, e.g., by postcode
+        }
+    }
+    ```
+  - Without implementing `Comparable`, creating a `TreeSet` will result in an error.
+  - With `Comparable`, you can compare and insert elements: `John`, `Emma`, `Peter`.
+
+### Converting Between Collections
+
+- **TreeSet to ArrayList**:
+  - TreeSet orders elements automatically based on `compareTo`.
+  - Convert TreeSet to ArrayList:
+    ```java
+    TreeSet<Customer> treeSet = new TreeSet<>();
+    // Add customers to treeSet
+    List<Customer> arrayList = new ArrayList<>(treeSet);
+    ```
+  - This allows easy conversion and retains order defined by `compareTo`.
+
+### Sorting Collections
+
+- **Sorting ArrayList with `Collections.sort`**:
+  - `sort` is a static method in `Collections` class.
+  - Requires elements to have implemented `Comparable`.
+  - Usage:
+    ```java
+    List<Customer> arrayList = new ArrayList<>();
+    // Add customers to arrayList
+    
+    // Sort ArrayList
+    Collections.sort(arrayList);
+    ```
+
+### Example Walkthrough
+
+- **Unsorted List**:
+  - Create a list of Customers without order.
+  - Directly inserting without `TreeSet` keeps insertion order.
+  - Code:
+    ```java
+    List<Customer> customerList = new ArrayList<>();
+    customerList.add(new Customer("John", 60));
+    customerList.add(new Customer("Emma", 75));
+    customerList.add(new Customer("Peter", 61));
+    ```
+
+- **Sorting the List**:
+  - Use `Collections.sort` to sort the list.
+  - Flow will look like:
+    ```java
+    Collections.sort(customerList);
+    ```
+  - Will sort based on `compareTo` implementation.
+
+### Output
+
+- **Initial List**:
+  - Unsorted: Preserves insertion order.
+  - Sorted: Uses `compareTo` and sorts on specified logic (e.g., `postCode`).
+
+- **Printed Output**:
+  - Directly printing customers from the list after sorting.
+
+### Key Points
+
+- Elements in `TreeSet` must implement `Comparable`.
+- `Collections.sort` methods require `Comparable`.
+- A list keeps the insertion order unless explicitly sorted.
+- TreeSet orders elements based on `compareTo`.
+- Conversion between `TreeSet` and `ArrayList` is straightforward. 
+
+---
+
+### Sample Code for Clarity
+
+- **Customer Class**:
+  ```java
+  class Customer implements Comparable<Customer> {
+      private String name;
+      private int postCode;
+
+      public Customer(String name, int postCode) {
+          this.name = name;
+          this.postCode = postCode;
+      }
+
+      @Override
+      public int compareTo(Customer other) {
+          return Integer.compare(this.postCode, other.postCode);
+      }
+
+      @Override
+      public String toString() {
+          return name + " - " + postCode;
+      }
+  }
+  ```
+- **TreeSet to ArrayList**:
+  ```java
+  TreeSet<Customer> treeSet = new TreeSet<>();
+  treeSet.add(new Customer("John", 12345));
+  treeSet.add(new Customer("Emma", 54321));
+
+  List<Customer> arrayList = new ArrayList<>(treeSet);
+  System.out.println(arrayList);
+  ```
+
+- **Sorting List**:
+  ```java
+  List<Customer> customerList = new ArrayList<>();
+  customerList.add(new Customer("John", 12345));
+  customerList.add(new Customer("Emma", 54321));
+
+  Collections.sort(customerList);
+  System.out.println(customerList);
+  ```
+
+- **Output Example**:
+  - Original List: `[Emma - 54321, John - 12345]`
+  - Sorted List: `[John - 12345, Emma - 54321]`
+
+Remember that consistency with the `compareTo` method is crucial for ensuring that collections are structured and sorted correctly.
+
+Summary of chunk 16:
+### Lecture Notes
+
+#### Sorting Logic and Method
+
+- Changing the order of comparisons can modify how the list is sorted:
+  - Example: Changing from ascending to descending order with minor changes in logic.
+    ```java
+    original order: lower, lower, higher
+    changed order: higher, lower, lower
+    ```
+  - Illustrates decoupling as only the comparison method changes, not the main logic.
+
+#### Complex Logic in Sorting
+
+- Flexible comparison methods:
+  - Compare by different fields (e.g., name, higher order, lower order).
+  - Customizable to include multiple criteria or complex logic.
+  - Only the specific method needs change for different comparison logic.
+
+#### Challenges and Limitations
+
+- Limitations of a single comparison method:
+  - Only one comparison method provided in the class.
+  - Cannot dynamically change sorting based on different criteria (e.g., postcode, rewards points).
+
+#### Customizable Comparisons at Runtime
+
+- Runtime customization for comparison:
+  - Comparison logic can be provided externally to the collection.
+  - Allows using different comparison methods as per requirement.
+  - Compatible if the logic is properly synchronized.
+
+#### Introduction to Lambda Expressions
+
+- Lambda expressions provide a succinct way to express the comparison logic.
+- More elegant and flexible.
+- Will be covered in detail later.
+
+#### Example and Implementation
+
+- Sorting using custom logic:
+  ```java
+  collection.sort(list, (customer1, customer2) -> {
+      // Comparison logic here
+  });
+  ```
+- Original way uses `compareTo` method implemented in the class.
+- Future methods will allow providing external comparison logic.
+
+#### Precondition for Using Collections
+
+- Preconditions for `compareTo`:
+  - Each object must have a `compareTo` method implemented.
+  - Ensures compatibility with collection sort operations.
+
+#### Next Steps
+
+- Future lectures will focus on:
+  - Detailed implementation of multiple comparison methods using lambda expressions.
+  - Creating flexible comparison objects dynamically.
+
+#### Assignment Reminder
+
+- Start working on Assignment 1.
+- Upcoming lectures will build on today's content.
+
+#### Q&A
+
+- Clarification on lambda expressions and sorting.
+- Discussion about having multiple comparison methods per customer object.
+- Default comparison based on customer ID with flexibility for dynamic logic changes.
+
+End of lecture notes.
+
+Summary of chunk 17:
+### Exception Handling in Java
+
+#### Basics
+- Main program should throw exceptions.
+  ```java
+  public class Main {
+      public static void main(String[] args) throws Exception {
+          // Your code here
+      }
+  }
+  ```
+
+#### Key Points
+- If the method `M1` in main program throws an exception and it is not caught, it will not compile.
+- Ensure exceptions are either:
+  - Caught using `try-catch` blocks or,
+  - Declared in the method signature using `throws`.
+
+#### Example Scenario
+- Method `M1` throws an exception.
+- If `M1` is called within `main` without catching or declaring the exception, it will not compile.
+
+#### Code Example Without Handling
+```java
+public class Main {
+    public static void main(String[] args) throws Exception { // Main program throws exception
+        M1(); // M1 throws exception not caught or declared
+    }
+
+    public static void M1() {
+        throw new RuntimeException("Exception from M1");
+    }
+}
+```
+- This will not compile as `M1` throws an exception which isn't handled.
+
+#### Proper Handling Example
+1. Catch the Exception:
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            try {
+                M1();
+            } catch (Exception e) {
+                System.out.println("Exception caught: " + e.getMessage());
+            }
+        }
+    
+        public static void M1() throws Exception {
+            throw new Exception("Exception from M1");
+        }
+    }
+    ```
+2. Declare the Exception:
+    ```java
+    public class Main {
+        public static void main(String[] args) throws Exception {
+            M1();  // M1 throws exception declared in main
+        }
+    
+        public static void M1() throws Exception {
+            throw new Exception("Exception from M1");
+        }
+    }
+    ```
+    
+#### Summary
+- Make sure to handle exceptions in your program to ensure smooth compilation and execution.
+- Exceptions can be handled by:
+  - `try-catch` blocks,
+  - Declaring in the method signature with `throws`.
+- Proper exception management ensures program resilience and reliability.
+
