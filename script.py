@@ -71,8 +71,9 @@ def save_summaries(summaries, output_file_path):
             file.write(f"> Summary of chunk {i + 1}:\n{summary}\n\n")
 
 if __name__ == "__main__":
-    input_file_path = 'COMP6452_6452 Lectur-transcript 6.txt'  # Replace with your input file path
-    output_file_path = input_file_path.removesuffix('.txt') + ' NOTES.md'  # Replace with your desired output file path
+    filename = "COMP6452_6452 Lectur-transcript.txt"
+    input_file_path = 'transcripts/' + filename  # Replace with your input file path
+    output_file_path = 'notes/' + filename.removesuffix('.txt') + ' NOTES.md'  # Replace with your desired output file path
     max_words = 1200  # Adjust the number of words per chunk
     course = "Blockchain"
     summaries = summarize_text_file(input_file_path, max_words)
